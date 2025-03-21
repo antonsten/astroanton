@@ -1,0 +1,64 @@
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-feature-settings: 'ss01' 1, 'ss02' 1, 'ss03' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply text-base font-regular text-gray-900;
+  }
+}
+
+@layer components {
+  .display-lg {
+    @apply text-display-lg font-medium tracking-tight;
+  }
+  
+  .display {
+    @apply text-display font-medium tracking-tight;
+  }
+
+  .h1 {
+    @apply text-h1 font-medium tracking-tight;
+  }
+
+  .h2 {
+    @apply text-h2 font-medium;
+  }
+
+  .h3 {
+    @apply text-h3 font-medium;
+  }
+
+  .h4 {
+    @apply text-h4 font-medium;
+  }
+
+  .h5 {
+    @apply text-h5 font-medium;
+  }
+
+  .body-xl {
+    @apply text-xl font-regular;
+  }
+
+  .body-lg {
+    @apply text-lg font-regular;
+  }
+
+  .body {
+    @apply text-base font-regular;
+  }
+
+  .body-sm {
+    @apply text-sm font-regular;
+  }
+
+  .caption {
+    @apply text-xs font-regular text-gray-500;
+  }
+} 

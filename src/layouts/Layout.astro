@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { 
+	title, 
+	description = "Anton Sten - Product design leader working remotely from the Swedish countryside" 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<!-- Add preconnect for custom fonts if needed -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	</head>
+	<body class="bg-white text-black antialiased">
+		<Navigation />
+		<main class="min-h-screen">
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style is:global>
+	/* Add any global styles here */
+	html {
+		font-family: 'Suisse Intl', system-ui, sans-serif;
+	}
+</style>

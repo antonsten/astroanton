@@ -1,0 +1,112 @@
+---
+// Define the current path to handle active states
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // Remove the leading slash
+---
+
+<div class="sticky top-0 z-50 px-[20px] pt-[20px]">
+  <nav class="bg-light-grey/80 backdrop-blur-sm rounded-xl">
+    <div class="px-[20px] py-[8px]">
+      <div class="flex items-center justify-between">
+        <!-- Logo/Home link -->
+        <a href="/" class="text-black">
+          <span class="text-[14px] font-semibold">Anton Sten</span>
+        </a>
+
+        <!-- Main navigation -->
+        <div class="hidden md:flex items-center gap-6">
+          <a 
+            href="/about" 
+            class="text-[14px] font-semibold text-black hover:underline decoration-1 underline-offset-4"
+          >
+            About
+          </a>
+          <a 
+            href="/articles" 
+            class="text-[14px] font-semibold text-black hover:underline decoration-1 underline-offset-4"
+          >
+            Articles
+          </a>
+          <a 
+            href="/work" 
+            class="text-[14px] font-semibold text-black hover:underline decoration-1 underline-offset-4"
+          >
+            Work
+          </a>
+          <a 
+            href="/newsletter" 
+            class="text-[14px] font-semibold text-black hover:underline decoration-1 underline-offset-4"
+          >
+            Newsletter
+          </a>
+          <a 
+            href="/contact" 
+            class="text-[14px] font-semibold text-black hover:underline decoration-1 underline-offset-4"
+          >
+            Contact
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button 
+          class="md:hidden text-[14px] font-semibold text-black"
+          aria-label="Toggle menu"
+          id="menuButton"
+        >
+          Menu
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div 
+        class="hidden md:hidden pt-4 pb-6"
+        id="mobileMenu"
+      >
+        <div class="flex flex-col space-y-4">
+          <a 
+            href="/about" 
+            class="text-[14px] font-semibold text-black hover:underline decoration-1 underline-offset-4"
+          >
+            About
+          </a>
+          <a 
+            href="/articles" 
+            class="text-[14px] font-semibold text-black hover:underline decoration-1 underline-offset-4"
+          >
+            Articles
+          </a>
+          <a 
+            href="/work" 
+            class="text-[14px] font-semibold text-black hover:underline decoration-1 underline-offset-4"
+          >
+            Work
+          </a>
+          <a 
+            href="/newsletter" 
+            class="text-[14px] font-semibold text-black hover:underline decoration-1 underline-offset-4"
+          >
+            Newsletter
+          </a>
+          <a 
+            href="/contact" 
+            class="text-[14px] font-semibold text-black hover:underline decoration-1 underline-offset-4"
+          >
+            Contact
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<script>
+  // Mobile menu toggle
+  const menuButton = document.getElementById('menuButton');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    const button = menuButton as HTMLButtonElement;
+    button.textContent = button.textContent === 'Menu' ? 'Close' : 'Menu';
+  });
+</script> 

@@ -1,0 +1,81 @@
+<div class="bg-light-green p-8 rounded-xl">
+    <p class="text-black mb-4 text-[20px] leading-[28px] tracking-[-0.01em] font-regular">
+        Each month, I share my insights on design with thousands of designers, developers, and product professionals from top companies like Amazon, IKEA, Figma, and Shopify.
+    </p>
+    <form id="newsletter-form" class="flex flex-col gap-4">
+        <div class="flex gap-2">
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                class="flex-1 px-4 py-2 rounded-lg border border-dark-grey/20 focus:outline-none focus:ring-2 focus:ring-green text-[16px] leading-[24px] tracking-[-0.01em] font-regular"
+                required
+            />
+            <button
+                type="submit"
+                class="px-6 py-2 bg-green text-white rounded-lg hover:bg-green/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+                Sign up
+            </button>
+        </div>
+        <div id="form-message" class="text-[26px] leading-[34px] tracking-[-0.01em] font-regular hidden"></div>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById('newsletter-form') as HTMLFormElement;
+    const message = document.getElementById('form-message') as HTMLParagraphElement;
+
+    if (form && message) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
+            const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+            
+            // Disable form while submitting
+            emailInput.disabled = true;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Signing up...';
+            message.classList.remove('text-red-500', 'text-green-500', 'hidden');
+            message.textContent = 'Subscribing to newsletter...';
+            message.classList.add('text-black');
+            
+            try {
+                const response = await fetch('/api/newsletter', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: emailInput.value }),
+                });
+                
+                const data = await response.json();
+                
+                message.textContent = data.message;
+                message.classList.remove('hidden', 'text-black');
+                
+                if (response.ok) {
+                    message.classList.add('text-green-500');
+                    form.reset();
+                    // Hide the input and button on success
+                    form.querySelector('.flex')?.classList.add('hidden');
+                } else {
+                    message.classList.add('text-red-500');
+                    // Re-enable the form on error
+                    emailInput.disabled = false;
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Sign up';
+                }
+            } catch (error) {
+                message.textContent = 'An error occurred. Please try again.';
+                message.classList.remove('hidden', 'text-black');
+                message.classList.add('text-red-500');
+                // Re-enable the form on error
+                emailInput.disabled = false;
+                submitButton.disabled = false;
+                submitButton.textContent = 'Sign up';
+            }
+        });
+    }
+</script> 

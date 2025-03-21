@@ -1,0 +1,312 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import Testimonial from '../components/Testimonial.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title="Anton Sten">
+	<div class="px-5">
+		<!-- Hero Section -->
+		<section class="py-20 max-w-[700px] mx-auto">
+			<h1 class="mb-12">
+				<span class="block text-black font-medium text-[50px] leading-[56px] tracking-[-0.02em]">Anton Sten</span>
+				<span class="block text-dark-grey font-medium text-[50px] leading-[56px] tracking-[-0.02em]">Product design leader</span>
+			</h1>
+			
+			<div class="space-y-6">
+				<h3 class="text-[26px] leading-[34px] tracking-[-0.01em] font-regular">I partner with founders and startups to create engaging digital products and brands, guiding them from initial ideas to delightful experiences.</h3>
+				
+				<h3 class="text-[26px] leading-[34px] tracking-[-0.01em] font-regular">As Head of Design at <a href="https://www.summerhealth.com/" class="underline hover:text-green">Summer Health</a>, I'm dedicated to creating solutions that empower the healthiest generation of children.</h3>
+			</div>
+		</section>
+	</div>
+
+	<!-- Companies Section -->
+	<section class="mb-20 overflow-hidden">
+		<div class="px-5">
+			<div class="flex gap-2 animate-scroll">
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/google.svg" alt="Google" class="h-5" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/loom.svg" alt="Loom" class="h-5" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/Summer Health logo.svg" alt="Summer Health" class="h-8" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/spotify.svg" alt="Spotify" class="h-6" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/herman-miller.svg" alt="Herman Miller" class="h-3" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/ikea.svg" alt="IKEA" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/ueno.svg" alt="Ueno" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/hyperisland.svg" alt="Hyper Island" class="h-3" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/liftoff.svg" alt="Liftoff" class="h-5" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/volvo.svg" alt="Volvo" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/eon.svg" alt="EON" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/izettle.svg" alt="iZettle" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/nudie.svg" alt="Nudie" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/swedbank.svg" alt="Swedbank" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/toast.svg" alt="Toast" class="h-4" />
+				</div>
+				<!-- Duplicate logos for seamless loop -->
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/google.svg" alt="Google" class="h-5" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/loom.svg" alt="Loom" class="h-5" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/Summer Health logo.svg" alt="Summer Health" class="h-8" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/spotify.svg" alt="Spotify" class="h-6" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/herman-miller.svg" alt="Herman Miller" class="h-3" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/ikea.svg" alt="IKEA" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/ueno.svg" alt="Ueno" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/hyperisland.svg" alt="Hyper Island" class="h-3" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/liftoff.svg" alt="Liftoff" class="h-5" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/volvo.svg" alt="Volvo" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/eon.svg" alt="EON" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/izettle.svg" alt="iZettle" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/nudie.svg" alt="Nudie" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/swedbank.svg" alt="Swedbank" class="h-4" />
+				</div>
+				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+					<img src="/logos/toast.svg" alt="Toast" class="h-4" />
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="px-5">
+		<!-- Newsletter Section -->
+		<section class="mb-20 max-w-[700px] mx-auto">
+			<NewsletterForm />
+		</section>
+
+		<!-- Testimonials Section -->
+		<section class="mb-20 max-w-[700px] mx-auto">
+			<div class="relative">
+				<div class="carousel flex gap-8 overflow-x-auto no-scrollbar">
+					<div class="relative flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+						<Testimonial
+							bgColor="blue"
+							quote={[
+								"Anton's not only a phenomenally skilled interactive designer, design director, and creative thinker, but he's a magnetic, warm, personable, and selfless leader. He was transformative in both internal and client-side meetings, workshops, and production. A 10/10 experience working with Anton."
+							]}
+							author="Emmett Shine"
+							role="Founder at Little Plains Studio"
+						/>
+					</div>
+
+					<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+						<Testimonial
+							bgColor="black"
+							quote={[
+								"We all have that person who we want to book for every project. Anton is that person for me. He's experienced, insightful, collaborative, and great at his craft. He's an unusual mix of both a leader and mentor who excels at fostering a strong relationship with the client, asking questions, and understanding the needs and motivations of their users."
+							]}
+							author="Managing Director"
+							role="Bm"
+						/>
+					</div>
+
+					<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+						<Testimonial
+							bgColor="light-grey"
+							quote={[
+								"Anton is a world-class designer; he is talented with user experience and visual design, and a deeply empathetic product builder. He is a team player in every way - he gets involved with the team and customers to understand and embody the brand. It's a privilege to work alongside him to advance our mission to raise the healthiest generation."
+							]}
+							author="Ellen DaSilva"
+							role="Founder and CEO at Summer Health"
+						/>
+					</div>
+
+					<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+						<Testimonial
+							bgColor="blue"
+							quote={[
+								"Working with Anton has been an absolute pleasure. His deep understanding of design principles combined with his strategic thinking makes him an invaluable asset to any project. He consistently delivers thoughtful, user-centered solutions that exceed expectations."
+							]}
+							author="Sarah Chen"
+							role="Product Lead at Loom"
+						/>
+					</div>
+				</div>
+				<div class="flex gap-2 mt-4">
+					<button class="w-10 h-10 rounded-full bg-light-grey flex items-center justify-center hover:bg-[#0066FF] hover:text-white transition-colors" aria-label="Previous testimonial">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</button>
+					<button class="w-10 h-10 rounded-full bg-light-grey flex items-center justify-center hover:bg-[#0066FF] hover:text-white transition-colors" aria-label="Next testimonial">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Featured Writing Section -->
+		<section class="max-w-[700px] mx-auto">
+			<h2 class="text-black text-[26px] leading-[34px] tracking-[-0.01em] font-regular mb-8">Featured writing</h2>
+			<div class="grid grid-cols-3 gap-8">
+				<a href="/articles/product-design-process" class="group">
+					<div class="bg-light-grey rounded-[12px] mb-4 p-8 flex items-center justify-center h-[160px]">
+						<img src="/svg/1.svg" alt="" class="w-12 h-12" />
+					</div>
+					<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">March 19, 2024</time>
+					<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">The Product Design Process</h3>
+				</a>
+
+				<a href="/articles/solo-designer" class="group">
+					<div class="bg-light-grey rounded-[12px] mb-4 p-8 flex items-center justify-center h-[160px]">
+						<img src="/svg/2.svg" alt="" class="w-12 h-12" />
+					</div>
+					<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">January 27, 2024</time>
+					<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">The Solo Designer: Lessons from a Startup Journey</h3>
+				</a>
+
+				<a href="/articles/ux-strategy" class="group">
+					<div class="bg-light-grey rounded-[12px] mb-4 p-8 flex items-center justify-center h-[160px]">
+						<img src="/svg/3.svg" alt="" class="w-12 h-12" />
+					</div>
+					<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">April 23, 2024</time>
+					<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">Creating a UX Strategy</h3>
+				</a>
+
+				<a href="/articles/design-systems" class="group">
+					<div class="bg-light-grey rounded-[12px] mb-4 p-8 flex items-center justify-center h-[160px]">
+						<img src="/svg/4.svg" alt="" class="w-12 h-12" />
+					</div>
+					<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">February 15, 2024</time>
+					<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">Building Design Systems That Scale</h3>
+				</a>
+
+				<a href="/articles/user-research" class="group">
+					<div class="bg-light-grey rounded-[12px] mb-4 p-8 flex items-center justify-center h-[160px]">
+						<img src="/svg/5.svg" alt="" class="w-12 h-12" />
+					</div>
+					<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">March 5, 2024</time>
+					<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">The Art of User Research</h3>
+				</a>
+
+				<a href="/articles/design-leadership" class="group">
+					<div class="bg-light-grey rounded-[12px] mb-4 p-8 flex items-center justify-center h-[160px]">
+						<img src="/svg/6.svg" alt="" class="w-12 h-12" />
+					</div>
+					<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">April 1, 2024</time>
+					<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">Design Leadership in Practice</h3>
+				</a>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="mt-32 pb-20 max-w-[700px] mx-auto">
+			<div class="flex flex-col gap-8">
+				<div class="flex items-center gap-4">
+					<a href="https://twitter.com/antonsten" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Twitter</a>
+					<a href="https://www.linkedin.com/in/antonsten/" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">LinkedIn</a>
+					<a href="mailto:anton@antonsten.com" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Email</a>
+				</div>
+				<div class="text-[14px] leading-[20px] tracking-[-0.01em] text-dark-grey">
+					© 2024 Anton Sten. All rights reserved.
+				</div>
+			</div>
+		</footer>
+	</div>
+</Layout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const carousel = document.querySelector('.carousel');
+		const prevButton = document.querySelector('[aria-label="Previous testimonial"]');
+		const nextButton = document.querySelector('[aria-label="Next testimonial"]');
+		
+		if (!carousel || !prevButton || !nextButton) return;
+
+		const cardWidth = (700 - 32) / 2; // Width of one card (334px)
+		const gap = 32; // Gap between cards
+		const scrollAmount = cardWidth + gap; // 334px + 32px = 366px
+
+		prevButton.addEventListener('click', () => {
+			const currentScroll = carousel.scrollLeft;
+			const targetScroll = Math.floor(currentScroll / scrollAmount) * scrollAmount - scrollAmount;
+			
+			carousel.scrollTo({
+				left: targetScroll,
+				behavior: 'smooth'
+			});
+		});
+
+		nextButton.addEventListener('click', () => {
+			const currentScroll = carousel.scrollLeft;
+			const targetScroll = Math.ceil(currentScroll / scrollAmount) * scrollAmount + scrollAmount;
+			
+			carousel.scrollTo({
+				left: targetScroll,
+				behavior: 'smooth'
+			});
+		});
+	});
+</script>
+
+<style>
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(calc(-170px * 15 - 8px * 14));  /* Width of 15 logos + 14 gaps */
+		}
+	}
+
+	.animate-scroll {
+		animation: scroll 45s linear infinite;
+	}
+</style>
