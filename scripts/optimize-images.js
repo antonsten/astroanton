@@ -92,15 +92,7 @@ async function optimizeImages() {
         await processImage(imagePath);
     }
 
-    // Watch for new images
-    console.log('\nWatching for new images...');
-    chokidar.watch('**/*.{jpg,jpeg,png}', {
-        cwd: IMAGES_DIR,
-        ignoreInitial: true
-    }).on('add', async (file) => {
-        const imagePath = path.join(IMAGES_DIR, file);
-        await processImage(imagePath);
-    });
+    console.log('Image optimization complete!');
 }
 
 // Run the script
