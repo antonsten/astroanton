@@ -18,22 +18,6 @@ const { article } = Astro.props;
 const { Content } = await article.render();
 ---
 
-<Layout title={article.data.title}>
-    <article class="prose prose-lg mx-auto px-4 py-8">
-        <h1>{article.data.title}</h1>
-        <div class="text-gray-600 mb-8">
-            <time datetime={article.data.publishDate}>
-                {new Date(article.data.publishDate).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                })}
-            </time>
-            {article.data.minutesToRead && (
-                <span class="mx-2">·</span>
-                <span>{article.data.minutesToRead} min read</span>
-            )}
-        </div>
-        <Content />
-    </article>
+<Layout frontmatter={article.data}>
+    <Content />
 </Layout> 

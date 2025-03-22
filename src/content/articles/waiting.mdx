@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/BlogPost.astro"
 title: "What is worth waiting for?"
 description: "What about speed? No, not the Keanu Reeves movie, but the speed of your product. How much thought have you given it? When building a product, speed is the one aspect that I think is often overlooked, yet it’s one of the features we have a lot of influence over.\n\n\nTake a minute and think about it… Speed can keep us from making a purchase, navigating through a website, or can even seriously harm our view of a brand. We barely notice when a company does it right, but they enjoy huge sales and ensur"
 publishDate: "2019-02-25"
@@ -7,58 +6,30 @@ minutesToRead: 5
 ---
 
 <p>What about speed? No, not the Keanu Reeves movie, but the speed of your product. How much thought have you given it? When building a product, speed is the one aspect that I think is often overlooked, yet it’s one of the features we have a lot of influence over.</p>
-<p>Take a minute and think about it… Speed can keep us from making a purchase, navigating through a website, or can even seriously harm our view of a brand. We barely notice when a company does it right, but they enjoy huge sales and ensured brand loyalty. It really is the </p>
-<a href="https://www.antonsten.com/secret-feature/">secret feature that everyone knows about. 
+<p>Take a minute and think about it… Speed can keep us from making a purchase, navigating through a website, or can even seriously harm our view of a brand. We barely notice when a company does it right, but they enjoy huge sales and ensured brand loyalty. It really is the <a href="https://www.antonsten.com/secret-feature/">secret feature that everyone knows about.</a></p>
 <p>The list of things you can do to improve your product’s speed is long (and to be honest, often technical). Reducing server requests, minimizing code, and optimizing images are a good place to start. We think, “of course we can do that,” but all of the fancy aesthetic design (custom fonts, etc) choices, new functionality, and increased content cancel out any progress we thought we made. The truth is our users tend to care more about speed than bells and whistles. They want the information now. Did I mention that search engine rankings now consider speed too? How about that?</p>
 <p>Bells and whistles can occasionally serve a purpose, but the load time due to analytics and tracking scripts is becoming insane. When the GDPR launched in Europe, USA Today decided to launch a European version without tracking and ads - bringing the page size from 5.2mb to just 500kb - a decrease of nearly 90%!</p>
-<a href="https://pxlnv.com/blog/bullshit-web/?ref="antonsten".com">Nick Heer</a>
- disassembled a CNN article only to find it contained 11 web fonts (414kb), 4 stylesheets (315kb), 20 frames, 29 XML HTTP requests (500kb) and approximately one hundred (100!) scripts totalling several megabytes.</p>
+<p><a href="https://pxlnv.com/blog/bullshit-web/?ref=antonsten.com">Nick Heer</a> disassembled a CNN article only to find it contained 11 web fonts (414kb), 4 stylesheets (315kb), 20 frames, 29 XML HTTP requests (500kb) and approximately one hundred (100!) scripts totalling several megabytes.</p>
+
 <div class="blockquote">
+<div><p>The vast majority of these resources are not directly related to the information on the page, and I’m including advertising. Many of the scripts that were loaded are purely for surveillance purposes: self-hosted analytics, of which there are several examples; various third-party analytics firms like Salesforce, Chartbeat, and Optimizely; and social network sharing widgets. They churn through CPU cycles and cause my six-year-old computer to cry out in pain and fury. I’m not asking much of it; I have opened a text-based document on the web.<br />
+<strong><a href="https://pxlnv.com/blog/bullshit-web/?ref=antonsten.com">Nick Heer - The Bullshit Web</a></strong></p></div>
 </div>
-<div>
-<p>The vast majority of these resources are not directly related to the information on the page, and I’m including advertising. Many of the scripts that were loaded are purely for surveillance purposes: self-hosted analytics, of which there are several examples; various third-party analytics firms like Salesforce, Chartbeat, and Optimizely; and social network sharing widgets. They churn through CPU cycles and cause my six-year-old computer to cry out in pain and fury. I’m not asking much of it; I have opened a text-based document on the web. </p>
-<br>
-<strong>
-</strong>
-<a href="https://pxlnv.com/blog/bullshit-web/?ref="antonsten".com">Nick Heer - The Bullshit Web </div>
-<h2 id="speed-is-a-two-way-street">Speed is a two-way street</h>
-</h2>
+
+<h2 id="speed-is-a-two-way-street">Speed is a two-way street</h2>
 <p>While there’s lots you can do to minimize the page load in your end, speed is a two-way street and even with the most efficient product, there’s one thing you can’t control - the user’s connection. We can make our mobile apps load fast, optimize images, and reduce features that aren’t used on mobile, but it’ll only get us so far. If the user is on a slow carrier connection, there’s nothing we can do to improve that situation.</p>
 <p>This is a situation that I’ve found myself working around lately in my work. The product I’m working on has many users in Asia with slower connection speeds. Often they also need to go through a VPN as well which slows them even further. So does that mean there’s nothing we can do to better serve these users?</p>
 <p>Of course not!</p>
-<p>Jacob Nielsen wrote a </p>
-<a href="https://www.nngroup.com/articles/response-times-3-important-limits/?ref="antonsten".com">great article on this topic</a>
- that we’ve used as a guiding star in our work. The gist of it is this: There are 3 main time limits (which are determined by human perceptual abilities) to keep in mind when optimizing web and application performance.</p>
+<p>Jacob Nielsen wrote a <a href="https://www.nngroup.com/articles/response-times-3-important-limits/?ref=antonsten.com">great article on this topic</a> that we’ve used as a guiding star in our work. The gist of it is this: There are 3 main time limits (which are determined by human perceptual abilities) to keep in mind when optimizing web and application performance.</p>
 <p>You can adjust the timings to what fits your situation, but basically we will think of scenarios from these three time limits:</p>
 <p>The basic advice regarding response times has been about the same for thirty years [Miller 1968; Card et al. 1991]:</p>
 <ul>
+<li><strong>0.1 second</strong> is about the limit for having the user feel that the system is <strong>reacting instantaneously</strong>, meaning that no special feedback is necessary except to display the result.</li>
+<li><strong>1.0 second</strong> is about the limit for the <strong>user's flow of thought to stay uninterrupted</strong>, even though the user will notice the delay. Normally, no special feedback is necessary during delays of more than 0.1 but less than 1.0 second, but the user does lose the feeling of operating directly on the data.</li>
+<li><strong>10 seconds</strong> is about the limit for <strong>keeping the user's attention focused</strong> on the dialogue. For longer delays, users will want to perform other tasks while waiting for the computer to finish, so they should be given feedback indicating when the computer expects to be done. Feedback during the delay is especially important if the response time is likely to be highly variable, since users will then not know what to expect.</li>
 </ul>
-<li>
-<strong>0.1 second</stron>
-</strong>
- is about the limit for having the user feel that the system is 
-<strong>reacting instantaneously</stron>
-</strong>
- , meaning that no special feedback is necessary except to display the result.</li>
-<li>
-</li>
-<strong>1.0 second</strong>
- is about the limit for the 
-<strong>user's flow of thought to stay uninterrupted</stron>
-</strong>
- , even though the user will notice the delay. Normally, no special feedback is necessary during delays of more than 0.1 but less than 1.0 second, but the user does lose the feeling of operating directly on the data.</li>
-<li>
-</li>
-<strong>10 seconds</strong>
- is about the limit for 
-<strong>keeping the user's attention focused</stron>
-</strong>
- on the dialogue. For longer delays, users will want to perform other tasks while waiting for the computer to finish, so they should be given feedback indicating when the computer expects to be done. Feedback during the delay is especially important if the response time is likely to be highly variable, since users will then not know what to expect. 
-<p>For anything that’ll take 10 seconds or longer and we’ll show a percentage indicator so the user gets an idea of the anticipated waiting time. Why? Because users don’t actually hate waiting, </p>
-<strong>they hate not knowing how long they’ll have to wait</strong>
- . This is something that call-in customer service center’s have known for years. Call a customer support line and you’ll likely be greeted with the anticipated waiting time. Being told the wait time is 6 minutes may seem like a long time, but waiting for 6 minutes without being told will feel like a whole lot longer.</p>
+<p>For anything that’ll take 10 seconds or longer and we’ll show a percentage indicator so the user gets an idea of the anticipated waiting time. Why? Because users don’t actually hate waiting, <strong>they hate not knowing how long they’ll have to wait</strong>. This is something that call-in customer service center’s have known for years. Call a customer support line and you’ll likely be greeted with the anticipated waiting time. Being told the wait time is 6 minutes may seem like a long time, but waiting for 6 minutes without being told will feel like a whole lot longer.</p>
 <p>Not only does being given the the anticipated wait time give you a reference - it gives you something that’s even more valuable to users - the data needed for making a decision! 6 minutes? Ok I’ll hold. 34 minutes? No I’ll call back later. Without knowing the anticipated waiting time we don’t have the knowledge to make that decision. Wouldn’t you want this information for a lot more interactions in your life? Dinner at your mother-in-laws will be four hours. It sounds like you have a decision to make.</p>
 <p>Finally, as you’re aware from waiting on the phone - the time remaining decreases. 6 minutes, now it’s 4 minutes and boom - you’re in. The same input is extremely useful dealing with technical data intensive digital tools. Has it crashed? Is it still processing? A visual indicator is there to show the user that the tool is still working - and even to give you something to rest your eyes on! This is why you’re hearing music while waiting on the phone. The music might be pretty terrible, but in most cases, it at least beats silence (and if not, at least give them credit for trying).</p>
-<h2 id="no-man-is-an-island">No man is an island</h>
-</h2>
+<h2 id="no-man-is-an-island">No man is an island</h2>
 <p>Just like no man is an island, no problem has only one solution. It’s therefore important to remember to tackle things like page speed from multiple angles as there’s only so much you can do on each front - but combined you can achieve far greater results. It is important to look creatively at the problem, collaboratively, and present the solution in a way that considers the user’s needs first. While I have some good ideas on how to improve this experience, my opinion is not the end all. It takes many minds to look at a problem as complex as making our speed strangled digital world faster - or at least more tolerable. So, what is your answer? What are the best solutions increasing our speed? How can we make ourselves more comfortable during the inevitable waits? I’m curious to hear what you have to say!</p>

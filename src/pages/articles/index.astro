@@ -1,68 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
-interface Post {
-    title: string;
-    description?: string;
-    publishDate: string;
-    minutesToRead?: number;
-    url: string;
-    layout?: string;
-}
+// Get all articles from the content collection
+const articles = await getCollection('articles');
 
-// Format the date without using browser APIs
-function formatDate(dateStr: string | undefined) {
-    if (!dateStr) {
-        console.error('No date string provided');
-        return '';
-    }
-    try {
-        const [year, month, day] = dateStr.split('-').map(num => parseInt(num, 10));
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        return `${months[month - 1]} ${day}, ${year}`;
-    } catch (error) {
-        console.error('Error formatting date:', error);
-        return '';
-    }
-}
-
-let sortedPosts: Post[] = [];
-
-try {
-    // Get all articles from the content collection
-    const articles = await getCollection('articles');
-    console.log('Found articles:', articles.length);
-
-    // Transform articles into posts
-    sortedPosts = articles
-        .map((article: CollectionEntry<'articles'>) => ({
-            ...article.data,
-            url: `/articles/${article.slug}`
-        }))
-        .filter((post: Post) => {
-            // Filter out posts without required frontmatter
-            if (!post.publishDate || !post.title) {
-                console.warn(`Skipping post with missing frontmatter:`, post.url);
-                return false;
-            }
-            return true;
-        })
-        .sort((a: Post, b: Post) => {
-            try {
-                return new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime();
-            } catch (e) {
-                console.error('Error sorting posts:', e);
-                return 0;
-            }
-        });
-
-    console.log('Final sorted posts:', sortedPosts.length);
-    console.log('First sorted post:', sortedPosts[0]);
-} catch (error) {
-    console.error('Error in main processing:', error);
-    throw error; // Re-throw to trigger the 500 error page
-}
+// Sort articles by publish date
+const sortedPosts = articles
+    .map(article => ({
+        ...article.data,
+        url: `/articles/${article.slug}`
+    }))
+    .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
 ---
 
 <Layout title="Articles | Anton Sten" description="Articles and thoughts on UX design, product strategy, and digital experiences.">
@@ -78,11 +27,15 @@ try {
             <div class="space-y-16">
                 {sortedPosts.length === 0 ? (
                     <p class="text-[18px] leading-[28px] tracking-[-0.01em] text-dark-grey">
-                        No articles found. Please check the console for debugging information.
+                        No articles found.
                     </p>
                 ) : (
-                    sortedPosts.map((post: Post) => {
-                        const formattedDate = formatDate(post.publishDate);
+                    sortedPosts.map(post => {
+                        const formattedDate = new Date(post.publishDate).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
                         
                         return (
                             <article class="group">
@@ -92,22 +45,15 @@ try {
                                             {post.title}
                                         </h2>
                                         <div class="flex items-center gap-2 text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">
-                                            {formattedDate && (
-                                                <>
-                                                    <time datetime={post.publishDate}>{formattedDate}</time>
-                                                    <span>•</span>
-                                                </>
-                                            )}
+                                            <time datetime={post.publishDate}>{formattedDate}</time>
                                             {post.minutesToRead && (
-                                                <span>{post.minutesToRead} min read</span>
+                                                <>
+                                                    <span>•</span>
+                                                    <span>{post.minutesToRead} min read</span>
+                                                </>
                                             )}
                                         </div>
                                     </div>
-                                    {post.description && (
-                                        <p class="text-[18px] leading-[28px] tracking-[-0.01em] text-dark-grey">
-                                            {post.description}
-                                        </p>
-                                    )}
                                 </a>
                             </article>
                         );

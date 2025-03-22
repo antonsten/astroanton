@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/BlogPost.astro"
 title: "A Redesign"
 description: "If you’re a frequent reader of my blog, you’ve probably already noticed there have been some changes in the structure and layout of my website. While it may look similar to the previous version, the site is actually completely rebuilt from the ground up. Rather than going into the technical details of the redesign, I thought I’d share my process and reasoning behind the choices I’ve made. Let’s see if you can spot the common thread behind each decision!\n\n\n\nWhy a redesign?\n\n\nDuring the last year,"
 publishDate: "2017-08-15"
@@ -7,64 +6,24 @@ minutesToRead: 3
 ---
 
 <p>If you’re a frequent reader of my blog, you’ve probably already noticed there have been some changes in the structure and layout of my website. While it may look similar to the previous version, the site is actually completely rebuilt from the ground up. Rather than going into the technical details of the redesign, I thought I’d share my process and reasoning behind the choices I’ve made. Let’s see if you can spot the common thread behind each decision!</p>
-<h2 id="why-a-redesign">Why a redesign?</h>
-</h2>
-<p>During the last year, some of my </p>
-<a href="https://www.antonsten.com/truefans/">posts</a>
-<a href="https://www.antonsten.com/investingproducts/">have</a>
-<a href="https://www.antonsten.com/better-uxdesigner/">received</a>
-<a href="https://www.antonsten.com/future-ux-designer/">substantial</a>
-<a href="https://www.antonsten.com/designers-write/">traffic</a>
- so, in theory, there was nothing wrong with the layout. However, as I’ve been starting to share 
-<a href="https://www.antonsten.com/design-quotes/">short</a>
-<a href="https://www.antonsten.com/enough/">excerpts</a>
- of posts that I’ve found inspiring, I noticed that the previous design didn’t work exceptionally well with that format. The new design systems offers greater flexibility without making the site feel bloated.</p>
-<h2 id="design">Design</h>
-</h2>
+<h2 id="why-a-redesign">Why a redesign?</h2>
+<p>During the last year, some of my <a href="https://www.antonsten.com/truefans/">posts</a> <a href="https://www.antonsten.com/investingproducts/">have</a> <a href="https://www.antonsten.com/better-uxdesigner/">received</a> <a href="https://www.antonsten.com/future-ux-designer/">substantial</a> <a href="https://www.antonsten.com/designers-write/">traffic</a> so, in theory, there was nothing wrong with the layout. However, as I’ve been starting to share <a href="https://www.antonsten.com/design-quotes/">short</a> <a href="https://www.antonsten.com/enough/">excerpts</a> of posts that I’ve found inspiring, I noticed that the previous design didn’t work exceptionally well with that format. The new design systems offers greater flexibility without making the site feel bloated.</p>
+<h2 id="design">Design</h2>
 <p>From a design perspective, I wanted to keep the ultra-simple look that I had previously, but take it even one step further and focus solely on the reading experience. I wanted to keep using Neutral which is a fantastic, clean, and modern typeface hosted through Fontstand. I’ve paired Neutral with a more retro mono typeface called Input Sans Condensed from DJR.</p>
-<p>As someone who preaches about </p>
-<a href="https://www.antonsten.com/designing-for-accessibility/">accessibility</a>
- , I wanted to make sure that my site is WCAG AA+ approved, so that even visually impaired people can experience my content.</p>
-<h2 id="technology">Technology</h>
-</h2>
-<p>Perhaps the biggest shift has been in terms of the technologies I used. While I used to run my site on Wordpress, like so many others, I’ve started to experience it’s limitations. The fact that Wordpress runs from a database and makes queries to that database is something that consumes bandwidth making it slower for you, the user. Considering the humble size of my website, I’m almost obsessed with making it as </p>
-<a href="https://www.antonsten.com/secret-feature/">fast as possible</a>
- . After a quick survey with people far more capable of choosing the correct solution than me, I’m now happy to say that my site uses Jekyll. Jekyll compiles pages into a static website making it far faster and less vulnerable to compromise than anything using a database.</p>
-<p>As I’m terrified of using the terminal to upload and edit websites, I’ve found a solution that I’m so far extremely content with. I’m having the entire site uploaded to </p>
-<a href="https://github.com/?ref="antonsten".com">Github</a>
- , a repository for code that offers great version controlling capabilities. A brilliant service called 
-<a href="https://buddy.works/?ref="antonsten".com">Buddy</a>
- , then gets notified of a new push to Github and recompiles the website (e.g making all links work, checks for errors etc). Once the build is complete, it uploads the ‘new’ iteration to 
-<a href="https://m.do.co/c/0461e4c13647?ref="antonsten".com">DigitalOcean</a>
- . (Edit: It now also purges the cache over at 
-<a href="https://cloudflare.com/?ref="antonsten".com">Cloudflare</a>
- before sending me a private Slack message notifying me that it’s all good.) Bam! Zero terminal required and a fast, backed up, secure website for a non-technical person like myself.</p>
-<p>I should admit that none of the above would have been possible without the help of </p>
-<a href="http://hnssn.se/?ref="antonsten".com">Alexander Hansson</a>
- . Thank you!</p>
-<h2 id="newsletter">Newsletter</h>
-</h2>
-<p>If you’re arriving here from my newsletter, you’ve already experienced the biggest (visual) change! If not, this is a good opportunity to sign up and get my </p>
-<a href="https://www.antonsten.com/newsletter/">newsletter</a>
- next week. After trying out 
-<a href="https://mbsy.co/cztnf?ref="antonsten".com">Drip</a>
- for almost a year, I've decided to move back to 
-<a href="http://eepurl.com/bvIKNL?ref="antonsten".com">Mailchimp</a>
- . While Drip offers some great automation tools and segmenting options, it was more complicated than what I actually need. Mailchimp’s simplicity and usability won me over.</p>
+<p>As someone who preaches about <a href="https://www.antonsten.com/designing-for-accessibility/">accessibility</a>, I wanted to make sure that my site is WCAG AA+ approved, so that even visually impaired people can experience my content.</p>
+<h2 id="technology">Technology</h2>
+<p>Perhaps the biggest shift has been in terms of the technologies I used. While I used to run my site on Wordpress, like so many others, I’ve started to experience it’s limitations. The fact that Wordpress runs from a database and makes queries to that database is something that consumes bandwidth making it slower for you, the user. Considering the humble size of my website, I’m almost obsessed with making it as <a href="https://www.antonsten.com/secret-feature/">fast as possible</a>. After a quick survey with people far more capable of choosing the correct solution than me, I’m now happy to say that my site uses Jekyll. Jekyll compiles pages into a static website making it far faster and less vulnerable to compromise than anything using a database.</p>
+<p>As I’m terrified of using the terminal to upload and edit websites, I’ve found a solution that I’m so far extremely content with. I’m having the entire site uploaded to <a href="https://github.com/?ref=antonsten.com">Github</a>, a repository for code that offers great version controlling capabilities. A brilliant service called <a href="https://buddy.works/?ref=antonsten.com">Buddy</a>, then gets notified of a new push to Github and recompiles the website (e.g making all links work, checks for errors etc). Once the build is complete, it uploads the ‘new’ iteration to <a href="https://m.do.co/c/0461e4c13647?ref=antonsten.com">DigitalOcean</a>. (Edit: It now also purges the cache over at <a href="https://cloudflare.com/?ref=antonsten.com">Cloudflare</a> before sending me a private Slack message notifying me that it’s all good.) Bam! Zero terminal required and a fast, backed up, secure website for a non-technical person like myself.</p>
+<p>I should admit that none of the above would have been possible without the help of <a href="http://hnssn.se/?ref=antonsten.com">Alexander Hansson</a>. Thank you!</p>
+<h2 id="newsletter">Newsletter</h2>
+<p>If you’re arriving here from my newsletter, you’ve already experienced the biggest (visual) change! If not, this is a good opportunity to sign up and get my <a href="https://www.antonsten.com/newsletter/">newsletter</a> next week. After trying out <a href="https://mbsy.co/cztnf?ref=antonsten.com">Drip</a> for almost a year, I've decided to move back to <a href="http://eepurl.com/bvIKNL?ref=antonsten.com">Mailchimp</a>. While Drip offers some great automation tools and segmenting options, it was more complicated than what I actually need. Mailchimp’s simplicity and usability won me over.</p>
+
 <div class="blockquote">
+<div><p>If you’re looking to get started with Mailchimp, I highly recommend Paul Jarvis’ <a href="https://chimpessentials.com/chimp/156/?ref=antonsten.com">Chimpessentials</a>. It’s a great online course that covers just about everything that you need to know to start your own newsletter, even if you have literally zero experience.</p></div>
 </div>
-<div>
-<p>If you’re looking to get started with Mailchimp, I highly recommend Paul Jarvis’ </p>
-<a href="https://chimpessentials.com/chimp/156/?ref="antonsten".com">Chimpessentials</a>
- . It’s a great online course that covers just about everything that you need to know to start your own newsletter, even if you have literally zero experience. </div>
-<h2 id="shop">Shop</h>
-</h2>
-<p>The final technical shift has been from the e-commerce solution behind my </p>
-<a href="https://www.antonsten.com/books/">book sales</a>
- . I started with Gumroad and then moved to Woocommerce as I thought it made more sense running Wordpress. While WooCommerce might seem like a affordable alternative (it’s free!), adding the extensions I needed quickly affected the final price. I’m now using 
-<a href="https://www.shopify.com/?ref="antonsten".com">Shopify</a>
- - a shopping experience I personally know and have used hundreds of times on other websites. It’s an all around great solution that really simplifies the sales process.</p>
-<h2 id="so-did-you-spot-the-common-thread">So, did you spot the common thread?</h>
-</h2>
+
+<h2 id="shop">Shop</h2>
+<p>The final technical shift has been from the e-commerce solution behind my <a href="https://www.antonsten.com/books/">book sales</a>. I started with Gumroad and then moved to Woocommerce as I thought it made more sense running Wordpress. While WooCommerce might seem like a affordable alternative (it’s free!), adding the extensions I needed quickly affected the final price. I’m now using <a href="https://www.shopify.com/?ref=antonsten.com">Shopify</a> - a shopping experience I personally know and have used hundreds of times on other websites. It’s an all around great solution that really simplifies the sales process.</p>
+<h2 id="so-did-you-spot-the-common-thread">So, did you spot the common thread?</h2>
 <p>Every decision that I made in this redesign/rebuild is based on improving YOUR experience. While the visuals may not have changed, I’m confident that your experience will be slightly better.</p>
 <p>You see, factors like load speed can really impact the user experience. As users, we don’t really care about speed or even notice it until it’s too slow, right? Most people will never go to a website and be amazed at just how fast it loads. Crafting great experiences is sometimes just staying out of the way (e.g. Dropbox, Backblaze etc) and allowing the user to do what they’ve set out to do without interruptions. No email popups to distract you here!</p>
