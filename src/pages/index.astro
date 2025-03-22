@@ -12,8 +12,8 @@ import Testimonial from '../components/Testimonial.astro';
 		<!-- Hero Section -->
 		<section class="py-20 max-w-[700px] mx-auto">
 			<h1 class="mb-12">
-				<span class="block text-black font-medium text-[50px] leading-[56px] tracking-[-0.02em]">Anton Sten</span>
-				<span class="block text-dark-grey font-medium text-[50px] leading-[56px] tracking-[-0.02em]">Product design leader</span>
+				<span class="block text-black font-medium text-[32px] md:text-[50px] leading-[40px] md:leading-[56px] tracking-[-0.02em]">Anton Sten</span>
+				<span class="block text-dark-grey font-medium text-[32px] md:text-[50px] leading-[40px] md:leading-[56px] tracking-[-0.02em]">Product design leader</span>
 			</h1>
 			
 			<div class="space-y-6">
@@ -123,12 +123,14 @@ import Testimonial from '../components/Testimonial.astro';
 		</div>
 	</section>
 
-	<div class="px-5">
-		<!-- Newsletter Section -->
-		<section class="mb-20 max-w-[700px] mx-auto">
+	<!-- Newsletter Section -->
+	<section class="mb-20 md:px-5">
+		<div class="md:max-w-[700px] md:mx-auto">
 			<NewsletterForm />
-		</section>
+		</div>
+	</section>
 
+	<div class="px-5">
 		<!-- Testimonials Section -->
 		<section class="mb-20 max-w-[700px] mx-auto">
 			<div class="relative">
@@ -178,12 +180,12 @@ import Testimonial from '../components/Testimonial.astro';
 					</div>
 				</div>
 				<div class="flex gap-2 mt-4">
-					<button class="w-10 h-10 rounded-full bg-light-grey flex items-center justify-center hover:bg-[#0066FF] hover:text-white transition-colors" aria-label="Previous testimonial">
+					<button class="w-10 h-10 rounded-[12px] bg-light-grey flex items-center justify-center hover:bg-[#0066FF] hover:text-white transition-colors" aria-label="Previous testimonial">
 						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
 					</button>
-					<button class="w-10 h-10 rounded-full bg-light-grey flex items-center justify-center hover:bg-[#0066FF] hover:text-white transition-colors" aria-label="Next testimonial">
+					<button class="w-10 h-10 rounded-[12px] bg-light-grey flex items-center justify-center hover:bg-[#0066FF] hover:text-white transition-colors" aria-label="Next testimonial">
 						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
@@ -195,53 +197,65 @@ import Testimonial from '../components/Testimonial.astro';
 		<!-- Featured Writing Section -->
 		<section class="max-w-[700px] mx-auto">
 			<h2 class="text-black text-[26px] leading-[34px] tracking-[-0.01em] font-regular mb-8">Featured writing</h2>
-			<div class="grid grid-cols-3 gap-8">
-				<a href="/articles/product-design-process" class="group">
-					<div class="bg-light-grey rounded-[12px] mb-4 p-8 flex items-center justify-center h-[160px]">
-						<img src="/svg/1.svg" alt="" class="w-12 h-12" />
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<a href="/articles/product-design-process" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+						<img src="/svg/1.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 					</div>
-					<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">March 19, 2024</time>
-					<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">The Product Design Process</h3>
+					<div>
+						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">March 19, 2024</time>
+						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">The Product Design Process</h3>
+					</div>
 				</a>
 
-				<a href="/articles/solo-designer" class="group">
-					<div class="bg-light-grey rounded-[12px] mb-4 p-8 flex items-center justify-center h-[160px]">
-						<img src="/svg/2.svg" alt="" class="w-12 h-12" />
+				<a href="/articles/solo-designer" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+						<img src="/svg/2.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 					</div>
-					<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">January 27, 2024</time>
-					<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">The Solo Designer: Lessons from a Startup Journey</h3>
+					<div>
+						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">January 27, 2024</time>
+						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">The Solo Designer: Lessons from a Startup Journey</h3>
+					</div>
 				</a>
 
-				<a href="/articles/ux-strategy" class="group">
-					<div class="bg-light-grey rounded-[12px] mb-4 p-8 flex items-center justify-center h-[160px]">
-						<img src="/svg/3.svg" alt="" class="w-12 h-12" />
+				<a href="/articles/ux-strategy" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+						<img src="/svg/3.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 					</div>
-					<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">April 23, 2024</time>
-					<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">Creating a UX Strategy</h3>
+					<div>
+						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">April 23, 2024</time>
+						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">Creating a UX Strategy</h3>
+					</div>
 				</a>
 
-				<a href="/articles/design-systems" class="group">
-					<div class="bg-light-grey rounded-[12px] mb-4 p-8 flex items-center justify-center h-[160px]">
-						<img src="/svg/4.svg" alt="" class="w-12 h-12" />
+				<a href="/articles/design-systems" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+						<img src="/svg/4.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 					</div>
-					<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">February 15, 2024</time>
-					<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">Building Design Systems That Scale</h3>
+					<div>
+						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">February 15, 2024</time>
+						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">Building Design Systems That Scale</h3>
+					</div>
 				</a>
 
-				<a href="/articles/user-research" class="group">
-					<div class="bg-light-grey rounded-[12px] mb-4 p-8 flex items-center justify-center h-[160px]">
-						<img src="/svg/5.svg" alt="" class="w-12 h-12" />
+				<a href="/articles/user-research" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+						<img src="/svg/5.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 					</div>
-					<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">March 5, 2024</time>
-					<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">The Art of User Research</h3>
+					<div>
+						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">March 5, 2024</time>
+						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">The Art of User Research</h3>
+					</div>
 				</a>
 
-				<a href="/articles/design-leadership" class="group">
-					<div class="bg-light-grey rounded-[12px] mb-4 p-8 flex items-center justify-center h-[160px]">
-						<img src="/svg/6.svg" alt="" class="w-12 h-12" />
+				<a href="/articles/design-leadership" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+						<img src="/svg/6.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 					</div>
-					<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">April 1, 2024</time>
-					<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">Design Leadership in Practice</h3>
+					<div>
+						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">April 1, 2024</time>
+						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">Design Leadership in Practice</h3>
+					</div>
 				</a>
 			</div>
 		</section>

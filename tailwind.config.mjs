@@ -38,7 +38,32 @@ export default {
         'sm': ['0.875rem', { lineHeight: '1.75' }],
         'xs': ['0.75rem', { lineHeight: '1.75' }],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#131313',
+            a: {
+              color: '#131313',
+              textDecoration: 'underline',
+              '&:hover': {
+                color: '#00A35C',
+              },
+            },
+            'h1, h2, h3, h4': {
+              color: '#131313',
+              fontWeight: '500',
+            },
+            blockquote: {
+              borderLeft: 'none',
+              fontStyle: 'normal',
+              paddingLeft: '0',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 } 

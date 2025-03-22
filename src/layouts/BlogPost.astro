@@ -1,0 +1,165 @@
+---
+import Layout from './Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+
+interface Props {
+    frontmatter?: {
+        title: string;
+        description?: string;
+        publishDate: string;
+        minutesToRead?: number;
+    };
+    title?: string;
+    description?: string;
+    publishDate?: string;
+    minutesToRead?: number;
+}
+
+const { 
+    title = 'Untitled Post', 
+    description = '',
+    publishDate = '',
+    minutesToRead = 5
+} = Astro.props.frontmatter || Astro.props;
+
+// Format the date without using browser APIs
+function formatDate(dateStr: string | undefined) {
+    if (!dateStr) {
+        console.error('No date string provided');
+        return '';
+    }
+    try {
+        const [year, month, day] = dateStr.split('-').map(num => parseInt(num, 10));
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        return `${months[month - 1]} ${day}, ${year}`;
+    } catch (error) {
+        console.error('Error formatting date:', error);
+        return '';
+    }
+}
+
+const formattedDate = formatDate(publishDate);
+---
+
+<Layout title={title} description={description}>
+    <article class="px-5 pt-32">
+        <div class="max-w-[700px] mx-auto">
+            <!-- Article Header -->
+            <header class="mb-12">
+                <h1 class="text-[32px] md:text-[50px] leading-[40px] md:leading-[56px] tracking-[-0.02em] font-medium text-black mb-4">{title}</h1>
+                <div class="flex items-center gap-2 text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">
+                    <time datetime={publishDate}>{formattedDate}</time>
+                    <span>•</span>
+                    <span>{minutesToRead} min read</span>
+                </div>
+            </header>
+
+            <!-- Article Content -->
+            <div class="prose prose-lg max-w-none">
+                <slot />
+            </div>
+
+            <!-- Newsletter Section -->
+            <section class="mt-16 mb-16">
+                <NewsletterForm />
+            </section>
+
+            <!-- Article Footer -->
+            <footer class="mt-16 pt-16 border-t border-light-grey">
+                <div class="flex flex-col gap-8">
+                    <div class="flex items-center gap-4">
+                        <a href="/articles" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">← Back to articles</a>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="https://twitter.com/antonsten" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Share on Twitter</a>
+                        <a href="https://www.linkedin.com/in/antonsten/" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Share on LinkedIn</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </article>
+</Layout>
+
+<style is:global>
+    /* Add any blog-specific global styles here */
+    .prose {
+        @apply text-[20px] leading-[32px] tracking-[-0.01em];
+    }
+    
+    .prose p {
+        @apply mb-8;
+    }
+
+    .prose h2 {
+        @apply text-[26px] leading-[34px] tracking-[-0.01em] font-medium text-black mt-24 mb-8;
+    }
+
+    .prose h3 {
+        @apply text-[20px] leading-[28px] tracking-[-0.01em] font-medium text-black mt-16 mb-6;
+    }
+
+    .prose ul {
+        @apply list-disc list-outside ml-6 mb-8;
+    }
+
+    .prose ol {
+        @apply list-decimal list-outside ml-6 mb-8;
+    }
+
+    .prose li {
+        @apply mb-2;
+    }
+
+    .prose a {
+        @apply text-black underline hover:text-green transition-colors;
+    }
+
+    .prose .blockquote {
+        @apply relative -mx-5 bg-light-grey py-12 my-12 rounded-[12px];
+    }
+
+    .prose .blockquote > div {
+        @apply max-w-[700px] mx-auto px-5;
+    }
+
+    .prose .blockquote p {
+        @apply text-green text-[26px] leading-[34px] tracking-[-0.01em] font-regular mb-0 relative;
+    }
+
+    .prose .blockquote p:first-of-type::before {
+        content: """;
+        @apply absolute -ml-[0.4em];
+    }
+
+    .prose .blockquote p:first-of-type::after {
+        content: """;
+    }
+
+    .prose .blockquote p + p {
+        @apply text-dark-grey text-[16px] leading-[24px] tracking-[-0.01em] mt-4 !important;
+    }
+
+    .prose code {
+        @apply bg-light-grey px-2 py-1 rounded-[4px] text-[18px] leading-[28px];
+    }
+
+    .prose pre {
+        @apply bg-light-grey p-6 rounded-[12px] mb-8 overflow-x-auto;
+    }
+
+    .prose pre code {
+        @apply bg-transparent p-0 text-[16px] leading-[24px];
+    }
+
+    .prose img {
+        @apply rounded-[12px] mb-8;
+    }
+
+    .prose figure {
+        @apply mb-8;
+    }
+
+    .prose figcaption {
+        @apply text-[16px] leading-[24px] text-dark-grey text-center mt-4;
+    }
+</style> 
