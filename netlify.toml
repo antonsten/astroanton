@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  NODE_ENV = "production"
 
 [[redirects]]
   from = "/*"
@@ -11,8 +12,4 @@
   status = 200
 
 [functions]
-  node_bundler = "esbuild"
-
-# Handle environment variables
-[build.environment]
-  NODE_ENV = "production" 
+  node_bundler = "esbuild" 
