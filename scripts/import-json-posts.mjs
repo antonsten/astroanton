@@ -64,7 +64,7 @@ async function convertHtmlToMdx(html, outputDir) {
         // Convert blockquotes
         .replace(/<blockquote([^>]*)>([\s\S]*?)<\/blockquote>/g, (_, attrs, content) => {
             content = content.trim();
-            return `\n<div class="blockquote">\n<div>${content}</div>\n</div>\n`;
+            return `\n<div class="blockquote">${content}</div>\n`;
         })
         // Convert figures with images
         .replace(/<figure[^>]*>[\s\S]*?<img[^>]*src="([^"]*)"[^>]*>[\s\S]*?<figcaption>([\s\S]*?)<\/figcaption>[\s\S]*?<\/figure>/g, async (match, src, caption) => {
