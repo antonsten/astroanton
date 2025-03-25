@@ -1,0 +1,139 @@
+---
+title: Design Systems 101
+description: A short reflection on user experience and design.
+date: 2021-08-23
+readingTime: 13
+---
+
+Any senior designer can probably tell you exactly what design school failed to teach them. This missing item? It's that a fairly decent part of your work will be about selling. (Maybe they've updated their curriculum since I was there, who knows!) Often you'll be selling and justifying your design internally and then need to switch gears and do the same thing for clients and their various stakeholders. If you're like most designers who already struggle with a bit of imposter syndrome, this added selling component just ups the stress level!
+
+Selling visual design is nearly always difficult because everyone has an opinion about how something looks. As a seasoned designer, you're able to demonstrate the motivation for your choices and build arguments for them in relationship to the brand while calling back to the general feeling you're trying to convey. UX design can be trickier to sell as not everyone is familiar with things like wireframes. We do have the advantage of being able to justify our choices using user research results, best practices, and ultimately, that we're creating something users have said they want.
+
+This brings us to design systems. This is absolutely harder to sell, but so worth it for your client. With an e-commerce site, you can add features and measure the impact. With other conversion-based experiences, you can track conversions. But because a design system is an internal tool, it makes it easier for the client to connect those dots. So today, I thought we'd spend some time on talking about what a design system is, what the benefits of one are, and how to create one.
+
+## What's a design system?
+
+But before we talk about the benefits and how to create one, let's start with the basics and defining what we mean when we mean when talking about design systems. The short explanation is that it's a set of [components](https://superfriendlydesign.systems/glossary/) (buttons, the navigation, input fields) and guidelines that your organization needs when making digital products (apps, websites, emails, etc). This makes the entire process more consistent, efficient, and speedy. Others describe it differently, like [Brad Frost](https://bradfrost.com/blog/link/design-systems/) who thinks _"a design system [is] the official story of how your organization designs and builds digital products.”_
+
+The generally-accepted definition of a design system is that it’s the outer circle - it encompasses pattern libraries, style guides, and any other artifacts. _But there’s more to it_. Having a collection of design patterns doesn’t mean you have a design system. A system is a framework. It’s a rulebook. It’s what tells you how those patterns work together.
+
+[Nathan Curtis](https://twitter.com/nathanacurtis/status/870302993211588608?s=20) outlined the complexity and scalability of a design systems:
+
+![Nathan Curtis](designsystems101.png)
+
+To put it as simply as possible, design systems are a shared place of truths where designers and developers both find re-usable components resulting in them spending less time on repetitive work and more time on building the best possible product.
+
+Design systems are our best bet against at ending up with a random library of components like this:
+
+![mess of components](designsystems1011.png)
+
+## The benefits of a design system
+
+Hopefully we are now on the same page on what a design system is, but just knowing what it is doesn't really answer our main challenge - selling one internally (or let alone, externally). We need to understand what the benefits of a design system are to truly understand why we need one. Let's dive in!
+
+## Efficiency
+
+The first and most primary benefit of a design system is efficiency. Take a very simple component... let's say a button. While it only takes a designer, let's say, one minute to create one if we multiply that by 10x per day and 150 days per year, that's 25 hours just creating that same button over and over. Now apply this to not only buttons but checkboxes, search fields, and a million other things. You'll quickly notice that a lot of work can be repetitive resulting in lost productivity. Design systems allow for the rapid prototyping of new ideas using existing, production-ready components. They allow teams to reuse designs and code freeing individuals to focus their creative energy on new problems. While the initial work load of [creating a design system may be bigger](https://alistapart.com/article/selling-design-systems/), just like compound interest, the earlier you create one, the larger the benefits will be.
+
+![efficiency](designsystems1012.png)
+
+> Design systems enable teams to build better products faster by making design reusable—reusability makes scale possible. This is the heart and primary value of design systems. A design system is a collection of reusable components, guided by clear standards, that can be assembled together to build any number of applications.**[Designbetter.co](http://designbetter.co/)**
+
+## Scale
+
+Previously, the only way to scale productivity was to hire more people. More bodies doing work. But a design system allows us to be more efficient (as previously stated) and we're able to scale productivity without the complexity of hiring. It allows us to reuse components, work faster, and the results will be more consistent (more on this later).
+
+It's obvious for anyone that's ever worked on a project with multiple designers is that every new designer wants to put their mark on the work. UX Pin has a [design system guide](https://www.uxpin.com/create-design-system-guide/) that starts by acknowledging this:
+
+> Scaling design through hiring, without putting standards in place, is a myth. With every new hire, new ideas for color palettes, typography and patterns appear in the product, growing the inconsistency and increasing the maintenance cost. Every new hire increases the design entropy.
+
+## Onboarding
+
+When you do hire more designers (or developers, product managers, etc) having a solid design system in place helps onboarding and lowers the learning curve. Let's compare a design system to a game of football. Since there are rules, new players and spectators can easily enjoy playing and watching the game. If there were no rules, game strategy, or player positions, the game couldn't flow as beautifully or be enjoyable to watch. New hires can hit the ground running more easily when there's less room for ambiguity and confusion.
+
+Please note that these are all primarily internal benefits. Work is more efficient, staff is easier to onboard, and scaling is easier. These aren't things that the end user cares about even if the CFO may. _So let's switch our POV and see how a design system can benefit our end users!_
+
+## Consistency
+
+> With no common design language to unite the product, the user experience starts to break down, as does the design process. Design critiques become unproductive when there’s a dearth of design conventions. To create alignment within teams, there must be a shared source of truth—a place to reference official patterns and styles.**[Designbetter.co](http://designbetter.co/)**
+
+I know from personal experience that working on the same product for a long time, it becomes easy to tweak things when you see a need to bend the system. Without a design system, it's obviously even easier to bend the system until it risks breaking it (well, meta discussion - can you break a system if there is no system?). The larger the team, the easier it is for any consistency to fall apart. This harms the user experience as patterns aren't consistent and their expectations aren't met. These inconsistent experiences result in our users lose trust in the brand. They’ve been conditioned to expect a certain kind of experience across multiple websites or products. When the user uses our product to complete a task, that task is the only thing that truly matters to them. Break that consistency, make it harder for them to do what they want to do, lose their trust. Stay true to that consistency, allow them to complete their task, build their trust.
+
+## Trust
+
+I like to point out that when creating user experiences trust an often overlooked variable. We focus on things like conversion and pleasurable experiences, but forget about the first steps in the hierarchy of needs; we can't create a pleasurable experience unless we first make sure it's functional, reliable, and usable. That's pretty obvious when you think about it.
+
+![Maslow](maslow.jpg)
+
+## Accessibility
+
+Give me a designer that doesn't claim to have a love-hate relationship with accessibility and I'll show a designer who's lying. I get it, we're confused about how some of the color-contrast options are accessible when our eyes tell us something completely different. We struggle to understand how large a tap area actually should be. And don't even get me started on screen readers! BUT (and that's capitalisation for effect):
+
+**Accessibility is important**.
+
+Accessible design creates a better web for everyone. In many countries, making physical stores and services accessible to those with impaired vision, hearing, or mobility is a legal requirement. Slowly, this is making its way to the digital world as well. When Joe Biden was inaugurated, the White House published [their commitment to a more accessible web](https://www.whitehouse.gov/accessibility/).
+
+A design system makes it's easier to create accessible components from the very beginning. Re-using the well-researched, accessible color combinations is not only consistent, but it helps us in making accessible products.
+
+## Usability
+
+As previously stated, trust comes from knowing what to expect. Better usability comes from repetition, as is often said - "familiarity breeds usability". With well-constructed systems, it's easier to solve a usability challenge once, make it repeatable, and then focus energy on the next one.
+
+> Your customers will learn to use your products and begin to subconsciously rely on that familiarity with the experience to lower their cognitive load. This should be just as important to our executive leadership as it is to those of us who are practitioners.
+> **[A list apart](https://alistapart.com/article/selling-design-systems)**
+
+## What to think about when creating one?
+
+I should preface all of this by saying that there's no one-size fits all when it comes to design systems. Consider these guidelines as just guidelines and not as directions. Your purpose with a design system may vary and so might the tools your team uses. Simply put, your mileage may vary. As with any systems, it's all about applying the guidelines in a way that fits _you_ and _your organization._
+
+The process I'm defining below uses the same methodology as [Atomic Design](https://atomicdesign.bradfrost.com). Atomic design is not a linear process. It's a mental model to help us think of our user interfaces as both a cohesive whole and a collection of parts at the same time. In the natural world, atomic elements combine to form molecules. These molecules can even combine further forming relatively complex organisms.
+
+**_Atomic design is a methodology composed of five stages that work together to create user interface design systems in a more deliberate and hierarchical manner._**
+
+The five stages of atomic design are:
+
+- Atoms
+- Molecules
+- Organisms
+- Templates
+- Pages
+
+While we're not using all of the five stages in creating the design system below, you'll see we're using some of the same terminology to define the different steps. Let's dive into our design system process!
+
+## 1. Define purpose and needs
+
+First of all, we need to define the purpose of our design system and what needs we have internally. As with any solution, we need to start by understanding what problem we are trying to solve. I cannot stress enough that it's important that this discussion is meant for both design and engineering. A design system that only lives in Figma won't allow you to scale at full effect. Define a naming and file structure that works for everyone involved. Setting these pillars is the foundation of the system we're building.
+
+## 2. Set tokens; color and typography
+
+Start by defining the typography and colors that your brand uses. Set a type scale that works well, that's flexible, but is limited enough so it's clearer when to use what. By setting our type and colors first, we can use these styles in all of our components and link them to the style library. That way, if we ever want to change colors or type, it'll automatically update in all of our components.
+
+## 3. Define spacing and layout
+
+It's easier to create components if we know what grid system they will live in. Setting the layout and grid spacing initially helps us a lot. We tend to use a grid system of 8px that is set up by intervals of, well 8px meaning spacing is 4px (0.5x), 8px (base), 16px (2x), 24px (3x), 48px (6x), etc.
+
+## 4. Define shapes
+
+Now it's time to get a little bit more visual and define shape settings, i.e are we using rounded shapes or sharp edges?
+
+_Now we have the essentials of our design system in place, naming structure, tokens, spacing and shapes. It's time to build our first component!_
+
+## 5. Build out first atoms
+
+We'll start with the smallest components (i.e [atoms](https://superfriendlydesign.systems/glossary/)). They are made out of the pieces that we've just defined; shapes, text, and color. This could be something basic as a button or an input field. Atoms are components that can’t be broken down any further without ceasing to be functional.
+
+## 6. Build out molecules
+
+Using our first atoms we can piece together multiple atoms together to create a molecule. Molecules are relatively simple groups of UI elements functioning together as a unit. Think of a molecule as something that's a little bit more advanced yet still pretty easy to define. This could be a product card that includes an image, a button, and a text description or a search field that has two atoms combined - an input field and a button.
+
+## 7. Build out organisms
+
+Organisms are relatively complex UI components composed of groups of molecules and/or atoms and/or other organisms. This could be a navigation that includes a search molecule, a login section, and navigation items.
+
+## 8. Document
+
+Often overlooked or disregarded due to lack of time, documentation collects how the components are built and how they should be used. This is one of the most important pieces of a design system. Without good documentation, it's not a system. It's just a collection of components. Agree on the documentation within both design and engineering teams so there's a shared belief and understanding of the system.
+
+## Need help?
+
+Are you curious about what a design system could solve for your organization? As mentioned, it's difficult to outline a process that works for every team as requirements will vary. Not sure where to begin? Reach out and we'll be happy to walk you through our thinking!

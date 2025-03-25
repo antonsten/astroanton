@@ -11,7 +11,12 @@ const sortedPosts = articles
         ...article.data,
         url: `/articles/${article.slug}`
     }))
-    .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
+    .sort((a, b) => {
+        // If either article has no date, put it at the end
+        if (!a.date) return 1;
+        if (!b.date) return -1;
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
 ---
 
 <Layout title="Articles | Anton Sten" description="Articles and thoughts on UX design, product strategy, and digital experiences.">
@@ -31,11 +36,11 @@ const sortedPosts = articles
                     </p>
                 ) : (
                     sortedPosts.map(post => {
-                        const formattedDate = new Date(post.publishDate).toLocaleDateString('en-US', {
+                        const formattedDate = post.date ? new Date(post.date).toLocaleDateString('en-US', {
                             year: 'numeric',
                             month: 'long',
                             day: 'numeric'
-                        });
+                        }) : null;
                         
                         return (
                             <article class="group">
@@ -45,12 +50,14 @@ const sortedPosts = articles
                                             {post.title}
                                         </h2>
                                         <div class="flex items-center gap-2 text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">
-                                            <time datetime={post.publishDate}>{formattedDate}</time>
-                                            {post.minutesToRead && (
+                                            {formattedDate && (
                                                 <>
-                                                    <span>•</span>
-                                                    <span>{post.minutesToRead} min read</span>
+                                                    <time datetime={post.date}>{formattedDate}</time>
+                                                    {post.readingTime && <span>•</span>}
                                                 </>
+                                            )}
+                                            {post.readingTime && (
+                                                <span>{post.readingTime}</span>
                                             )}
                                         </div>
                                     </div>

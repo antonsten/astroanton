@@ -5,8 +5,8 @@ const articles = defineCollection({
     schema: z.object({
         title: z.string(),
         description: z.string().optional(),
-        publishDate: z.string(),
-        minutesToRead: z.number().optional(),
+        date: z.union([z.date(), z.string(), z.string().transform(str => new Date(str))]).optional(),
+        readingTime: z.union([z.number(), z.string(), z.string().transform(str => parseInt(str, 10))]).optional(),
         layout: z.string().optional()
     })
 });
