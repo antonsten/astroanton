@@ -4,21 +4,13 @@ interface Props {
   description?: string;
 }
 
-const { 
-  title, 
-  description = "Anton Sten - Product design leader working remotely from the Swedish countryside" 
-} = Astro.props;
+const { title, description = "Anton's personal website" } = Astro.props;
 ---
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
-  <meta name="viewport" content="width=device-width" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
-
-  <!-- Add preconnect for custom fonts if needed -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head> 
