@@ -1,5 +1,32 @@
 import fs from 'fs';
 import { glob } from 'glob';
+import path from 'path';
+
+const articlesDir = path.join(__dirname, '../src/content/articles');
+
+// Function to update image references in a file
+function updateImageReferences(filePath) {
+  let content = fs.readFileSync(filePath, 'utf8');
+  
+  // Update image references that don't start with /images/articles/
+  content = content.replace(
+    /!\[(.*?)\]\(([^/].*?\.(jpg|png|gif|webp|jpeg))\)/g,
+    (match, alt, path) => `![${alt}](/images/articles/${path})`
+  );
+  
+  fs.writeFileSync(filePath, content);
+  console.log(`Updated image references in ${path.basename(filePath)}`);
+}
+
+// Process all MDX files in the articles directory
+fs.readdirSync(articlesDir)
+  .filter(file => file.endsWith('.mdx'))
+  .forEach(file => {
+    const filePath = path.join(articlesDir, file);
+    updateImageReferences(filePath);
+  });
+
+console.log('Finished updating image references in all articles.');
 
 async function fixImageReferences() {
   // Get all MDX files

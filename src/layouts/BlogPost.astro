@@ -6,19 +6,19 @@ interface Props {
     frontmatter?: {
         title: string;
         description?: string;
-        publishDate: string;
+        date: string;
         minutesToRead?: number;
     };
     title?: string;
     description?: string;
-    publishDate?: string;
+    date?: string;
     minutesToRead?: number;
 }
 
 const { 
     title = 'Untitled Post', 
     description = '',
-    publishDate = '',
+    date = '',
     minutesToRead = 5
 } = Astro.props.frontmatter || Astro.props;
 
@@ -29,16 +29,16 @@ function formatDate(dateStr: string | undefined) {
         return '';
     }
     try {
-        const [year, month, day] = dateStr.split('-').map(num => parseInt(num, 10));
+        const date = new Date(dateStr);
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        return `${months[month - 1]} ${day}, ${year}`;
+        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
     } catch (error) {
         console.error('Error formatting date:', error);
         return '';
     }
 }
 
-const formattedDate = formatDate(publishDate);
+const formattedDate = formatDate(date);
 ---
 
 <Layout title={title} description={description}>
@@ -47,10 +47,10 @@ const formattedDate = formatDate(publishDate);
             <!-- Article Header -->
             <header class="mb-12">
                 <h1 class="text-[32px] md:text-[50px] leading-[40px] md:leading-[56px] tracking-[-0.02em] font-medium text-black mb-4">{title}</h1>
-                <div class="flex items-center gap-2 text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em]">
-                    <time datetime={publishDate}>{formattedDate}</time>
+                <div class="flex items-center gap-2 text-dark-grey text-[18px] leading-[32px] tracking-[-0.01em]">
+                    <time datetime={date}>{formattedDate}</time>
                     <span>•</span>
-                    <span>{minutesToRead} min read</span>
+                    <span>{minutesToRead} minute reading time</span>
                 </div>
             </header>
 
@@ -83,7 +83,7 @@ const formattedDate = formatDate(publishDate);
 <style is:global>
     /* Add any blog-specific global styles here */
     .prose {
-        @apply text-[20px] leading-[32px] tracking-[-0.01em];
+        @apply text-[18px] leading-[32px] tracking-[-0.01em];
     }
     
     .prose p {
@@ -114,29 +114,24 @@ const formattedDate = formatDate(publishDate);
         @apply text-black underline hover:text-green transition-colors;
     }
 
-    .prose .blockquote {
-        @apply relative -mx-5 bg-light-grey py-12 my-12 rounded-[12px];
+    .prose blockquote {
+        @apply relative bg-light-grey p-8 rounded-xl mb-12 !important;
     }
 
-    .prose .blockquote > div {
-        @apply max-w-[700px] mx-auto px-5;
+    .prose blockquote > div {
+        @apply relative flex-1;
     }
 
-    .prose .blockquote p {
-        @apply text-green text-[26px] leading-[34px] tracking-[-0.01em] font-regular mb-0 relative;
+    .prose blockquote > div > div {
+        @apply relative;
     }
 
-    .prose .blockquote p:first-of-type::before {
-        content: """;
-        @apply absolute -ml-[0.4em];
+    .prose blockquote p {
+        @apply text-[20px] leading-[26px] mb-4 last:mb-0 text-black relative !important;
     }
 
-    .prose .blockquote p:first-of-type::after {
-        content: """;
-    }
-
-    .prose .blockquote p + p {
-        @apply text-dark-grey text-[16px] leading-[24px] tracking-[-0.01em] mt-4 !important;
+    .prose blockquote a {
+        @apply text-[16px] leading-[24px] tracking-[-0.01em] font-regular opacity-80 no-underline hover:opacity-100 transition-opacity mt-4 block;
     }
 
     .prose code {

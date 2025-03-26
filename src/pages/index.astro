@@ -27,97 +27,69 @@ import Testimonial from '../components/Testimonial.astro';
 	<!-- Companies Section -->
 	<section class="mb-20 overflow-hidden">
 		<div class="px-5">
-			<div class="flex gap-2 animate-scroll">
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/google.svg" alt="Google" class="h-5" />
+			<div class="relative h-[90px] max-w-[700px] mx-auto">
+				<!-- First group of logos -->
+				<div class="absolute inset-0 flex gap-2 justify-center animate-fade-group-1">
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/google.svg" alt="Google" class="h-5" />
+					</div>
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/loom.svg" alt="Loom" class="h-5" />
+					</div>
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/Summer Health logo.svg" alt="Summer Health" class="h-8" />
+					</div>
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/spotify.svg" alt="Spotify" class="h-6" />
+					</div>
 				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/loom.svg" alt="Loom" class="h-5" />
+
+				<!-- Second group of logos -->
+				<div class="absolute inset-0 flex gap-2 justify-center animate-fade-group-2">
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/herman-miller.svg" alt="Herman Miller" class="h-3" />
+					</div>
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/ikea.svg" alt="IKEA" class="h-4" />
+					</div>
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/ueno.svg" alt="Ueno" class="h-4" />
+					</div>
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/hyperisland.svg" alt="Hyper Island" class="h-3" />
+					</div>
 				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/Summer Health logo.svg" alt="Summer Health" class="h-8" />
+
+				<!-- Third group of logos -->
+				<div class="absolute inset-0 flex gap-2 justify-center animate-fade-group-3">
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/liftoff.svg" alt="Liftoff" class="h-5" />
+					</div>
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/volvo.svg" alt="Volvo" class="h-4" />
+					</div>
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/eon.svg" alt="EON" class="h-4" />
+					</div>
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/izettle.svg" alt="iZettle" class="h-4" />
+					</div>
 				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/spotify.svg" alt="Spotify" class="h-6" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/herman-miller.svg" alt="Herman Miller" class="h-3" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/ikea.svg" alt="IKEA" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/ueno.svg" alt="Ueno" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/hyperisland.svg" alt="Hyper Island" class="h-3" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/liftoff.svg" alt="Liftoff" class="h-5" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/volvo.svg" alt="Volvo" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/eon.svg" alt="EON" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/izettle.svg" alt="iZettle" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/nudie.svg" alt="Nudie" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/swedbank.svg" alt="Swedbank" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/toast.svg" alt="Toast" class="h-4" />
-				</div>
-				<!-- Duplicate logos for seamless loop -->
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/google.svg" alt="Google" class="h-5" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/loom.svg" alt="Loom" class="h-5" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/Summer Health logo.svg" alt="Summer Health" class="h-8" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/spotify.svg" alt="Spotify" class="h-6" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/herman-miller.svg" alt="Herman Miller" class="h-3" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/ikea.svg" alt="IKEA" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/ueno.svg" alt="Ueno" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/hyperisland.svg" alt="Hyper Island" class="h-3" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/liftoff.svg" alt="Liftoff" class="h-5" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/volvo.svg" alt="Volvo" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/eon.svg" alt="EON" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/izettle.svg" alt="iZettle" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/nudie.svg" alt="Nudie" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/swedbank.svg" alt="Swedbank" class="h-4" />
-				</div>
-				<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-					<img src="/logos/toast.svg" alt="Toast" class="h-4" />
+
+				<!-- Fourth group of logos -->
+				<div class="absolute inset-0 flex gap-2 justify-center animate-fade-group-4">
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/nudie.svg" alt="Nudie" class="h-4" />
+					</div>
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/swedbank.svg" alt="Swedbank" class="h-4" />
+					</div>
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/toast.svg" alt="Toast" class="h-4" />
+					</div>
+					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
+						<img src="/logos/google.svg" alt="Google" class="h-5" />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -198,70 +170,70 @@ import Testimonial from '../components/Testimonial.astro';
 		<section class="max-w-[700px] mx-auto">
 			<h2 class="text-black text-[26px] leading-[34px] tracking-[-0.01em] font-regular mb-8">Featured writing</h2>
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<a href="/articles/product-design-process" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+				<a href="/articles/the-product-design-process" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/1.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 					</div>
 					<div>
 						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">March 19, 2024</time>
-						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">The Product Design Process</h3>
+						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-medium group-hover:text-green">The Product Design Process</h3>
 					</div>
 				</a>
 
-				<a href="/articles/solo-designer" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+				<a href="/articles/the-solo-designer-lessons-from-a-startup-journey" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/2.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 					</div>
 					<div>
 						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">January 27, 2024</time>
-						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">The Solo Designer: Lessons from a Startup Journey</h3>
+						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-medium group-hover:text-green">The Solo Designer: Lessons from a Startup Journey</h3>
 					</div>
 				</a>
 
-				<a href="/articles/ux-strategy" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+				<a href="/articles/creating-a-ux-strategy" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/3.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 					</div>
 					<div>
 						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">April 23, 2024</time>
-						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">Creating a UX Strategy</h3>
+						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-medium group-hover:text-green">Creating a UX Strategy</h3>
 					</div>
 				</a>
 
-				<a href="/articles/design-systems" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+				<a href="/articles/the-stakeholder-interview" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/4.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 					</div>
 					<div>
-						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">February 15, 2024</time>
-						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">Building Design Systems That Scale</h3>
+						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">March 25, 2024</time>
+						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-medium group-hover:text-green">The Stakeholder Interview</h3>
 					</div>
 				</a>
 
-				<a href="/articles/user-research" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+				<a href="/articles/why-designers-need-to-write" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/5.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 					</div>
 					<div>
-						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">March 5, 2024</time>
-						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">The Art of User Research</h3>
+						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">May 25, 2017</time>
+						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-medium group-hover:text-green">Why Designers Need to Write</h3>
 					</div>
 				</a>
 
-				<a href="/articles/design-leadership" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+				<a href="/articles/working-as-a-ux-lead" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/6.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 					</div>
 					<div>
 						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">April 1, 2024</time>
-						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-regular group-hover:underline">Design Leadership in Practice</h3>
+						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-medium group-hover:text-green">Working as a UX-Lead</h3>
 					</div>
 				</a>
 			</div>
 		</section>
 
 		<!-- Footer -->
-		<footer class="mt-32 pb-20 max-w-[700px] mx-auto">
+		<footer class="max-w-[700px] mx-auto mt-16 mb-8">
 			<div class="flex flex-col gap-8">
 				<div class="flex items-center gap-4">
 					<a href="https://twitter.com/antonsten" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Twitter</a>
@@ -311,16 +283,68 @@ import Testimonial from '../components/Testimonial.astro';
 </script>
 
 <style>
-	@keyframes scroll {
+	@keyframes logoAnimation {
 		0% {
-			transform: translateX(0);
+			opacity: 0;
+			filter: blur(10px);
+			transform: translateY(20px);
+		}
+		10% {
+			opacity: 1;
+			filter: blur(0);
+			transform: translateY(0);
+		}
+		40% {
+			opacity: 1;
+			filter: blur(0);
+			transform: translateY(0);
+		}
+		50% {
+			opacity: 0;
+			filter: blur(10px);
+			transform: translateY(-20px);
 		}
 		100% {
-			transform: translateX(calc(-170px * 15 - 8px * 14));  /* Width of 15 logos + 14 gaps */
+			opacity: 0;
+			filter: blur(10px);
+			transform: translateY(-20px);
 		}
 	}
 
-	.animate-scroll {
-		animation: scroll 45s linear infinite;
+	@keyframes rotateIcon {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	.animate-fade-group-1,
+	.animate-fade-group-2,
+	.animate-fade-group-3,
+	.animate-fade-group-4 {
+		animation: logoAnimation 20s infinite;
+		animation-timing-function: ease-in-out;
+	}
+
+	.animate-fade-group-1 {
+		animation-delay: 15s;
+	}
+
+	.animate-fade-group-2 {
+		animation-delay: 0s;
+	}
+
+	.animate-fade-group-3 {
+		animation-delay: 5s;
+	}
+
+	.animate-fade-group-4 {
+		animation-delay: 10s;
+	}
+
+	.group:hover img {
+		animation: rotateIcon 1s ease-in-out;
 	}
 </style>
