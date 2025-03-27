@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/mdx": "^4.2.1",
     "@astrojs/netlify": "^6.2.4",
+    "@astrojs/tailwind": "^6.0.2",
     "@tryghost/content-api": "^1.11.21",
     "astro": "^5.5.3",
     "chokidar": "^4.0.3",
@@ -24,7 +25,6 @@
     "turndown": "^7.2.0"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^6.0.2",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^22.13.13",
     "autoprefixer": "^10.4.17",
