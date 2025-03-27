@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.1",
+    "@astrojs/netlify": "^6.2.4",
     "@astrojs/tailwind": "^6.0.0",
     "@tailwindcss/typography": "^0.5.16",
     "@tryghost/content-api": "^1.11.21",
