@@ -9,7 +9,8 @@
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/entry"
-  status = 200
+  status = 404
+  force = true
 
 [functions]
   node_bundler = "esbuild" 
