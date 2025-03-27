@@ -7,12 +7,6 @@
   NODE_ENV = "production"
 
 [[redirects]]
-  from = "/assets/*"
-  to = "/assets/:splat"
-  status = 200
-  force = true
-
-[[redirects]]
   from = "/*"
   to = "/.netlify/functions/entry"
   status = 200
@@ -21,4 +15,6 @@
 [functions]
   node_bundler = "esbuild"
   external_node_modules = ["sharp"]
-  included_files = ["dist/**/*", "public/**/*"] 
+
+[[plugins]]
+  package = "@astrojs/netlify" 

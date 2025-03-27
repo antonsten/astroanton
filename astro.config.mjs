@@ -19,7 +19,8 @@ export default defineConfig({
     rehypePlugins: []
   },
   vite: {
-    envDir: './'
+    envDir: './',
+    assetsInclude: ['**/*.jpg', '**/*.png', '**/*.svg', '**/*.webp', '**/*.woff2']
   },
   publicDir: 'public',
   build: {
