@@ -14,13 +14,14 @@ export default defineConfig({
     })
   ],
   output: 'server',
-  adapter: netlify(),
+  adapter: netlify({
+    edgeMiddleware: true
+  }),
   markdown: {
-    shikiConfig: {
-      theme: 'github-dark'
-    }
+    remarkPlugins: [],
+    rehypePlugins: []
   },
   vite: {
-    envDir: '.'
+    envDir: './'
   }
 });

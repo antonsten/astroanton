@@ -2,22 +2,25 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/BlogPost.astro';
 
-export async function getStaticPaths() {
-    const articles = await getCollection('articles');
-    return articles.map(article => ({
-        params: { slug: article.slug },
-        props: { article },
-    }));
+const { slug } = Astro.params;
+const articles = await getCollection('articles');
+const article = articles.find(article => article.slug === slug);
+
+if (!article) {
+    return Astro.redirect('/404');
 }
 
-interface Props {
-    article: CollectionEntry<'articles'>;
-}
-
-const { article } = Astro.props;
 const { Content } = await article.render();
+
+// Transform the article data to match the expected frontmatter format
+const frontmatter = {
+    title: article.data.title,
+    description: article.data.description,
+    date: article.data.date instanceof Date ? article.data.date.toISOString() : article.data.date || '',
+    minutesToRead: typeof article.data.readingTime === 'string' ? parseInt(article.data.readingTime, 10) : article.data.readingTime || 5
+};
 ---
 
-<Layout frontmatter={article.data}>
+<Layout frontmatter={frontmatter}>
     <Content />
 </Layout> 
