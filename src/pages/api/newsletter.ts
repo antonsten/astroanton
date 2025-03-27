@@ -1,11 +1,28 @@
 import type { APIRoute } from 'astro';
 
 export const POST: APIRoute = async ({ request }) => {
+    // Add CORS headers
+    const corsHeaders = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+    };
+
+    // Handle OPTIONS request for CORS
+    if (request.method === 'OPTIONS') {
+        return new Response(null, {
+            status: 204,
+            headers: corsHeaders
+        });
+    }
+
     try {
+        console.log('Received newsletter subscription request');
         const data = await request.json();
         const email = data.email;
 
         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            console.log('Invalid email format:', email);
             return new Response(
                 JSON.stringify({
                     message: 'Please provide a valid email address'
@@ -14,7 +31,7 @@ export const POST: APIRoute = async ({ request }) => {
                     status: 400,
                     headers: {
                         'Content-Type': 'application/json',
-                        'Access-Control-Allow-Origin': '*'
+                        ...corsHeaders
                     }
                 }
             );
@@ -85,7 +102,7 @@ export const POST: APIRoute = async ({ request }) => {
                 status: 200,
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
+                    ...corsHeaders
                 }
             }
         );
@@ -100,7 +117,7 @@ export const POST: APIRoute = async ({ request }) => {
                 status: 500,
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
+                    ...corsHeaders
                 }
             }
         );
