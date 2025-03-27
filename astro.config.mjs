@@ -20,5 +20,6 @@ export default defineConfig({
   },
   vite: {
     envDir: './'
-  }
+  },
+  publicDir: 'public'
 });

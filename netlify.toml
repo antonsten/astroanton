@@ -15,4 +15,4 @@
 [functions]
   node_bundler = "esbuild"
   external_node_modules = ["sharp"]
-  included_files = ["dist/**/*"] 
+  included_files = ["dist/**/*", "public/**/*"] 
