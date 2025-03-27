@@ -11,19 +11,8 @@ export default defineConfig({
     mdx()
   ],
   output: 'server',
-  adapter: netlify({
-    edgeMiddleware: true
-  }),
-  markdown: {
-    remarkPlugins: [],
-    rehypePlugins: []
-  },
+  adapter: netlify(),
   vite: {
-    envDir: './',
-    assetsInclude: ['**/*.jpg', '**/*.png', '**/*.svg', '**/*.webp', '**/*.woff2']
-  },
-  publicDir: 'public',
-  build: {
-    assets: '_assets'
+    envDir: './'
   }
 });

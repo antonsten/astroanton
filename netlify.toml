@@ -6,15 +6,6 @@
   NODE_VERSION = "20"
   NODE_ENV = "production"
 
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/entry"
-  status = 200
-  force = true
-
 [functions]
   node_bundler = "esbuild"
-  external_node_modules = ["sharp"]
-
-[[plugins]]
-  package = "@astrojs/netlify" 
+  external_node_modules = ["sharp"] 
