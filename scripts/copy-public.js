@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { glob } from 'glob';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -9,38 +8,35 @@ const __dirname = path.dirname(__filename);
 const PUBLIC_DIR = path.join(path.dirname(__dirname), 'public');
 const DIST_DIR = path.join(path.dirname(__dirname), 'dist');
 
-async function copyPublicToDist() {
-    try {
-        // Find all files in public directory
-        const files = await glob('**/*', { 
-            cwd: PUBLIC_DIR,
-            nodir: true,
-            dot: true
-        });
+function copyFolderSync(from, to) {
+    // Create the destination folder if it doesn't exist
+    if (!fs.existsSync(to)) {
+        fs.mkdirSync(to, { recursive: true });
+    }
 
-        console.log(`Found ${files.length} files to copy...`);
+    // Read all files/folders in the source directory
+    const items = fs.readdirSync(from, { withFileTypes: true });
 
-        for (const file of files) {
-            const sourcePath = path.join(PUBLIC_DIR, file);
-            const targetPath = path.join(DIST_DIR, file);
+    for (const item of items) {
+        const fromPath = path.join(from, item.name);
+        const toPath = path.join(to, item.name);
 
-            // Create directory if it doesn't exist
-            const targetDir = path.dirname(targetPath);
-            if (!fs.existsSync(targetDir)) {
-                fs.mkdirSync(targetDir, { recursive: true });
-            }
-
-            // Copy file
-            fs.copyFileSync(sourcePath, targetPath);
-            console.log(`✅ Copied: ${file}`);
+        if (item.isDirectory()) {
+            // Recursively copy directories
+            copyFolderSync(fromPath, toPath);
+        } else {
+            // Copy files
+            fs.copyFileSync(fromPath, toPath);
+            console.log(`✅ Copied: ${path.relative(PUBLIC_DIR, fromPath)}`);
         }
-
-        console.log('Public directory copy complete!');
-    } catch (error) {
-        console.error('Error copying public directory:', error);
-        process.exit(1);
     }
 }
 
-// Run the script
-copyPublicToDist().catch(console.error); 
+try {
+    console.log('Starting to copy public directory...');
+    copyFolderSync(PUBLIC_DIR, DIST_DIR);
+    console.log('Public directory copy complete!');
+} catch (error) {
+    console.error('Error copying public directory:', error);
+    process.exit(1);
+} 
