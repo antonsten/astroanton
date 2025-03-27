@@ -10,9 +10,23 @@ export const POST: APIRoute = async ({ request }) => {
                 JSON.stringify({
                     message: 'Please provide a valid email address'
                 }), 
-                { status: 400 }
+                { 
+                    status: 400,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
+                    }
+                }
             );
         }
+
+        // Log all environment variables (without sensitive values)
+        console.log('Environment variables:', {
+            hasApiKey: !!import.meta.env.CONVERTKIT_API_KEY,
+            hasFormId: !!import.meta.env.CONVERTKIT_FORM_ID,
+            apiKeyLength: import.meta.env.CONVERTKIT_API_KEY?.length,
+            formId: import.meta.env.CONVERTKIT_FORM_ID
+        });
 
         const CONVERTKIT_API_KEY = import.meta.env.CONVERTKIT_API_KEY;
         const FORM_ID = import.meta.env.CONVERTKIT_FORM_ID;
@@ -30,13 +44,19 @@ export const POST: APIRoute = async ({ request }) => {
             apiKeyLength: CONVERTKIT_API_KEY.length
         });
 
-        const response = await fetch(`https://api.convertkit.com/v3/forms/${FORM_ID}/subscribe?api_key=${CONVERTKIT_API_KEY}`, {
+        const response = await fetch('https://api.convertkit.com/v3/subscribers', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Api-Key': CONVERTKIT_API_KEY
             },
             body: JSON.stringify({
-                email: email
+                api_key: CONVERTKIT_API_KEY,
+                email: email,
+                form_id: FORM_ID,
+                fields: {
+                    form_id: FORM_ID
+                }
             })
         });
 
@@ -44,18 +64,30 @@ export const POST: APIRoute = async ({ request }) => {
         console.log('ConvertKit API response:', {
             status: response.status,
             ok: response.ok,
-            data: responseData
+            data: responseData,
+            headers: Object.fromEntries(response.headers.entries())
         });
 
         if (!response.ok) {
-            throw new Error(responseData.message || 'Failed to subscribe');
+            console.error('ConvertKit API error details:', {
+                status: response.status,
+                statusText: response.statusText,
+                data: responseData
+            });
+            throw new Error(responseData.message || `Failed to subscribe: ${response.status} ${response.statusText}`);
         }
 
         return new Response(
             JSON.stringify({
                 message: 'Successfully subscribed to the newsletter!'
             }), 
-            { status: 200 }
+            { 
+                status: 200,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                }
+            }
         );
     } catch (error) {
         console.error('Newsletter subscription error:', error);
@@ -64,7 +96,13 @@ export const POST: APIRoute = async ({ request }) => {
             JSON.stringify({
                 message: errorMessage
             }), 
-            { status: 500 }
+            { 
+                status: 500,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                }
+            }
         );
     }
 } 

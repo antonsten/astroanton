@@ -8,244 +8,191 @@ import Testimonial from '../components/Testimonial.astro';
 ---
 
 <Layout title="Anton Sten">
-	<div class="px-5">
-		<!-- Hero Section -->
-		<section class="py-20 max-w-[700px] mx-auto">
-			<h1 class="mb-12">
-				<span class="block text-black font-medium text-[32px] md:text-[50px] leading-[40px] md:leading-[56px] tracking-[-0.02em]">Anton Sten</span>
-				<span class="block text-dark-grey font-medium text-[32px] md:text-[50px] leading-[40px] md:leading-[56px] tracking-[-0.02em]">Product design leader</span>
-			</h1>
+	<!-- Hero Section -->
+	<section class="py-20">
+		<h1 class="mb-12">
+			<span class="block text-black font-medium display">Anton Sten</span>
+			<span class="block text-dark-grey font-medium display">Product design leader</span>
+		</h1>
+		
+		<div class="space-y-6">
+			<h3 class="body-xl">I partner with founders and startups to create engaging digital products and brands, guiding them from initial ideas to delightful experiences.</h3>
 			
-			<div class="space-y-6">
-				<h3 class="text-[26px] leading-[34px] tracking-[-0.01em] font-regular">I partner with founders and startups to create engaging digital products and brands, guiding them from initial ideas to delightful experiences.</h3>
-				
-				<h3 class="text-[26px] leading-[34px] tracking-[-0.01em] font-regular">As Head of Design at <a href="https://www.summerhealth.com/" class="underline hover:text-green">Summer Health</a>, I'm dedicated to creating solutions that empower the healthiest generation of children.</h3>
-			</div>
-		</section>
-	</div>
+			<h3 class="body-xl">As Head of Design at <a href="https://www.summerhealth.com/" class="underline hover:text-green">Summer Health</a>, I'm dedicated to creating solutions that empower the healthiest generation of children.</h3>
+		</div>
+	</section>
 
 	<!-- Companies Section -->
-	<section class="mb-20 overflow-hidden">
-		<div class="px-5">
-			<div class="relative h-[90px] max-w-[700px] mx-auto">
-				<!-- First group of logos -->
-				<div class="absolute inset-0 flex gap-2 justify-center animate-fade-group-1">
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/google.svg" alt="Google" class="h-5" />
-					</div>
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/loom.svg" alt="Loom" class="h-5" />
-					</div>
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/Summer Health logo.svg" alt="Summer Health" class="h-8" />
-					</div>
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/spotify.svg" alt="Spotify" class="h-6" />
-					</div>
-				</div>
-
-				<!-- Second group of logos -->
-				<div class="absolute inset-0 flex gap-2 justify-center animate-fade-group-2">
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/herman-miller.svg" alt="Herman Miller" class="h-3" />
-					</div>
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/ikea.svg" alt="IKEA" class="h-4" />
-					</div>
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/ueno.svg" alt="Ueno" class="h-4" />
-					</div>
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/hyperisland.svg" alt="Hyper Island" class="h-3" />
-					</div>
-				</div>
-
-				<!-- Third group of logos -->
-				<div class="absolute inset-0 flex gap-2 justify-center animate-fade-group-3">
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/liftoff.svg" alt="Liftoff" class="h-5" />
-					</div>
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/volvo.svg" alt="Volvo" class="h-4" />
-					</div>
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/eon.svg" alt="EON" class="h-4" />
-					</div>
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/izettle.svg" alt="iZettle" class="h-4" />
-					</div>
-				</div>
-
-				<!-- Fourth group of logos -->
-				<div class="absolute inset-0 flex gap-2 justify-center animate-fade-group-4">
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/nudie.svg" alt="Nudie" class="h-4" />
-					</div>
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/swedbank.svg" alt="Swedbank" class="h-4" />
-					</div>
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/toast.svg" alt="Toast" class="h-4" />
-					</div>
-					<div class="bg-light-grey w-[170px] h-[90px] rounded-[12px] flex items-center justify-center px-5 flex-shrink-0">
-						<img src="/logos/google.svg" alt="Google" class="h-5" />
-					</div>
-				</div>
+	<section class="mb-20">
+		<div class="grid grid-cols-3 gap-4">
+			<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+				<img src="/logos/google.svg" alt="Google" class="h-5" />
+			</div>
+			<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+				<img src="/logos/loom.svg" alt="Loom" class="h-5" />
+			</div>
+			<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+				<img src="/logos/Summer Health logo.svg" alt="Summer Health" class="h-8" />
+			</div>
+			<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+				<img src="/logos/spotify.svg" alt="Spotify" class="h-6" />
+			</div>
+			<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+				<img src="/logos/herman-miller.svg" alt="Herman Miller" class="h-3" />
+			</div>
+			<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+				<img src="/logos/ikea.svg" alt="IKEA" class="h-4" />
 			</div>
 		</div>
 	</section>
 
 	<!-- Newsletter Section -->
-	<section class="mb-20 md:px-5">
-		<div class="md:max-w-[700px] md:mx-auto">
-			<NewsletterForm />
+	<section class="mb-20">
+		<NewsletterForm />
+	</section>
+
+	<!-- Testimonials Section -->
+	<section class="mb-20">
+		<div class="relative">
+			<div class="carousel flex gap-8 overflow-x-auto no-scrollbar">
+				<div class="relative flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial
+						bgColor="blue"
+						quote={[
+							"Anton's not only a phenomenally skilled interactive designer, design director, and creative thinker, but he's a magnetic, warm, personable, and selfless leader. He was transformative in both internal and client-side meetings, workshops, and production. A 10/10 experience working with Anton."
+						]}
+						author="Emmett Shine"
+						role="Founder at Little Plains Studio"
+					/>
+				</div>
+
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial
+						bgColor="black"
+						quote={[
+							"We all have that person who we want to book for every project. Anton is that person for me. He's experienced, insightful, collaborative, and great at his craft. He's an unusual mix of both a leader and mentor who excels at fostering a strong relationship with the client, asking questions, and understanding the needs and motivations of their users."
+						]}
+						author="Managing Director"
+						role="Bm"
+					/>
+				</div>
+
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial
+						bgColor="light-grey"
+						quote={[
+							"Anton is a world-class designer; he is talented with user experience and visual design, and a deeply empathetic product builder. He is a team player in every way - he gets involved with the team and customers to understand and embody the brand. It's a privilege to work alongside him to advance our mission to raise the healthiest generation."
+						]}
+						author="Ellen DaSilva"
+						role="Founder and CEO at Summer Health"
+					/>
+				</div>
+
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial
+						bgColor="blue"
+						quote={[
+							"Working with Anton has been an absolute pleasure. His deep understanding of design principles combined with his strategic thinking makes him an invaluable asset to any project. He consistently delivers thoughtful, user-centered solutions that exceed expectations."
+						]}
+						author="Sarah Chen"
+						role="Product Lead at Loom"
+					/>
+				</div>
+			</div>
+			<div class="flex gap-2 mt-4">
+				<button class="w-10 h-10 rounded-[12px] bg-light-grey flex items-center justify-center hover:bg-[#0066FF] hover:text-white transition-colors" aria-label="Previous testimonial">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+				<button class="w-10 h-10 rounded-[12px] bg-light-grey flex items-center justify-center hover:bg-[#0066FF] hover:text-white transition-colors" aria-label="Next testimonial">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+			</div>
 		</div>
 	</section>
 
-	<div class="px-5">
-		<!-- Testimonials Section -->
-		<section class="mb-20 max-w-[700px] mx-auto">
-			<div class="relative">
-				<div class="carousel flex gap-8 overflow-x-auto no-scrollbar">
-					<div class="relative flex-shrink-0" style="width: calc((700px - 32px) / 2);">
-						<Testimonial
-							bgColor="blue"
-							quote={[
-								"Anton's not only a phenomenally skilled interactive designer, design director, and creative thinker, but he's a magnetic, warm, personable, and selfless leader. He was transformative in both internal and client-side meetings, workshops, and production. A 10/10 experience working with Anton."
-							]}
-							author="Emmett Shine"
-							role="Founder at Little Plains Studio"
-						/>
-					</div>
-
-					<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
-						<Testimonial
-							bgColor="black"
-							quote={[
-								"We all have that person who we want to book for every project. Anton is that person for me. He's experienced, insightful, collaborative, and great at his craft. He's an unusual mix of both a leader and mentor who excels at fostering a strong relationship with the client, asking questions, and understanding the needs and motivations of their users."
-							]}
-							author="Managing Director"
-							role="Bm"
-						/>
-					</div>
-
-					<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
-						<Testimonial
-							bgColor="light-grey"
-							quote={[
-								"Anton is a world-class designer; he is talented with user experience and visual design, and a deeply empathetic product builder. He is a team player in every way - he gets involved with the team and customers to understand and embody the brand. It's a privilege to work alongside him to advance our mission to raise the healthiest generation."
-							]}
-							author="Ellen DaSilva"
-							role="Founder and CEO at Summer Health"
-						/>
-					</div>
-
-					<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
-						<Testimonial
-							bgColor="blue"
-							quote={[
-								"Working with Anton has been an absolute pleasure. His deep understanding of design principles combined with his strategic thinking makes him an invaluable asset to any project. He consistently delivers thoughtful, user-centered solutions that exceed expectations."
-							]}
-							author="Sarah Chen"
-							role="Product Lead at Loom"
-						/>
-					</div>
+	<!-- Featured Writing Section -->
+	<section>
+		<h2 class="text-black h2 mb-8">Featured writing</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<a href="/articles/the-product-design-process" class="group flex md:flex-col gap-4 md:gap-0">
+				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+					<img src="/svg/1.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 				</div>
-				<div class="flex gap-2 mt-4">
-					<button class="w-10 h-10 rounded-[12px] bg-light-grey flex items-center justify-center hover:bg-[#0066FF] hover:text-white transition-colors" aria-label="Previous testimonial">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-					</button>
-					<button class="w-10 h-10 rounded-[12px] bg-light-grey flex items-center justify-center hover:bg-[#0066FF] hover:text-white transition-colors" aria-label="Next testimonial">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-					</button>
+				<div>
+					<time class="text-dark-grey caption block">March 19, 2024</time>
+					<h3 class="text-black body font-medium group-hover:text-green">The Product Design Process</h3>
 				</div>
+			</a>
+
+			<a href="/articles/the-solo-designer-lessons-from-a-startup-journey" class="group flex md:flex-col gap-4 md:gap-0">
+				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+					<img src="/svg/2.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
+				</div>
+				<div>
+					<time class="text-dark-grey caption block">January 27, 2024</time>
+					<h3 class="text-black body font-medium group-hover:text-green">The Solo Designer: Lessons from a Startup Journey</h3>
+				</div>
+			</a>
+
+			<a href="/articles/creating-a-ux-strategy" class="group flex md:flex-col gap-4 md:gap-0">
+				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+					<img src="/svg/3.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
+				</div>
+				<div>
+					<time class="text-dark-grey caption block">April 23, 2024</time>
+					<h3 class="text-black body font-medium group-hover:text-green">Creating a UX Strategy</h3>
+				</div>
+			</a>
+
+			<a href="/articles/the-stakeholder-interview" class="group flex md:flex-col gap-4 md:gap-0">
+				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+					<img src="/svg/4.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
+				</div>
+				<div>
+					<time class="text-dark-grey caption block">March 25, 2024</time>
+					<h3 class="text-black body font-medium group-hover:text-green">The Stakeholder Interview</h3>
+				</div>
+			</a>
+
+			<a href="/articles/why-designers-need-to-write" class="group flex md:flex-col gap-4 md:gap-0">
+				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+					<img src="/svg/5.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
+				</div>
+				<div>
+					<time class="text-dark-grey caption block">May 25, 2017</time>
+					<h3 class="text-black body font-medium group-hover:text-green">Why Designers Need to Write</h3>
+				</div>
+			</a>
+
+			<a href="/articles/working-as-a-ux-lead" class="group flex md:flex-col gap-4 md:gap-0">
+				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+					<img src="/svg/6.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
+				</div>
+				<div>
+					<time class="text-dark-grey caption block">April 1, 2024</time>
+					<h3 class="text-black body font-medium group-hover:text-green">Working as a UX-Lead</h3>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="mt-16 mb-8">
+		<div class="flex flex-col gap-8">
+			<div class="flex items-center gap-4">
+				<a href="https://twitter.com/antonsten" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Twitter</a>
+				<a href="https://www.linkedin.com/in/antonsten/" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">LinkedIn</a>
+				<a href="mailto:anton@antonsten.com" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Email</a>
 			</div>
-		</section>
-
-		<!-- Featured Writing Section -->
-		<section class="max-w-[700px] mx-auto">
-			<h2 class="text-black text-[26px] leading-[34px] tracking-[-0.01em] font-regular mb-8">Featured writing</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<a href="/articles/the-product-design-process" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
-						<img src="/svg/1.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
-					</div>
-					<div>
-						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">March 19, 2024</time>
-						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-medium group-hover:text-green">The Product Design Process</h3>
-					</div>
-				</a>
-
-				<a href="/articles/the-solo-designer-lessons-from-a-startup-journey" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
-						<img src="/svg/2.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
-					</div>
-					<div>
-						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">January 27, 2024</time>
-						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-medium group-hover:text-green">The Solo Designer: Lessons from a Startup Journey</h3>
-					</div>
-				</a>
-
-				<a href="/articles/creating-a-ux-strategy" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
-						<img src="/svg/3.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
-					</div>
-					<div>
-						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">April 23, 2024</time>
-						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-medium group-hover:text-green">Creating a UX Strategy</h3>
-					</div>
-				</a>
-
-				<a href="/articles/the-stakeholder-interview" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
-						<img src="/svg/4.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
-					</div>
-					<div>
-						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">March 25, 2024</time>
-						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-medium group-hover:text-green">The Stakeholder Interview</h3>
-					</div>
-				</a>
-
-				<a href="/articles/why-designers-need-to-write" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
-						<img src="/svg/5.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
-					</div>
-					<div>
-						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">May 25, 2017</time>
-						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-medium group-hover:text-green">Why Designers Need to Write</h3>
-					</div>
-				</a>
-
-				<a href="/articles/working-as-a-ux-lead" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
-						<img src="/svg/6.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
-					</div>
-					<div>
-						<time class="text-dark-grey text-[14px] leading-[20px] tracking-[-0.01em] block">April 1, 2024</time>
-						<h3 class="text-black text-[16px] leading-[24px] tracking-[-0.01em] font-medium group-hover:text-green">Working as a UX-Lead</h3>
-					</div>
-				</a>
+			<div class="text-[14px] leading-[20px] tracking-[-0.01em] text-dark-grey">
+				© 2024 Anton Sten. All rights reserved.
 			</div>
-		</section>
-
-		<!-- Footer -->
-		<footer class="max-w-[700px] mx-auto mt-16 mb-8">
-			<div class="flex flex-col gap-8">
-				<div class="flex items-center gap-4">
-					<a href="https://twitter.com/antonsten" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Twitter</a>
-					<a href="https://www.linkedin.com/in/antonsten/" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">LinkedIn</a>
-					<a href="mailto:anton@antonsten.com" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Email</a>
-				</div>
-				<div class="text-[14px] leading-[20px] tracking-[-0.01em] text-dark-grey">
-					© 2024 Anton Sten. All rights reserved.
-				</div>
-			</div>
-		</footer>
-	</div>
+		</div>
+	</footer>
 </Layout>
 
 <script>
@@ -283,34 +230,6 @@ import Testimonial from '../components/Testimonial.astro';
 </script>
 
 <style>
-	@keyframes logoAnimation {
-		0% {
-			opacity: 0;
-			filter: blur(10px);
-			transform: translateY(20px);
-		}
-		10% {
-			opacity: 1;
-			filter: blur(0);
-			transform: translateY(0);
-		}
-		40% {
-			opacity: 1;
-			filter: blur(0);
-			transform: translateY(0);
-		}
-		50% {
-			opacity: 0;
-			filter: blur(10px);
-			transform: translateY(-20px);
-		}
-		100% {
-			opacity: 0;
-			filter: blur(10px);
-			transform: translateY(-20px);
-		}
-	}
-
 	@keyframes rotateIcon {
 		from {
 			transform: rotate(0deg);
@@ -318,30 +237,6 @@ import Testimonial from '../components/Testimonial.astro';
 		to {
 			transform: rotate(360deg);
 		}
-	}
-
-	.animate-fade-group-1,
-	.animate-fade-group-2,
-	.animate-fade-group-3,
-	.animate-fade-group-4 {
-		animation: logoAnimation 20s infinite;
-		animation-timing-function: ease-in-out;
-	}
-
-	.animate-fade-group-1 {
-		animation-delay: 15s;
-	}
-
-	.animate-fade-group-2 {
-		animation-delay: 0s;
-	}
-
-	.animate-fade-group-3 {
-		animation-delay: 5s;
-	}
-
-	.animate-fade-group-4 {
-		animation-delay: 10s;
 	}
 
 	.group:hover img {

@@ -33,57 +33,55 @@ function getFirstLine(content: string) {
 
 <Layout title="Articles - Anton Sten">
     <div class="min-h-screen bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
-            <div class="max-w-2xl mx-auto">
-                <h1 class="h1 mb-16">Articles</h1>
-                <h3 class="text-[26px] leading-[34px] tracking-[-0.01em] font-regular mb-24">
-                    Insights and thoughts on design, technology, and the future of digital experiences.
-                </h3>
+        <div class="pt-32 pb-16">
+            <h1 class="h1 mb-16">Articles</h1>
+            <h3 class="body-xl mb-24">
+                Insights and thoughts on design, technology, and the future of digital experiences.
+            </h3>
 
-                <div class="space-y-16">
-                    {articles.map((article) => (
-                        <article class="group">
-                            <a href={`/articles/${article.slug}`} class="block">
-                                <div class="flex flex-col gap-4">
-                                    <div>
-                                        <h3 class="text-[26px] leading-[34px] tracking-[-0.01em] font-medium mb-2 group-hover:text-green transition-colors">
-                                            {article.data.title}
-                                        </h3>
-                                        <div class="flex items-center gap-2 text-[18px] leading-[32px] tracking-[-0.01em] font-regular text-dark-grey mb-2">
-                                            {article.data.date && (
-                                                <>
-                                                    <time datetime={article.data.date instanceof Date ? article.data.date.toISOString() : new Date(article.data.date || '').toISOString()}>
-                                                        {article.data.date instanceof Date 
-                                                            ? article.data.date.toLocaleDateString('en-US', {
-                                                                year: 'numeric',
-                                                                month: 'long',
-                                                                day: 'numeric'
-                                                            })
-                                                            : new Date(article.data.date).toLocaleDateString('en-US', {
-                                                                year: 'numeric',
-                                                                month: 'long',
-                                                                day: 'numeric'
-                                                            })
-                                                        }
-                                                    </time>
-                                                    {article.data.readingTime && <span>•</span>}
-                                                </>
-                                            )}
-                                            {article.data.readingTime && (
-                                                <span>{article.data.readingTime} minute reading time</span>
-                                            )}
-                                        </div>
-                                        {article.data.description && (
-                                            <p class="text-[18px] leading-[32px] tracking-[-0.01em] font-regular text-black mb-2">
-                                                {article.data.description}
-                                            </p>
+            <div class="space-y-16">
+                {articles.map((article) => (
+                    <article class="group">
+                        <a href={`/articles/${article.slug}`} class="block">
+                            <div class="flex flex-col gap-4">
+                                <div>
+                                    <h3 class="h2 mb-2 group-hover:text-green transition-colors">
+                                        {article.data.title}
+                                    </h3>
+                                    <div class="flex items-center gap-2 text-[18px] leading-[32px] tracking-[-0.01em] font-regular text-dark-grey mb-2">
+                                        {article.data.date && (
+                                            <>
+                                                <time datetime={article.data.date instanceof Date ? article.data.date.toISOString() : new Date(article.data.date || '').toISOString()}>
+                                                    {article.data.date instanceof Date 
+                                                        ? article.data.date.toLocaleDateString('en-US', {
+                                                            year: 'numeric',
+                                                            month: 'long',
+                                                            day: 'numeric'
+                                                        })
+                                                        : new Date(article.data.date).toLocaleDateString('en-US', {
+                                                            year: 'numeric',
+                                                            month: 'long',
+                                                            day: 'numeric'
+                                                        })
+                                                    }
+                                                </time>
+                                                {article.data.readingTime && <span>•</span>}
+                                            </>
+                                        )}
+                                        {article.data.readingTime && (
+                                            <span>{article.data.readingTime} minute reading time</span>
                                         )}
                                     </div>
+                                    {article.data.description && (
+                                        <p class="text-[18px] leading-[32px] tracking-[-0.01em] font-regular text-black mb-2">
+                                            {article.data.description}
+                                        </p>
+                                    )}
                                 </div>
-                            </a>
-                        </article>
-                    ))}
-                </div>
+                            </div>
+                        </a>
+                    </article>
+                ))}
             </div>
         </div>
     </div>

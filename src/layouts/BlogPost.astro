@@ -42,48 +42,46 @@ const formattedDate = formatDate(date);
 ---
 
 <Layout title={title} description={description}>
-    <div class="px-5 pt-32">
-        <div class="max-w-[700px] mx-auto">
-            <!-- Article Header -->
-            <header class="mb-12">
-                <h1 class="text-[32px] md:text-[50px] leading-[40px] md:leading-[56px] tracking-[-0.02em] font-medium text-black mb-4">{title}</h1>
-                <div class="flex items-center gap-2 text-dark-grey text-[18px] leading-[32px] tracking-[-0.01em]">
-                    <time datetime={date}>{formattedDate}</time>
-                    <span>•</span>
-                    <span>{minutesToRead} minute reading time</span>
-                </div>
-            </header>
-
-            <!-- Article Content -->
-            <div class="prose prose-lg max-w-none">
-                <slot />
+    <div class="pt-32">
+        <!-- Article Header -->
+        <header class="mb-12">
+            <h1 class="text-[32px] md:text-[50px] leading-[40px] md:leading-[56px] tracking-[-0.02em] font-medium text-black mb-4">{title}</h1>
+            <div class="flex items-center gap-2 text-dark-grey text-[18px] leading-[32px] tracking-[-0.01em]">
+                <time datetime={date}>{formattedDate}</time>
+                <span>•</span>
+                <span>{minutesToRead} minute reading time</span>
             </div>
+        </header>
 
-            <!-- Newsletter Section -->
-            <section class="mt-16 mb-16">
-                <NewsletterForm />
-            </section>
-
-            <!-- Article Footer -->
-            <footer class="mt-16 pt-16 border-t border-light-grey">
-                <div class="flex flex-col gap-8">
-                    <div class="flex items-center gap-4">
-                        <a href="/articles" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">← Back to articles</a>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <a href="https://twitter.com/antonsten" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Share on Twitter</a>
-                        <a href="https://www.linkedin.com/in/antonsten/" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Share on LinkedIn</a>
-                    </div>
-                </div>
-            </footer>
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none">
+            <slot />
         </div>
+
+        <!-- Newsletter Section -->
+        <section class="mt-16 mb-16">
+            <NewsletterForm />
+        </section>
+
+        <!-- Article Footer -->
+        <footer class="mt-16 pt-16 border-t border-light-grey">
+            <div class="flex flex-col gap-8">
+                <div class="flex items-center gap-4">
+                    <a href="/articles" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">← Back to articles</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="https://twitter.com/antonsten" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Share on Twitter</a>
+                    <a href="https://www.linkedin.com/in/antonsten/" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Share on LinkedIn</a>
+                </div>
+            </div>
+        </footer>
     </div>
 </Layout>
 
 <style is:global>
     /* Add any blog-specific global styles here */
     .prose {
-        @apply text-[18px] leading-[32px] tracking-[-0.01em];
+        @apply body-lg;
     }
     
     .prose p {
@@ -91,11 +89,11 @@ const formattedDate = formatDate(date);
     }
 
     .prose h2 {
-        @apply text-[26px] leading-[34px] tracking-[-0.01em] font-medium text-black mt-24 mb-8;
+        @apply h2 mt-24 mb-8;
     }
 
     .prose h3 {
-        @apply text-[20px] leading-[28px] tracking-[-0.01em] font-medium text-black mt-16 mb-6;
+        @apply h3 mt-16 mb-6;
     }
 
     .prose ul {
@@ -127,15 +125,15 @@ const formattedDate = formatDate(date);
     }
 
     .prose blockquote p {
-        @apply text-[20px] leading-[26px] mb-4 last:mb-0 text-black relative !important;
+        @apply body-xl mb-4 last:mb-0 text-black relative !important;
     }
 
     .prose blockquote a {
-        @apply text-[16px] leading-[24px] tracking-[-0.01em] font-regular opacity-80 no-underline hover:opacity-100 transition-opacity mt-4 block;
+        @apply body-sm tracking-[-0.01em] font-regular opacity-80 no-underline hover:opacity-100 transition-opacity mt-4 block;
     }
 
     .prose code {
-        @apply bg-light-grey px-2 py-1 rounded-[4px] text-[18px] leading-[28px];
+        @apply bg-light-grey px-2 py-1 rounded-[4px] body-lg;
     }
 
     .prose pre {
@@ -143,7 +141,7 @@ const formattedDate = formatDate(date);
     }
 
     .prose pre code {
-        @apply bg-transparent p-0 text-[16px] leading-[24px];
+        @apply bg-transparent p-0 body-sm;
     }
 
     .prose img {
@@ -155,6 +153,6 @@ const formattedDate = formatDate(date);
     }
 
     .prose figcaption {
-        @apply text-[16px] leading-[24px] text-dark-grey text-center mt-4;
+        @apply body-sm text-dark-grey text-center mt-4;
     }
 </style> 

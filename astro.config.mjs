@@ -10,7 +10,7 @@ export default defineConfig({
     mdx({
       remarkPlugins: [],
       rehypePlugins: [],
-      components: {
+      customComponents: {
         img: './src/components/MDXImage.astro'
       }
     })
@@ -20,5 +20,8 @@ export default defineConfig({
     shikiConfig: {
       theme: 'github-dark'
     }
+  },
+  vite: {
+    envDir: '.'
   }
 });
