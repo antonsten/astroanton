@@ -13,6 +13,10 @@ export default defineConfig({
   output: 'server',
   adapter: netlify(),
   vite: {
-    envDir: './'
+    envDir: './',
+    build: {
+      assetsDir: '_astro',
+      copyPublicDir: true
+    }
   }
 });
