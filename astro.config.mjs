@@ -8,10 +8,7 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
   integrations: [
     tailwind(),
-    mdx({
-      remarkPlugins: [],
-      rehypePlugins: []
-    })
+    mdx()
   ],
   output: 'server',
   adapter: netlify(),
