@@ -7,6 +7,11 @@
   NODE_ENV = "production"
 
 [[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/.netlify/functions/entry"
   status = 200
