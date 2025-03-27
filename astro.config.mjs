@@ -10,10 +10,7 @@ export default defineConfig({
     tailwind(),
     mdx({
       remarkPlugins: [],
-      rehypePlugins: [],
-      customComponents: {
-        img: './src/components/MDXImage.astro'
-      }
+      rehypePlugins: []
     })
   ],
   output: 'server',
