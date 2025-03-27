@@ -21,5 +21,8 @@ export default defineConfig({
   vite: {
     envDir: './'
   },
-  publicDir: 'public'
+  publicDir: 'public',
+  build: {
+    assets: '_assets'
+  }
 });
