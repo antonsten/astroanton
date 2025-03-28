@@ -13,9 +13,6 @@ export default defineConfig({
   output: 'server',
   adapter: netlify(),
   vite: {
-    envDir: './',
-    ssr: {
-      noExternal: ['path-to-regexp']
-    }
+    envDir: './'
   }
 });
