@@ -14,11 +14,11 @@
         min-width="400 500 600 700 800"
     >
         <div data-style="clean">
-            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+            <ul class="formkit-alert formkit-alert-error hidden" data-element="errors" data-group="alert"></ul>
             <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
                 <div class="formkit-field flex-1">
                     <input 
-                        class="formkit-input w-full px-6 py-4 rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-green text-[20px] leading-[26px] tracking-[-0.01em] font-regular placeholder-[#A1A1AA]" 
+                        class="formkit-input w-full px-4 py-2 rounded-[12px] bg-white focus:outline-none text-[16px] leading-[24px] tracking-[-0.01em] font-regular placeholder-[#A1A1AA] border-0" 
                         name="email_address" 
                         aria-label="Email Address" 
                         placeholder="Enter your email" 
@@ -28,7 +28,7 @@
                 </div>
                 <button 
                     data-element="submit" 
-                    class="formkit-submit px-8 py-4 bg-green text-white rounded-full hover:bg-green/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-[20px] leading-[26px] tracking-[-0.01em] font-medium whitespace-nowrap"
+                    class="formkit-submit px-4 py-2 bg-green text-white rounded-[12px] hover:bg-green/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-[16px] leading-[24px] tracking-[-0.01em] font-medium whitespace-nowrap"
                 >
                     <div class="formkit-spinner">
                         <div></div>
@@ -62,12 +62,16 @@
         display: none;
     }
     .formkit-form[data-uid="0b55f87e42"] .formkit-alert {
+        display: none;
         margin: 0 0 1rem 0;
         padding: 0.75rem;
         border-radius: 9999px;
         font-size: 1rem;
         line-height: 1.5;
         font-weight: 500;
+    }
+    .formkit-form[data-uid="0b55f87e42"] .formkit-alert:not(:empty) {
+        display: block;
     }
     .formkit-form[data-uid="0b55f87e42"] .formkit-alert-error {
         background-color: #fde8e2;
@@ -83,5 +87,9 @@
     .formkit-form[data-uid="0b55f87e42"] * {
         box-shadow: none !important;
         -webkit-box-shadow: none !important;
+    }
+    .formkit-form[data-uid="0b55f87e42"] .formkit-input {
+        border: none;
+        background-color: white;
     }
 </style> 
