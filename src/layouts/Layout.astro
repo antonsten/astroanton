@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import HtmlHead from '../components/HtmlHead.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
 	title: string;
@@ -20,10 +21,11 @@ const {
 	<body class="bg-white text-black antialiased">
 		<Navigation />
 		<main class="min-h-screen">
-			<div class="max-w-[600px] mx-auto px-4 sm:px-6">
+			<div class="max-w-[660px] mx-auto px-4 sm:px-6 pt-32 pb-16">
 				<slot />
 			</div>
 		</main>
+		<Footer />
 	</body>
 </html>
 

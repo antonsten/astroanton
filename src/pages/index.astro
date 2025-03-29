@@ -16,32 +16,40 @@ import Testimonial from '../components/Testimonial.astro';
 		</h1>
 		
 		<div class="space-y-6">
-			<h3 class="body-xl">I partner with founders and startups to create engaging digital products and brands, guiding them from initial ideas to delightful experiences.</h3>
+			<h3 class="body-xxl">I partner with founders and startups to create engaging digital products and brands, guiding them from initial ideas to delightful experiences.</h3>
 			
-			<h3 class="body-xl">As Head of Design at <a href="https://www.summerhealth.com/" class="underline hover:text-green">Summer Health</a>, I'm dedicated to creating solutions that empower the healthiest generation of children.</h3>
+			<h3 class="body-xxl">As Head of Design at <a href="https://www.summerhealth.com/" class="underline hover:text-green">Summer Health</a>, I'm currently dedicated to creating solutions that empower the healthiest generation of children.</h3>
 		</div>
 	</section>
 
 	<!-- Companies Section -->
 	<section class="mb-20">
-		<div class="grid grid-cols-3 gap-4">
-			<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
-				<img src="/logos/google.svg" alt="Google" class="h-5" />
-			</div>
-			<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
-				<img src="/logos/loom.svg" alt="Loom" class="h-5" />
-			</div>
-			<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
-				<img src="/logos/Summer Health logo.svg" alt="Summer Health" class="h-8" />
-			</div>
-			<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
-				<img src="/logos/spotify.svg" alt="Spotify" class="h-6" />
-			</div>
-			<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
-				<img src="/logos/herman-miller.svg" alt="Herman Miller" class="h-3" />
-			</div>
-			<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
-				<img src="/logos/ikea.svg" alt="IKEA" class="h-4" />
+		<div class="relative">
+			<!-- Logo containers -->
+			<div class="grid grid-cols-3 gap-4">
+				<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+					<img src="/logos/google.svg" alt="Google" class="h-5" />
+				</div>
+
+				<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+					<img src="/logos/loom.svg" alt="Loom" class="h-5" />
+				</div>
+
+				<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+						<img src="/logos/ueno.svg" alt="Ueno logo" class="h-4" />
+				</div>
+
+				<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+					<img src="/logos/spotify.svg" alt="Spotify" class="h-6" />
+				</div>
+
+				<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+					<img src="/logos/herman-miller.svg" alt="Herman Miller" class="h-3" />
+				</div>
+
+				<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+					<img src="/logos/ikea.svg" alt="IKEA" class="h-4" />
+				</div>
 			</div>
 		</div>
 	</section>
@@ -54,48 +62,114 @@ import Testimonial from '../components/Testimonial.astro';
 	<!-- Testimonials Section -->
 	<section class="mb-20">
 		<div class="relative">
-			<div class="carousel flex gap-8 overflow-x-auto no-scrollbar">
-				<div class="relative flex-shrink-0" style="width: calc((700px - 32px) / 2);">
-					<Testimonial
-						bgColor="blue"
-						quote={[
-							"Anton's not only a phenomenally skilled interactive designer, design director, and creative thinker, but he's a magnetic, warm, personable, and selfless leader. He was transformative in both internal and client-side meetings, workshops, and production. A 10/10 experience working with Anton."
-						]}
-						author="Emmett Shine"
-						role="Founder at Little Plains Studio"
+			<div class="carousel flex gap-4 overflow-x-auto no-scrollbar">
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial bgColor="light-grey" quote={[
+						"I was excited to finally get the chance to work with Anton, and the experience was better than I could have imagined. He's not only a phenomenally skilled interactive designer, design director, and creative thinker, but he's a magnetic, warm, personable, and selfless leader.",
+						"He was transformative in both internal and client-side meetings, workshops, and production. A 10/10 experience working with Anton."
+					]}
+					author="Emmett Shine"
+					role="Founder at Little Plains"
 					/>
 				</div>
-
+					
 				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
-					<Testimonial
-						bgColor="black"
-						quote={[
-							"We all have that person who we want to book for every project. Anton is that person for me. He's experienced, insightful, collaborative, and great at his craft. He's an unusual mix of both a leader and mentor who excels at fostering a strong relationship with the client, asking questions, and understanding the needs and motivations of their users."
-						]}
-						author="Managing Director"
-						role="Bm"
+					<Testimonial bgColor="light-grey" quote={["Anton is an example of mature leadership.",
+					"He is interested in learning, understanding, and doing the right thing for the products he makes in partnership with clients. His ideas are carefully considered with the user's needs and business goals top of mind.",
+					"I'd work with him again in a heartbeat."]}
+					author="Jessi Hall"
+					role="Producer at Big Medium"
 					/>
 				</div>
-
+					
 				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
-					<Testimonial
-						bgColor="light-grey"
-						quote={[
-							"Anton is a world-class designer; he is talented with user experience and visual design, and a deeply empathetic product builder. He is a team player in every way - he gets involved with the team and customers to understand and embody the brand. It's a privilege to work alongside him to advance our mission to raise the healthiest generation."
-						]}
-						author="Ellen DaSilva"
-						role="Founder and CEO at Summer Health"
+					<Testimonial bgColor="light-grey" quote={["Anton partnered with us to reimagine Loom's design system and our team could not be happier. He is highly organized, malleable to team feedback yet principled, and the deliverables he helped us produce will absolutely help accelerate the velocity and collaboration within Design and beyond. I cannot recommend Anton enough for design system partnerships that benefit from someone with specialized expertise."]}
+					author="Sean Thompson"
+					role="Principal Designer at Loom"
 					/>
 				</div>
-
+					
 				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
-					<Testimonial
-						bgColor="blue"
-						quote={[
-							"Working with Anton has been an absolute pleasure. His deep understanding of design principles combined with his strategic thinking makes him an invaluable asset to any project. He consistently delivers thoughtful, user-centered solutions that exceed expectations."
-						]}
-						author="Sarah Chen"
-						role="Product Lead at Loom"
+					<Testimonial bgColor="light-grey" quote={["I've had the pleasure of working with Anton on a fast-moving project that has greatly benefited from his talents. Anton is an intelligent, creative, team-oriented, and highly conscientious designer, and he has quickly become one of my favorite collaborators."]}
+					author="Ryan Andersson"
+					role="VP Global Research & Insights at Herman Miller"
+					/>
+				</div>
+					
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial bgColor="light-grey" quote={["Tractorbeam has been following Anton for a while, and we finally had the pleasure of working with him on a category-defining redesign and design system for Front Gate Tickets. Anton's expertise and mentorship were integral throughout the project lifecycle – not to mention he's an absolute joy to work with. We cannot recommend Anton enough; he truly is a rare talent. Ps. Has Bond villain hair."]}
+					author="Emily Edwards"
+					role="Senior Strategist at Tractorbeam"
+					/>
+				</div>
+					
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial bgColor="light-grey" quote={["A skilled and strategic designer, he can delve into the details without losing sight of the bigger picture. In fact, he's probably thinking two steps ahead. Even though he could boast about his impressive UX credentials, he never does. In fact, his humility and good humor make him an even better person to work with. If you have the chance to collaborate with Anton, seize it."]}
+					author="Lily Mathews"
+					role="UX Researcher & Strategist, Consultant"
+					/>
+				</div>
+					
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial bgColor="light-grey" quote={["Anton was thorough and a pleasure to work with. He's a great collaborator and partner to work through product solutions with. He does what he says and never misses a deadline, which is an unfortunate rarity these days that you don't have to worry about with Anton."]}
+					author="Travis Schmeisser"
+					role="Founder & Partner at First Principle"
+					/>
+				</div>
+					
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial bgColor="light-grey" quote={["We all have that person whom we want to book for every project. Anton is that person for me. He's experienced, insightful, collaborative, and great at his craft. He's an unusual mix of both a leader and mentor for the creative team while also building a strong relationship with the client, asking questions, and understanding the needs and motivations of their users. The resulting work is always well-considered and exceeds expectations."]}
+					author="Nicole Hampton"
+					role="Head of Projects at BTTR"
+					/>
+				</div>
+					
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial bgColor="light-grey" quote={["Anton is a world-class designer: he is talented with user experience and visual design, and a deeply empathetic product builder. He knows our product inside and out, and has been with us since the start. He is a team player in every way - he gets involved with the team and customers to understand and embody the brand, and produces extremely clean, user-friendly designs as a result."]}
+					author="Ellen DaSilva"
+					role="CEO & Co-Founder at Summer Health"
+					/>
+				</div>
+					
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial bgColor="light-grey" quote={["Smart, edgy, and always to the point, Anton Sten is most likely the user experience addition your team needs to help ensure practicality, elegance, and efficiency in how your customers engage with your products and services."]}
+					author="Rob Maigret"
+					role="President at Titan Space"
+					/>
+				</div>
+					
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial bgColor="light-grey" quote={["Anton is a very structured design thinker. He shines at taking a breadth of inputs and transforming them into usable information and experiences. Anton is also highly collaborative and great to work with. Any team would be lucky to have him!"]}
+					author="Carrie Ko"
+					role="Executive Strategy Director at ueno"
+					/>
+				</div>
+					
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial bgColor="light-grey" quote={["Anton is a Renaissance man. It's rare to find someone who can help in so many areas at such a thoughtful and high level of quality. Anton makes any team better."]}
+					author="Dan Mall"
+					role="Founder at SuperFriendly"
+					/>
+				</div>
+					
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial bgColor="light-grey" quote={["If you dislike working with consultants as much as I do, you'll love working with Anton. He was challenging when appropriate and accommodating when necessary, all the while being extremely mindful of our time. He's quick to offer possible solutions and even faster to implement them."]}
+					author="Elsa Bernadotte"
+					role="COO and Co-Founder at Karma"
+					/>
+				</div>
+					
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial bgColor="light-grey" quote={["Whenever someone asks me if I know any good UX designers I always answer with Anton. He's a great designer with superior business understanding who always put the user in the front seat and delivers bloody good work. If you get a chance to work with Anton, don't miss it."]}
+					author="Christian Wilsson"
+					role="Head of Design at Spotify"
+					/>
+				</div>
+					
+				<div class="flex-shrink-0" style="width: calc((700px - 32px) / 2);">
+					<Testimonial bgColor="light-grey" quote={["I had the pleasure of working with Anton on one of our highest-priority projects. He was able to quickly familiarize himself with the challenges at hand and produce conceptual designs that were spot on from the start. His experience and insight were invaluable to our team and project."]}
+					author="Greg Henriques"
+					role="Head of CX at Swedbank"
 					/>
 				</div>
 			</div>
@@ -116,15 +190,15 @@ import Testimonial from '../components/Testimonial.astro';
 
 	<!-- Featured Writing Section -->
 	<section>
-		<h2 class="text-black h2 mb-8">Featured writing</h2>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+		<h2 class="text-black body-xxl mb-8">Featured writing</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 			<a href="/articles/the-product-design-process" class="group flex md:flex-col gap-4 md:gap-0">
 				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 					<img src="/svg/1.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" />
 				</div>
 				<div>
 					<time class="text-dark-grey caption block">March 19, 2024</time>
-					<h3 class="text-black body font-medium group-hover:text-green">The Product Design Process</h3>
+					<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Product Design Process</h3>
 				</div>
 			</a>
 
@@ -134,7 +208,7 @@ import Testimonial from '../components/Testimonial.astro';
 				</div>
 				<div>
 					<time class="text-dark-grey caption block">January 27, 2024</time>
-					<h3 class="text-black body font-medium group-hover:text-green">The Solo Designer: Lessons from a Startup Journey</h3>
+					<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Solo Designer: Lessons from a Startup Journey</h3>
 				</div>
 			</a>
 
@@ -144,7 +218,7 @@ import Testimonial from '../components/Testimonial.astro';
 				</div>
 				<div>
 					<time class="text-dark-grey caption block">April 23, 2024</time>
-					<h3 class="text-black body font-medium group-hover:text-green">Creating a UX Strategy</h3>
+					<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Creating a UX Strategy</h3>
 				</div>
 			</a>
 
@@ -154,7 +228,7 @@ import Testimonial from '../components/Testimonial.astro';
 				</div>
 				<div>
 					<time class="text-dark-grey caption block">March 25, 2024</time>
-					<h3 class="text-black body font-medium group-hover:text-green">The Stakeholder Interview</h3>
+					<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Stakeholder Interview</h3>
 				</div>
 			</a>
 
@@ -164,7 +238,7 @@ import Testimonial from '../components/Testimonial.astro';
 				</div>
 				<div>
 					<time class="text-dark-grey caption block">May 25, 2017</time>
-					<h3 class="text-black body font-medium group-hover:text-green">Why Designers Need to Write</h3>
+					<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Why Designers Need to Write</h3>
 				</div>
 			</a>
 
@@ -174,38 +248,25 @@ import Testimonial from '../components/Testimonial.astro';
 				</div>
 				<div>
 					<time class="text-dark-grey caption block">April 1, 2024</time>
-					<h3 class="text-black body font-medium group-hover:text-green">Working as a UX-Lead</h3>
+					<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Working as a UX-Lead</h3>
 				</div>
 			</a>
 		</div>
 	</section>
-
-	<!-- Footer -->
-	<footer class="mt-16 mb-8">
-		<div class="flex flex-col gap-8">
-			<div class="flex items-center gap-4">
-				<a href="https://twitter.com/antonsten" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Twitter</a>
-				<a href="https://www.linkedin.com/in/antonsten/" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">LinkedIn</a>
-				<a href="mailto:anton@antonsten.com" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Email</a>
-			</div>
-			<div class="text-[14px] leading-[20px] tracking-[-0.01em] text-dark-grey">
-				© 2024 Anton Sten. All rights reserved.
-			</div>
-		</div>
-	</footer>
 </Layout>
 
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
+		// Carousel code
 		const carousel = document.querySelector('.carousel');
 		const prevButton = document.querySelector('[aria-label="Previous testimonial"]');
 		const nextButton = document.querySelector('[aria-label="Next testimonial"]');
 		
 		if (!carousel || !prevButton || !nextButton) return;
 
-		const cardWidth = (700 - 32) / 2; // Width of one card (334px)
-		const gap = 32; // Gap between cards
-		const scrollAmount = cardWidth + gap; // 334px + 32px = 366px
+		const cardWidth = (700 - 32) / 2;
+		const gap = 32;
+		const scrollAmount = cardWidth + gap;
 
 		prevButton.addEventListener('click', () => {
 			const currentScroll = carousel.scrollLeft;

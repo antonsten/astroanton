@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "optimize-images": "node scripts/optimize-images.js"
+    "optimize-images": "node scripts/optimize-images.js",
+    "add-slugs": "tsx scripts/add-slugs.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.1",
@@ -30,6 +31,7 @@
     "@types/node": "^22.13.13",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.3"
   }
 }

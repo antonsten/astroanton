@@ -7,7 +7,8 @@ const articles = defineCollection({
         description: z.string().optional(),
         date: z.union([z.date(), z.string(), z.string().transform(str => new Date(str))]).optional(),
         readingTime: z.union([z.number(), z.string(), z.string().transform(str => parseInt(str, 10))]).optional(),
-        layout: z.string().optional()
+        layout: z.string().optional(),
+        slug: z.string().optional()
     })
 });
 

@@ -43,15 +43,19 @@
   }
 
   .body-xl {
-    @apply text-xl font-regular;
+    @apply text-[20px] leading-[26px] tracking-[-0.01em] font-regular;
+  }
+
+  .body-xxl {
+    @apply text-[26px] leading-[34px] tracking-[-0.01em] font-regular !important;
   }
 
   .body-lg {
-    @apply text-lg font-regular;
+    @apply text-[18px] leading-[28px] tracking-[-0.01em] font-regular;
   }
 
   .body {
-    @apply text-base font-regular;
+    @apply text-[16px] leading-[22px] tracking-[-0.01em] font-regular;
   }
 
   .body-sm {
@@ -60,5 +64,9 @@
 
   .caption {
     @apply text-xs font-regular text-gray-500;
+  }
+
+  .text-lg {
+    @apply text-[18px] leading-[28px];
   }
 } 

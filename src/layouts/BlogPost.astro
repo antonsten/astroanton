@@ -47,7 +47,7 @@ const formattedDate = formatDate(date);
         <!-- Article Header -->
         <header class="mb-12">
             <h1 class="text-[32px] md:text-[50px] leading-[40px] md:leading-[56px] tracking-[-0.02em] font-medium text-black mb-4">{title}</h1>
-            <div class="flex items-center gap-2 text-dark-grey text-[18px] leading-[32px] tracking-[-0.01em]">
+            <div class="flex items-center gap-2 text-dark-grey text-[16px] leading-[24px] tracking-[-0.01em]">
                 <time datetime={date}>{formattedDate}</time>
                 <span>•</span>
                 <span>{minutesToRead} minute reading time</span>
@@ -59,30 +59,60 @@ const formattedDate = formatDate(date);
             <slot />
         </div>
 
+        <!-- Social Sharing -->
+        <div class="bg-light-grey/90 backdrop-blur-sm rounded-xl px-[20px] py-[20px] mt-16">
+            <h2 class="body-xl text-black mb-6">Did you enjoy this article?</h2>
+            <div class="flex flex-wrap items-center gap-2">
+                <a href={`https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(title + ' ' + Astro.url.toString())}`} target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-3 py-1 rounded-lg transition-colors flex items-center gap-2">
+                    <i class="fa-brands fa-linkedin"></i>
+                    Share on LinkedIn
+                </a>
+                <a href={`https://bsky.app/intent/compose?text=${encodeURIComponent(title + ' ' + Astro.url.toString())}`} target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-3 py-1 rounded-lg transition-colors flex items-center gap-2">
+                    <i class="fa-brands fa-bluesky"></i>
+                    Share on Bluesky
+                </a>
+                <button id="copyUrl" class="text-[14px] text-black hover:bg-white px-3 py-1 rounded-lg transition-colors flex items-center gap-2">
+                    <i class="fa-regular fa-copy"></i>
+                    Copy link
+                </button>
+            </div>
+        </div>
+
         <!-- Newsletter Section -->
         <section class="mt-16 mb-16">
             <NewsletterForm />
         </section>
-
-        <!-- Article Footer -->
-        <footer class="mt-16 pt-16 border-t border-light-grey">
-            <div class="flex flex-col gap-8">
-                <div class="flex items-center gap-4">
-                    <a href="/articles" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">← Back to articles</a>
-                </div>
-                <div class="flex items-center gap-4">
-                    <a href="https://twitter.com/antonsten" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Share on Twitter</a>
-                    <a href="https://www.linkedin.com/in/antonsten/" class="text-[16px] leading-[24px] tracking-[-0.01em] text-dark-grey hover:text-black transition-colors">Share on LinkedIn</a>
-                </div>
-            </div>
-        </footer>
     </div>
 </Layout>
+
+<!-- Add Font Awesome -->
+<script src="https://kit.fontawesome.com/746b7e8cf2.js" crossorigin="anonymous"></script>
+
+<script>
+    // Add copy URL functionality
+    document.getElementById('copyUrl')?.addEventListener('click', () => {
+        const url = new URL(window.location.href);
+        url.searchParams.set('utm_source', 'antonsten');
+        url.searchParams.set('utm_medium', 'website');
+        url.searchParams.set('utm_campaign', 'article_share');
+        
+        navigator.clipboard.writeText(url.toString());
+        
+        const button = document.getElementById('copyUrl');
+        if (button) {
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 2000);
+        }
+    });
+</script>
 
 <style is:global>
     /* Add any blog-specific global styles here */
     .prose {
-        @apply text-lg font-regular;
+        @apply text-[18px] leading-[28px] font-regular;
     }
     
     .prose p {
@@ -117,6 +147,16 @@ const formattedDate = formatDate(date);
         @apply relative bg-light-grey p-8 rounded-xl mb-12 !important;
     }
 
+    .prose blockquote::before,
+    .prose blockquote::after,
+    .prose blockquote > div::before,
+    .prose blockquote > div::after,
+    .prose blockquote p::before,
+    .prose blockquote p::after {
+        content: none !important;
+        display: none !important;
+    }
+
     .prose blockquote > div {
         @apply relative flex-1;
     }
@@ -126,11 +166,23 @@ const formattedDate = formatDate(date);
     }
 
     .prose blockquote p {
-        @apply text-[20px] leading-[26px] mb-4 last:mb-0 text-black relative !important;
+        @apply text-[20px] leading-[32px] mb-4 last:mb-0 text-black relative font-regular mt-0 !important;
+    }
+
+    .prose blockquote > div > div > p:first-child {
+        @apply mt-0 !important;
+    }
+
+    .prose blockquote p em {
+        @apply text-[16px] leading-[32px] text-dark-grey mt-12 block not-italic font-regular;
     }
 
     .prose blockquote a {
-        @apply text-[16px] leading-[24px] tracking-[-0.01em] font-regular opacity-80 no-underline hover:opacity-100 transition-opacity mt-4 block;
+        @apply text-[16px] leading-[24px] tracking-[-0.01em] font-regular text-grey no-underline mt-4 block;
+    }
+
+    .prose blockquote a:hover {
+        @apply text-green;
     }
 
     .prose code {
@@ -155,5 +207,9 @@ const formattedDate = formatDate(date);
 
     .prose figcaption {
         @apply text-[16px] leading-[24px] text-dark-grey text-center mt-4;
+    }
+
+    .prose iframe {
+        @apply w-full aspect-video rounded-[12px] mb-8;
     }
 </style> 

@@ -14,7 +14,7 @@ const currentPath = pathname.slice(1); // Remove the leading slash
         </a>
 
         <!-- Main navigation -->
-        <div class="hidden md:flex items-center gap-6">
+        <div class="hidden md:flex items-center gap-2">
           <a 
             href="/about" 
             class={`text-[14px] font-semibold text-black hover:bg-white px-3 py-1 rounded-lg transition-colors ${currentPath === 'about' ? 'bg-white' : ''}`}
@@ -34,16 +34,16 @@ const currentPath = pathname.slice(1); // Remove the leading slash
             Work
           </a>
           <a 
+            href="/coaching" 
+            class={`text-[14px] font-semibold text-black hover:bg-white px-3 py-1 rounded-lg transition-colors ${currentPath === 'coaching' ? 'bg-white' : ''}`}
+          >
+            Coaching
+          </a>
+          <a 
             href="/newsletter" 
             class={`text-[14px] font-semibold text-black hover:bg-white px-3 py-1 rounded-lg transition-colors ${currentPath === 'newsletter' ? 'bg-white' : ''}`}
           >
             Newsletter
-          </a>
-          <a 
-            href="/contact" 
-            class={`text-[14px] font-semibold text-black hover:bg-white px-3 py-1 rounded-lg transition-colors ${currentPath === 'contact' ? 'bg-white' : ''}`}
-          >
-            Contact
           </a>
         </div>
 
@@ -82,16 +82,16 @@ const currentPath = pathname.slice(1); // Remove the leading slash
             Work
           </a>
           <a 
+            href="/coaching" 
+            class={`text-[14px] font-semibold text-black hover:bg-white px-3 py-1 rounded-lg transition-colors ${currentPath === 'coaching' ? 'bg-white' : ''}`}
+          >
+            Coaching
+          </a>
+          <a 
             href="/newsletter" 
             class={`text-[14px] font-semibold text-black hover:bg-white px-3 py-1 rounded-lg transition-colors ${currentPath === 'newsletter' ? 'bg-white' : ''}`}
           >
             Newsletter
-          </a>
-          <a 
-            href="/contact" 
-            class={`text-[14px] font-semibold text-black hover:bg-white px-3 py-1 rounded-lg transition-colors ${currentPath === 'contact' ? 'bg-white' : ''}`}
-          >
-            Contact
           </a>
         </div>
       </div>
