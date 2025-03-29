@@ -11,7 +11,9 @@ export default defineConfig({
     mdx()
   ],
   output: 'server',
-  adapter: netlify(),
+  adapter: netlify({
+    edgeMiddleware: true
+  }),
   vite: {
     envDir: './'
   }
