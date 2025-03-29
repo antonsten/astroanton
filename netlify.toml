@@ -12,7 +12,7 @@
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/entry"
+  to = "/.netlify/functions/ssr"
   status = 200
   force = true
 
