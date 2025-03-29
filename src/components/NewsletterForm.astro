@@ -2,80 +2,82 @@
     <p class="text-black mb-8 text-[20px] leading-[26px] tracking-[-0.01em] font-regular">
         Each month, I share my insights on design with thousands of designers, developers, and product professionals from top companies like Amazon, IKEA, Figma, and Shopify.
     </p>
-    <form id="newsletter-form" class="flex flex-col gap-4">
-        <div class="flex gap-2">
-            <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                class="flex-1 px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-green text-[16px] leading-[24px] tracking-[-0.01em] font-regular"
-                required
-            />
-            <button
-                type="submit"
-                class="px-6 py-2 bg-green text-white rounded-xl hover:bg-green/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-[16px] leading-[24px] tracking-[-0.01em] font-medium"
-            >
-                Sign up
-            </button>
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+    <form 
+        action="https://app.kit.com/forms/7820469/subscriptions" 
+        class="seva-form formkit-form" 
+        method="post" 
+        data-sv-form="7820469" 
+        data-uid="0b55f87e42" 
+        data-format="inline" 
+        data-version="5" 
+        data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://kit.com/features/forms?utm_campaign=poweredby&utm_content=form&utm_medium=referral&utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
+        min-width="400 500 600 700 800"
+    >
+        <div data-style="clean">
+            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+            <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+                <div class="formkit-field">
+                    <input 
+                        class="formkit-input flex-1 px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-green text-[16px] leading-[24px] tracking-[-0.01em] font-regular" 
+                        name="email_address" 
+                        aria-label="Email Address" 
+                        placeholder="Enter your email" 
+                        required="" 
+                        type="email"
+                    >
+                </div>
+                <button 
+                    data-element="submit" 
+                    class="formkit-submit px-6 py-2 bg-green text-white rounded-xl hover:bg-green/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-[16px] leading-[24px] tracking-[-0.01em] font-medium"
+                >
+                    <div class="formkit-spinner">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <span>Sign up</span>
+                </button>
+            </div>
         </div>
-        <div id="form-message" class="text-[16px] leading-[24px] tracking-[-0.01em] font-medium hidden"></div>
     </form>
 </div>
 
-<script>
-    const form = document.getElementById('newsletter-form') as HTMLFormElement;
-    const message = document.getElementById('form-message') as HTMLParagraphElement;
-
-    if (form && message) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
-            const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-            
-            // Disable form while submitting
-            emailInput.disabled = true;
-            submitButton.disabled = true;
-            submitButton.textContent = 'Signing up...';
-            message.classList.remove('text-red-500', 'text-green-500', 'hidden');
-            message.textContent = 'Subscribing to newsletter...';
-            message.classList.add('text-black');
-            
-            try {
-                const response = await fetch('/api/newsletter', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email: emailInput.value }),
-                });
-                
-                const data = await response.json();
-                
-                message.textContent = data.message;
-                message.classList.remove('hidden', 'text-black');
-                
-                if (response.ok) {
-                    message.classList.add('text-green-500');
-                    form.reset();
-                    // Hide the input and button on success
-                    form.querySelector('.flex')?.classList.add('hidden');
-                } else {
-                    message.classList.add('text-red-500');
-                    // Re-enable the form on error
-                    emailInput.disabled = false;
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Sign up';
-                }
-            } catch (error) {
-                message.textContent = 'An error occurred. Please try again.';
-                message.classList.remove('hidden', 'text-black');
-                message.classList.add('text-red-500');
-                // Re-enable the form on error
-                emailInput.disabled = false;
-                submitButton.disabled = false;
-                submitButton.textContent = 'Sign up';
-            }
-        });
+<style>
+    .formkit-form[data-uid="0b55f87e42"] {
+        max-width: 100%;
     }
-</script> 
+    .formkit-form[data-uid="0b55f87e42"] .formkit-fields {
+        display: flex;
+        gap: 0.5rem;
+        margin: 0;
+    }
+    .formkit-form[data-uid="0b55f87e42"] .formkit-field {
+        flex: 1;
+        margin: 0;
+    }
+    .formkit-form[data-uid="0b55f87e42"] .formkit-submit {
+        margin: 0;
+    }
+    .formkit-form[data-uid="0b55f87e42"] .formkit-powered-by-convertkit-container {
+        display: none;
+    }
+    .formkit-form[data-uid="0b55f87e42"] .formkit-alert {
+        margin: 0 0 1rem 0;
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        font-weight: 500;
+    }
+    .formkit-form[data-uid="0b55f87e42"] .formkit-alert-error {
+        background-color: #fde8e2;
+        border-color: #f2643b;
+        color: #ea4110;
+    }
+    .formkit-form[data-uid="0b55f87e42"] .formkit-alert-success {
+        background-color: #d3fbeb;
+        border-color: #10bf7a;
+        color: #0c905c;
+    }
+</style> 
