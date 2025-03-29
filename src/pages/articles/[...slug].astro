@@ -2,14 +2,15 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/BlogPost.astro';
 
-const { slug } = Astro.params;
-const articles = await getCollection('articles');
-const article = articles.find(article => article.slug === slug);
-
-if (!article) {
-    return Astro.redirect('/404');
+export async function getStaticPaths() {
+    const articles = await getCollection('articles');
+    return articles.map(article => ({
+        params: { slug: article.slug },
+        props: { article }
+    }));
 }
 
+const { article } = Astro.props;
 const { Content } = await article.render();
 
 // Transform the article data to match the expected frontmatter format

@@ -6,16 +6,6 @@
   NODE_VERSION = "20"
   NODE_ENV = "production"
 
-[functions]
-  node_bundler = "esbuild"
-  external_node_modules = ["sharp"]
-
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/ssr"
-  status = 200
-  force = true
-
 [dev]
   framework = "astro"
   targetPort = 3000 
