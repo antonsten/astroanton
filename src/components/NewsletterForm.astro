@@ -1,4 +1,4 @@
-<div class="bg-light-green p-8 md:rounded-xl">
+<div class="bg-light-green p-8 md:rounded-xl -mx-8 md:mx-0">
     <p class="text-black mb-8 text-[20px] leading-[26px] tracking-[-0.01em] font-regular">
         Each month, I share my insights on design with thousands of designers, developers, and product professionals from top companies like Amazon, IKEA, Figma, and Shopify.
     </p>
@@ -49,14 +49,27 @@
     }
     .formkit-form[data-uid="0b55f87e42"] .formkit-fields {
         display: flex;
+        flex-direction: column;
         gap: 1rem;
         margin: 0;
     }
+    @media (min-width: 640px) {
+        .formkit-form[data-uid="0b55f87e42"] .formkit-fields {
+            flex-direction: row;
+        }
+    }
     .formkit-form[data-uid="0b55f87e42"] .formkit-field {
         margin: 0;
+        flex: 1;
     }
     .formkit-form[data-uid="0b55f87e42"] .formkit-submit {
         margin: 0;
+        width: 100%;
+    }
+    @media (min-width: 640px) {
+        .formkit-form[data-uid="0b55f87e42"] .formkit-submit {
+            width: auto;
+        }
     }
     .formkit-form[data-uid="0b55f87e42"] .formkit-powered-by-convertkit-container {
         display: none;
