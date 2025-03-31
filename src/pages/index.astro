@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import Testimonial from '../components/Testimonial.astro';
+import { Image } from 'astro:assets';
+import anton from '../assets/anton.png';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -9,250 +11,274 @@ import Testimonial from '../components/Testimonial.astro';
 
 <Layout title="Anton Sten">
 	<!-- Hero Section -->
-	<section class="py-20">
-		<h1 class="mb-12">
-			<span class="block text-black font-medium text-[48px] leading-[1.1] tracking-[-0.02em] sm:text-display">Anton Sten</span>
-			<span class="block text-dark-grey font-medium text-[48px] leading-[1.1] tracking-[-0.02em] sm:text-display">Product design leader</span>
-		</h1>
-		
-		<div class="space-y-6">
-			<h3 class="body-xxl">I partner with founders and startups to create engaging digital products and brands, guiding them from initial ideas to delightful experiences.</h3>
-			
+	<div class="px-[20px] mt-[40vh]">
+		<div class="flex flex-col gap-20">
+			<h1>
+				<span class="block text-black font-medium text-[48px] leading-[1.2] tracking-[-0.02em] sm:text-display">Anton Sten partners with founders and startups to design engaging digital products and brands.</span>
+			</h1>
+		</div>
+	</div>
+
+	<div class="max-w-[660px] mx-auto px-8 sm:px-6 mt-40">
+		<div class="space-y-6 mb-20">
 			<h3 class="body-xxl">As Head of Design at <a href="https://www.summerhealth.com/" class="underline hover:text-green">Summer Health</a>, I'm currently dedicated to creating solutions that empower the healthiest generation of children.</h3>
 		</div>
-	</section>
 
-	<!-- Companies Section -->
-	<section class="mb-20">
-		<div class="relative">
-			<!-- Logo containers -->
-			<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-				<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
-					<img src="/logos/google.svg" alt="Google" class="h-5" loading="lazy" />
-				</div>
+		<!-- Companies Section -->
+		<section class="mb-20">
+			<div class="relative">
+				<!-- Logo containers -->
+				<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+					<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+						<img src="/logos/google.svg" alt="Google" class="h-5" loading="lazy" />
+					</div>
 
-				<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
-					<img src="/logos/loom.svg" alt="Loom" class="h-5" loading="lazy" />
-				</div>
+					<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+						<img src="/logos/loom.svg" alt="Loom" class="h-5" loading="lazy" />
+					</div>
 
-				<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
-					<img src="/logos/ueno.svg" alt="Ueno logo" class="h-4" loading="lazy" />
-				</div>
+					<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+						<img src="/logos/ueno.svg" alt="Ueno logo" class="h-4" loading="lazy" />
+					</div>
 
-				<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
-					<img src="/logos/spotify.svg" alt="Spotify" class="h-6" loading="lazy" />
-				</div>
+					<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+						<img src="/logos/spotify.svg" alt="Spotify" class="h-6" loading="lazy" />
+					</div>
 
-				<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
-					<img src="/logos/herman-miller.svg" alt="Herman Miller" class="h-3" loading="lazy" />
-				</div>
+					<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+						<img src="/logos/herman-miller.svg" alt="Herman Miller" class="h-3" loading="lazy" />
+					</div>
 
-				<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
-					<img src="/logos/ikea.svg" alt="IKEA" class="h-4" loading="lazy" />
+					<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+						<img src="/logos/ikea.svg" alt="IKEA" class="h-4" loading="lazy" />
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<!-- Newsletter Section -->
-	<section class="mb-0">
-		<NewsletterForm />
-	</section>
+		<!-- Newsletter Section -->
+		<section class="mb-20">
+			<NewsletterForm />
+		</section>
 
-	<!-- Testimonials Section -->
-	<section class="mb-20">
-		<div class="relative -mx-8 sm:mx-0">
-			<div class="carousel flex sm:gap-4 overflow-x-auto no-scrollbar">
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={[
-						"I was excited to finally get the chance to work with Anton, and the experience was better than I could have imagined. He's not only a phenomenally skilled interactive designer, design director, and creative thinker, but he's a magnetic, warm, personable, and selfless leader.",
-						"He was transformative in both internal and client-side meetings, workshops, and production. A 10/10 experience working with Anton."
-					]}
-					author="Emmett Shine"
-					role="Founder at Little Plains"
-					/>
-				</div>
+		<!-- Testimonials Section -->
+		<section class="mb-20">
+			<div class="relative -mx-8 sm:mx-0">
+				<div class="carousel flex sm:gap-4 overflow-x-auto no-scrollbar">
+						
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="#615CF5" textColor="white" logo="/logos/loom-test.svg" quote={["Anton partnered with us to reimagine Loom's design system and our team could not be happier. He is highly organized, malleable to team feedback yet principled, and the deliverables he helped us produce will absolutely help accelerate the velocity and collaboration within Design and beyond.",
+						"I cannot recommend Anton enough for design system partnerships that benefit from someone with specialized expertise."]}
+						author="Sean Thompson"
+						role="Principal Designer at Loom"
+						/>
+					</div>
+						
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="#E22D00" textColor='white' logo="/logos/herman-miller-test.svg" quote={["I've had the pleasure of working with Anton on a fast-moving project that has greatly benefited from his talents.",
+						"Anton is an intelligent, creative, team-oriented, and highly conscientious designer, and he has quickly become one of my favorite collaborators."]}
+						author="Ryan Andersson"
+						role="VP Global Research at Herman Miller"
+						/>
+					</div>
 					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["Anton is an example of mature leadership.",
-					"He is interested in learning, understanding, and doing the right thing for the products he makes in partnership with clients. His ideas are carefully considered with the user's needs and business goals top of mind.",
-					"I'd work with him again in a heartbeat."]}
-					author="Jessi Hall"
-					role="Producer at Big Medium"
-					/>
-				</div>
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial 
+							bgColor="#0066FF"
+							textColor="white"
+							quote={[
+								"I was excited to finally get the chance to work with Anton, and the experience was better than I could have imagined. He's not only a phenomenally skilled interactive designer, design director, and creative thinker, but he's a magnetic, warm, personable, and selfless leader.",
+								"He was transformative in both internal and client-side meetings, workshops, and production.",
+								"A 10/10 experience working with Anton."
+							]}
+							author="Emmett Shine"
+							role="Founder at Little Plains"
+						/>
+					</div>
+						
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="light-grey" quote={["Anton is an example of mature leadership.",
+						"He is interested in learning, understanding, and doing the right thing for the products he makes in partnership with clients. His ideas are carefully considered with the user's needs and business goals top of mind.",
+						"I'd work with him again in a heartbeat."]}
+						author="Jessi Hall"
+						role="Producer at Big Medium"
+						/>
+					</div>
+										
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="#1DB954" textColor="white" logo="/logos/spotify-test.svg" quote={["Whenever someone asks me if I know any good designers I always answer with Anton.",
+						"He's a great designer with superior business understanding who always put the user in the front seat and delivers bloody good work.",
+						"If you get a chance to work with Anton, don't miss it."]}
+						author="Christian Wilsson"
+						role="Head of Design at Spotify"
+						/>
+					</div>
+						
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="black" textColor="white"  logo="/logos/bttr-test.png" quote={["We all have that person whom we want to book for every project. Anton is that person for me. He's experienced, insightful, collaborative, and great at his craft. He's an unusual mix of both a leader and mentor for the creative team while also building a strong relationship with the client, asking questions, and understanding the needs and motivations of their users. The resulting work is always well-considered and exceeds expectations."]}
+						author="Nicole Hampton"
+						role="Head of Projects at BTTR"
+						/>
+					</div>
+						
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="#ffc220" textColor="black"  logo="/logos/summerhealth-test.svg" quote={["Anton is a world-class designer: he is talented with user experience and visual design, and a deeply empathetic product builder. He knows our product inside and out, and has been with us since the start. He is a team player in every way - he gets involved with the team and customers to understand and embody the brand, and produces extremely clean, user-friendly designs as a result."]}
+						author="Ellen DaSilva"
+						role="CEO at Summer Health"
+						/>
+					</div>
+			
+						
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="black" textColor="white" quote={["Tractorbeam has been following Anton for a while, and we finally had the pleasure of working with him on a category-defining redesign and design system for Front Gate Tickets.",
+						"Anton's expertise and mentorship were integral throughout the project lifecycle – not to mention he's an absolute joy to work with. We cannot recommend Anton enough; he truly is a rare talent.",
+						"Ps. Has Bond villain hair."]}
+						author="Emily Edwards"
+						role="Senior Strategist at Tractorbeam"
+						/>
+					</div>
+						
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="light-grey" quote={["A skilled and strategic designer, he can delve into the details without losing sight of the bigger picture. In fact, he's probably thinking two steps ahead. Even though he could boast about his impressive UX credentials, he never does. In fact, his humility and good humor make him an even better person to work with. If you have the chance to collaborate with Anton, seize it."]}
+						author="Lily Mathews"
+						role="UX Researcher & Strategist, Consultant"
+						/>
+					</div>
+						
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="light-grey" quote={["Anton was thorough and a pleasure to work with. He's a great collaborator and partner to work through product solutions with. He does what he says and never misses a deadline, which is an unfortunate rarity these days that you don't have to worry about with Anton."]}
+						author="Travis Schmeisser"
+						role="Founder & Partner at First Principle"
+						/>
+					</div>
 					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["Anton partnered with us to reimagine Loom's design system and our team could not be happier. He is highly organized, malleable to team feedback yet principled, and the deliverables he helped us produce will absolutely help accelerate the velocity and collaboration within Design and beyond. I cannot recommend Anton enough for design system partnerships that benefit from someone with specialized expertise."]}
-					author="Sean Thompson"
-					role="Principal Designer at Loom"
-					/>
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="light-grey" quote={["Smart, edgy, and always to the point, Anton Sten is most likely the user experience addition your team needs to help ensure practicality, elegance, and efficiency in how your customers engage with your products and services."]}
+						author="Rob Maigret"
+						role="President at Titan Space"
+						/>
+					</div>
+						
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="light-grey" quote={["Anton is a very structured design thinker. He shines at taking a breadth of inputs and transforming them into usable information and experiences. Anton is also highly collaborative and great to work with. Any team would be lucky to have him!"]}
+						author="Carrie Ko"
+						role="Executive Strategy Director at ueno"
+						/>
+					</div>
+						
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="light-grey" quote={["Anton is a Renaissance man. It's rare to find someone who can help in so many areas at such a thoughtful and high level of quality. Anton makes any team better."]}
+						author="Dan Mall"
+						role="Founder at SuperFriendly"
+						/>
+					</div>
+						
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="light-grey" quote={["If you dislike working with consultants as much as I do, you'll love working with Anton. He was challenging when appropriate and accommodating when necessary, all the while being extremely mindful of our time. He's quick to offer possible solutions and even faster to implement them."]}
+						author="Elsa Bernadotte"
+						role="COO and Co-Founder at Karma"
+						/>
+					</div>
+
+						
+					<div class="flex-shrink-0" style="width: 100vw;">
+						<Testimonial bgColor="light-grey" quote={["I had the pleasure of working with Anton on one of our highest-priority projects. He was able to quickly familiarize himself with the challenges at hand and produce conceptual designs that were spot on from the start. His experience and insight were invaluable to our team and project."]}
+						author="Greg Henriques"
+						role="Head of CX at Swedbank"
+						/>
+					</div>
 				</div>
-					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["I've had the pleasure of working with Anton on a fast-moving project that has greatly benefited from his talents. Anton is an intelligent, creative, team-oriented, and highly conscientious designer, and he has quickly become one of my favorite collaborators."]}
-					author="Ryan Andersson"
-					role="VP Global Research & Insights at Herman Miller"
-					/>
-				</div>
-					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["Tractorbeam has been following Anton for a while, and we finally had the pleasure of working with him on a category-defining redesign and design system for Front Gate Tickets. Anton's expertise and mentorship were integral throughout the project lifecycle – not to mention he's an absolute joy to work with. We cannot recommend Anton enough; he truly is a rare talent. Ps. Has Bond villain hair."]}
-					author="Emily Edwards"
-					role="Senior Strategist at Tractorbeam"
-					/>
-				</div>
-					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["A skilled and strategic designer, he can delve into the details without losing sight of the bigger picture. In fact, he's probably thinking two steps ahead. Even though he could boast about his impressive UX credentials, he never does. In fact, his humility and good humor make him an even better person to work with. If you have the chance to collaborate with Anton, seize it."]}
-					author="Lily Mathews"
-					role="UX Researcher & Strategist, Consultant"
-					/>
-				</div>
-					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["Anton was thorough and a pleasure to work with. He's a great collaborator and partner to work through product solutions with. He does what he says and never misses a deadline, which is an unfortunate rarity these days that you don't have to worry about with Anton."]}
-					author="Travis Schmeisser"
-					role="Founder & Partner at First Principle"
-					/>
-				</div>
-					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["We all have that person whom we want to book for every project. Anton is that person for me. He's experienced, insightful, collaborative, and great at his craft. He's an unusual mix of both a leader and mentor for the creative team while also building a strong relationship with the client, asking questions, and understanding the needs and motivations of their users. The resulting work is always well-considered and exceeds expectations."]}
-					author="Nicole Hampton"
-					role="Head of Projects at BTTR"
-					/>
-				</div>
-					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["Anton is a world-class designer: he is talented with user experience and visual design, and a deeply empathetic product builder. He knows our product inside and out, and has been with us since the start. He is a team player in every way - he gets involved with the team and customers to understand and embody the brand, and produces extremely clean, user-friendly designs as a result."]}
-					author="Ellen DaSilva"
-					role="CEO & Co-Founder at Summer Health"
-					/>
-				</div>
-					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["Smart, edgy, and always to the point, Anton Sten is most likely the user experience addition your team needs to help ensure practicality, elegance, and efficiency in how your customers engage with your products and services."]}
-					author="Rob Maigret"
-					role="President at Titan Space"
-					/>
-				</div>
-					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["Anton is a very structured design thinker. He shines at taking a breadth of inputs and transforming them into usable information and experiences. Anton is also highly collaborative and great to work with. Any team would be lucky to have him!"]}
-					author="Carrie Ko"
-					role="Executive Strategy Director at ueno"
-					/>
-				</div>
-					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["Anton is a Renaissance man. It's rare to find someone who can help in so many areas at such a thoughtful and high level of quality. Anton makes any team better."]}
-					author="Dan Mall"
-					role="Founder at SuperFriendly"
-					/>
-				</div>
-					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["If you dislike working with consultants as much as I do, you'll love working with Anton. He was challenging when appropriate and accommodating when necessary, all the while being extremely mindful of our time. He's quick to offer possible solutions and even faster to implement them."]}
-					author="Elsa Bernadotte"
-					role="COO and Co-Founder at Karma"
-					/>
-				</div>
-					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["Whenever someone asks me if I know any good UX designers I always answer with Anton. He's a great designer with superior business understanding who always put the user in the front seat and delivers bloody good work. If you get a chance to work with Anton, don't miss it."]}
-					author="Christian Wilsson"
-					role="Head of Design at Spotify"
-					/>
-				</div>
-					
-				<div class="flex-shrink-0" style="width: 100vw;">
-					<Testimonial bgColor="light-grey" quote={["I had the pleasure of working with Anton on one of our highest-priority projects. He was able to quickly familiarize himself with the challenges at hand and produce conceptual designs that were spot on from the start. His experience and insight were invaluable to our team and project."]}
-					author="Greg Henriques"
-					role="Head of CX at Swedbank"
-					/>
+				<div class="flex gap-2 mt-4">
+					<button 
+						class="w-12 h-12 rounded-[12px] flex items-center justify-center hover:bg-green group transition-colors"
+						aria-label="Previous testimonial"
+						data-testimonial-prev
+					>
+						<svg class="w-6 h-6 group-hover:text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</button>
+					<button 
+						class="w-12 h-12 rounded-[12px] flex items-center justify-center hover:bg-green group transition-colors"
+						aria-label="Next testimonial"
+						data-testimonial-next
+					>
+						<svg class="w-6 h-6 group-hover:text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</button>
 				</div>
 			</div>
-			<div class="flex gap-2 mt-4">
-				<button class="w-10 h-10 rounded-[12px] bg-light-grey flex items-center justify-center hover:bg-[#0066FF] hover:text-white transition-colors" aria-label="Previous testimonial">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</button>
-				<button class="w-10 h-10 rounded-[12px] bg-light-grey flex items-center justify-center hover:bg-[#0066FF] hover:text-white transition-colors" aria-label="Next testimonial">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</button>
+		</section>
+
+		<!-- Featured Writing Section -->
+		<section>
+			<h2 class="text-black body-xxl mb-8">Featured writing</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+				<a href="/articles/the-product-design-process" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+						<img src="/svg/1.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
+					</div>
+					<div>
+						<time class="text-dark-grey caption block">March 19, 2024</time>
+						<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Product Design Process</h3>
+					</div>
+				</a>
+
+				<a href="/articles/the-solo-designer-lessons-from-a-startup-journey" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+						<img src="/svg/2.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
+					</div>
+					<div>
+						<time class="text-dark-grey caption block">January 27, 2024</time>
+						<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Solo Designer: Lessons from a Startup Journey</h3>
+					</div>
+				</a>
+
+				<a href="/articles/creating-a-ux-strategy" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+						<img src="/svg/3.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
+					</div>
+					<div>
+						<time class="text-dark-grey caption block">April 23, 2024</time>
+						<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Creating a UX Strategy</h3>
+					</div>
+				</a>
+
+				<a href="/articles/the-stakeholder-interview" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+						<img src="/svg/4.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
+					</div>
+					<div>
+						<time class="text-dark-grey caption block">March 25, 2024</time>
+						<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Stakeholder Interview</h3>
+					</div>
+				</a>
+
+				<a href="/articles/why-designers-need-to-write" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+						<img src="/svg/5.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
+					</div>
+					<div>
+						<time class="text-dark-grey caption block">May 25, 2017</time>
+						<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Why Designers Need to Write</h3>
+					</div>
+				</a>
+
+				<a href="/articles/working-as-a-ux-lead" class="group flex md:flex-col gap-4 md:gap-0">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+						<img src="/svg/6.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
+					</div>
+					<div>
+						<time class="text-dark-grey caption block">April 1, 2024</time>
+						<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Working as a UX-Lead</h3>
+					</div>
+				</a>
 			</div>
-		</div>
-	</section>
+		</section>
+	</div>
 
-	<!-- Featured Writing Section -->
-	<section>
-		<h2 class="text-black body-xxl mb-8">Featured writing</h2>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-			<a href="/articles/the-product-design-process" class="group flex md:flex-col gap-4 md:gap-0">
-				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
-					<img src="/svg/1.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
-				</div>
-				<div>
-					<time class="text-dark-grey caption block">March 19, 2024</time>
-					<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Product Design Process</h3>
-				</div>
-			</a>
 
-			<a href="/articles/the-solo-designer-lessons-from-a-startup-journey" class="group flex md:flex-col gap-4 md:gap-0">
-				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
-					<img src="/svg/2.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
-				</div>
-				<div>
-					<time class="text-dark-grey caption block">January 27, 2024</time>
-					<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Solo Designer: Lessons from a Startup Journey</h3>
-				</div>
-			</a>
-
-			<a href="/articles/creating-a-ux-strategy" class="group flex md:flex-col gap-4 md:gap-0">
-				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
-					<img src="/svg/3.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
-				</div>
-				<div>
-					<time class="text-dark-grey caption block">April 23, 2024</time>
-					<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Creating a UX Strategy</h3>
-				</div>
-			</a>
-
-			<a href="/articles/the-stakeholder-interview" class="group flex md:flex-col gap-4 md:gap-0">
-				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
-					<img src="/svg/4.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
-				</div>
-				<div>
-					<time class="text-dark-grey caption block">March 25, 2024</time>
-					<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Stakeholder Interview</h3>
-				</div>
-			</a>
-
-			<a href="/articles/why-designers-need-to-write" class="group flex md:flex-col gap-4 md:gap-0">
-				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
-					<img src="/svg/5.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
-				</div>
-				<div>
-					<time class="text-dark-grey caption block">May 25, 2017</time>
-					<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Why Designers Need to Write</h3>
-				</div>
-			</a>
-
-			<a href="/articles/working-as-a-ux-lead" class="group flex md:flex-col gap-4 md:gap-0">
-				<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
-					<img src="/svg/6.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
-				</div>
-				<div>
-					<time class="text-dark-grey caption block">April 1, 2024</time>
-					<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Working as a UX-Lead</h3>
-				</div>
-			</a>
-		</div>
-	</section>
 </Layout>
 
 <script>
@@ -271,33 +297,32 @@ import Testimonial from '../components/Testimonial.astro';
 			return (700 - 32) / 2;
 		};
 
-		const getScrollAmount = () => {
+		const scrollToCard = (direction: 'prev' | 'next') => {
 			const cardWidth = getCardWidth();
-			const gap = window.innerWidth < 640 ? 0 : 32;
-			return cardWidth + gap;
+			const currentScroll = carousel.scrollLeft;
+			const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+			
+			let targetScroll;
+			if (direction === 'prev') {
+				targetScroll = currentScroll - cardWidth;
+				if (targetScroll < 0) {
+					targetScroll = maxScroll;
+				}
+			} else {
+				targetScroll = currentScroll + cardWidth;
+				if (targetScroll > maxScroll) {
+					targetScroll = 0;
+				}
+			}
+			
+			carousel.scrollTo({
+				left: targetScroll,
+				behavior: 'smooth'
+			});
 		};
 
-		prevButton.addEventListener('click', () => {
-			const currentScroll = carousel.scrollLeft;
-			const scrollAmount = getScrollAmount();
-			const targetScroll = Math.floor(currentScroll / scrollAmount) * scrollAmount - scrollAmount;
-			
-			carousel.scrollTo({
-				left: targetScroll,
-				behavior: 'smooth'
-			});
-		});
-
-		nextButton.addEventListener('click', () => {
-			const currentScroll = carousel.scrollLeft;
-			const scrollAmount = getScrollAmount();
-			const targetScroll = Math.ceil(currentScroll / scrollAmount) * scrollAmount + scrollAmount;
-			
-			carousel.scrollTo({
-				left: targetScroll,
-				behavior: 'smooth'
-			});
-		});
+		prevButton.addEventListener('click', () => scrollToCard('prev'));
+		nextButton.addEventListener('click', () => scrollToCard('next'));
 
 		// Update card widths on window resize
 		window.addEventListener('resize', () => {

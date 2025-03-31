@@ -3,10 +3,12 @@ interface Props {
     quote: string[];
     author: string;
     role: string;
-    bgColor?: 'blue' | 'black' | 'light-grey';
+    bgColor?: string;
+    textColor?: 'black' | 'white';
+    logo?: string;
 }
 
-const { quote, author, role, bgColor = 'light-grey' } = Astro.props;
+const { quote, author, role, bgColor = '#F7F7F7', textColor = 'black', logo } = Astro.props;
 
 const bgColorClasses = {
     'blue': 'bg-[#0066FF] text-white',
@@ -15,19 +17,22 @@ const bgColorClasses = {
 };
 ---
 
-<div class={`${bgColorClasses[bgColor]} p-8 rounded-xl flex flex-col h-full`}>
+<div class={`p-8 rounded-xl flex flex-col h-full ${textColor === 'white' ? 'text-white' : 'text-black'}`} style={`background-color: ${bgColor}`}>
     <div class="relative flex-1">
         <div class="relative">
             <span class="absolute -left-[0.4em] -top-[0.25em] text-[16px]">"</span>
             {quote.map((paragraph, i) => (
-                <p class="text-[16px] leading-[24px] mb-4 last:mb-0">
+                <p class="text-[16px] leading-[24px] mb-4 last:mb-0 font-medium">
                     {paragraph}{i === quote.length - 1 && '"'}
                 </p>
             ))}
         </div>
     </div>
-    <footer class="mt-10">
+    <footer class="mt-16 flex flex-col items-center text-center">
+        {logo && (
+            <img src={logo} alt="" class="w-12 h-12 object-contain mb-4" />
+        )}
         <p class="text-[16px] leading-[24px] tracking-[-0.01em] font-medium">{author}</p>
-        {role && <p class="text-[16px] leading-[24px] tracking-[-0.01em] font-regular opacity-80 -mt-1">{role}</p>}
+        {role && <p class="text-[16px] leading-[20px] tracking-[-0.01em] font-regular opacity-80 -mt-0.5">{role}</p>}
     </footer>
 </div> 
