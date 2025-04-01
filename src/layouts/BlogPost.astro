@@ -43,9 +43,9 @@ const formattedDate = formatDate(date);
 ---
 
 <Layout title={title} description={description}>
-    <div class="pt-32">
+    <article class="max-w-[700px] mx-auto px-4">
         <!-- Article Header -->
-        <header class="mb-12">
+        <header class="mb-16 mt-[20vh]">
             <h1 class="text-[32px] md:text-[50px] leading-[40px] md:leading-[56px] tracking-[-0.02em] font-medium text-black mb-4">{title}</h1>
             <div class="flex items-center gap-2 text-dark-grey text-[16px] leading-[24px] tracking-[-0.01em]">
                 <time datetime={date}>{formattedDate}</time>
@@ -55,12 +55,12 @@ const formattedDate = formatDate(date);
         </header>
 
         <!-- Article Content -->
-        <div class="prose prose-lg max-w-none">
+        <div class="prose prose-lg max-w-none mb-16">
             <slot />
         </div>
 
         <!-- Social Sharing -->
-        <div class="bg-light-grey/90 backdrop-blur-sm rounded-xl px-[20px] py-[20px] mt-16">
+        <div class="bg-light-grey/90 backdrop-blur-sm rounded-xl px-[20px] py-[20px] mb-16">
             <h2 class="body-xl text-black mb-6">Did you enjoy this article?</h2>
             <div class="flex flex-wrap items-center gap-2">
                 <a href={`https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(title + ' ' + Astro.url.toString())}`} target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-3 py-1 rounded-lg transition-colors flex items-center gap-2">
@@ -79,10 +79,10 @@ const formattedDate = formatDate(date);
         </div>
 
         <!-- Newsletter Section -->
-        <section class="mt-16 mb-16">
+        <section class="mb-16">
             <NewsletterForm />
         </section>
-    </div>
+    </article>
 </Layout>
 
 <!-- Add Font Awesome -->

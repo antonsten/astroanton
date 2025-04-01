@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Testimonial from '../components/Testimonial.astro';
+---
+
+<Layout title="Coaching - Anton Sten">
+    <div class="max-w-[700px] mx-auto px-8 sm:px-6 mt-[20vh]">
+        <h1 class="text-black font-medium text-[48px] leading-[1.2] tracking-[-0.02em] sm:text-display mb-40">Coaching</h1>
+
+        <h3 class="body-xxl mb-24">I'm part of a global community of mentors through ADPList, Talk To A Creative Director, and AIGA NY. While I've always made time to guide creatives who reach out, I'm now leveraging these platforms to scale my impact and reach more people seeking professional — or personal — development.</h3>
+
+        <!-- Coaching Offerings -->
+        <section class="space-y-12 mb-24">
+            <h2 class="text-2xl font-bold mb-12">Coaching Offerings</h2>
+
+            <!-- First Session -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-semibold">First 1:1 30-Minute Session</h3>
+                <p class="body-lg">
+                    We can cover a lot in a half hour. Bring your questions, ideas, concerns, aspirations. Sign up via ADPList or Talk To A Creative Director and specify in the intake form what you'd like to discuss. While we may live in the same city, phone or virtual calls are preferable.
+                </p>
+                <div class="space-y-2">
+                    <p class="text-dark-grey">Price options:</p>
+                    <ul class="list-disc list-inside space-y-1 text-dark-grey">
+                        <li>Free</li>
+                        <li>Buy Me A Coffee</li>
+                        <li>Pay-what-you-can</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Deep Dive -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-semibold">1:1 60-Minute Deep Dive Session</h3>
+                <p class="body-lg">
+                    We'll work together to discuss topics for growth and create an actionable plan together. Each session will end with measurable goals to keep you on track. Depending on your location, format can be via phone, virtual, or in person.
+                </p>
+                <div class="space-y-2">
+                    <p class="text-dark-grey">Price options:</p>
+                    <ul class="list-disc list-inside space-y-1 text-dark-grey">
+                        <li>Free for those impacted by layoffs</li>
+                        <li>Pay-what-you-can for students</li>
+                        <li>$175/hour</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ongoing Coaching -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-semibold">1:1 Ongoing Coaching Sessions</h3>
+                <p class="body-lg">
+                    If you are finding that our time together is valuable and you'd like a more ongoing partnership, we can align on a meeting cadence that gives you the most support. Depending on your location, format can be via phone, virtual, in person, or hybrid.
+                </p>
+                <div class="space-y-2">
+                    <p class="text-dark-grey">Price options:</p>
+                    <ul class="list-disc list-inside space-y-1 text-dark-grey">
+                        <li>Pay-what-you-can for students</li>
+                        <li>$200/hour for resume, LinkedIn profile, portfolio, or general career guidance</li>
+                        <li>Fee to be determined based on need</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="mt-20">
+            <h2 class="text-2xl font-bold mb-12">Mentee Testimonials</h2>
+            <div class="grid gap-8 md:grid-cols-2">
+                <Testimonial
+                    bgColor="light-grey"
+                    quote={[
+                        "I had the pleasure of working with Anton as my career coach during a pivotal moment in my design career. I was seeking someone with experience in both business and creative fields, and Anton exceeded my expectations. From my initial research, I knew he would be professional, strong, and clear in his guidance. However, what truly stood out was his empathy and genuine effort to understand my goals."
+                    ]}
+                    author="Dillon McSwane"
+                    role="Independent Designer & Photographer"
+                />
+
+                <Testimonial
+                    bgColor="light-grey"
+                    quote={[
+                        "Over the course of seven sessions, Anton provided valuable resources and critiques on my writing that pushed me to think more critically and clearly about my design practice. By the final session, I had a revamped resume, LinkedIn portfolio, short and long-form bios, and the confidence to start applying for design jobs."
+                    ]}
+                    author="Dillon McSwane"
+                    role="Independent Designer & Photographer"
+                />
+            </div>
+        </section>
+    </div>
+</Layout> 

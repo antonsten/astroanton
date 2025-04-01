@@ -3,9 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const articles = await getCollection('articles');
-const sortedArticles = articles.sort((a, b) => {
-    const dateA = new Date(a.data.date || '');
-    const dateB = new Date(b.data.date || '');
+articles.sort((a, b) => {
+    const dateA = a.data.date ? new Date(a.data.date) : new Date(0);
+    const dateB = b.data.date ? new Date(b.data.date) : new Date(0);
     return dateB.getTime() - dateA.getTime();
 });
 
@@ -31,53 +31,41 @@ function getFirstLine(content: string) {
 }
 ---
 
-<Layout title="Articles - Anton Sten">
-    <h1 class="h1 mb-24">Articles</h1>
-    <h3 class="body-xxl mb-24">
-        "Wisdom is a useless gift unless you share it"
-        <br>
-        - Esther Williams
-    </h3>
-    <p class="body-lg mb-24">
-        Whether it's through blogging, speaking at conferences, or simply talking to fellow creatives, I believe that sharing knowledge and experience is one of the best ways to help others grow and succeed. With each conversation, I learn something new and gain a fresh perspective on the world of design and entrepreneurship.
-    </p>
-    <div class="space-y-12">
-        {sortedArticles.map((article, index) => (
-            <article class={`group ${index !== sortedArticles.length - 1 ? 'border-b border-light-grey pb-12' : ''}`}>
-                <a href={`/articles/${article.slug}`} class="block">
-                    <div class="flex flex-col gap-4">
-                        <div>
-                            <h3 class="body-xl group-hover:text-green transition-colors">
+<Layout title="Articles">
+    <div class="max-w-[700px] mx-auto px-4">
+        <h1 class="text-black font-medium text-[48px] leading-[1.2] tracking-[-0.02em] sm:text-display mb-40 mt-[20vh]">Articles</h1>
+
+        <h3 class="body-xxl mb-24">
+            "Wisdom is a useless gift unless you share it"
+            <br>
+            - Esther Williams
+        </h3>
+        <p class="body-xxl mb-24">
+            Whether it's through blogging, speaking at conferences, or simply talking to fellow creatives, I believe that sharing knowledge and experience is one of the best ways to help others grow and succeed. With each conversation, I learn something new and gain a fresh perspective on the world of design and entrepreneurship.
+        </p>
+
+        <div class="space-y-8">
+            {articles.map(article => (
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="body-lg font-medium">
+                            <a href={`/articles/${article.slug}`} class="hover:opacity-80 transition-opacity">
                                 {article.data.title}
-                            </h3>
-                            <div class="text-[16px] leading-[24px] text-dark-grey">
-                                {article.data.date && (
-                                    <>
-                                        <time datetime={article.data.date instanceof Date ? article.data.date.toISOString() : new Date(article.data.date || '').toISOString()}>
-                                            {article.data.date instanceof Date 
-                                                ? article.data.date.toLocaleDateString('en-US', {
-                                                    year: 'numeric',
-                                                    month: 'long',
-                                                    day: 'numeric'
-                                                })
-                                                : new Date(article.data.date).toLocaleDateString('en-US', {
-                                                    year: 'numeric',
-                                                    month: 'long',
-                                                    day: 'numeric'
-                                                })
-                                            }
-                                        </time>
-                                        {article.data.readingTime && <span> • </span>}
-                                    </>
-                                )}
-                                {article.data.readingTime && (
-                                    <span>{article.data.readingTime} minute reading time</span>
-                                )}
-                            </div>
-                        </div>
+                            </a>
+                        </h3>
+                        {article.data.date && (
+                            <span class="body-lg text-dark-grey">
+                                {new Date(article.data.date).toLocaleDateString('en-US', { 
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric'
+                                })}
+                            </span>
+                        )}
                     </div>
-                </a>
-            </article>
-        ))}
+                    <div class="h-px bg-light-grey mt-8"></div>
+                </div>
+            ))}
+        </div>
     </div>
 </Layout> 

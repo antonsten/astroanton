@@ -5,55 +5,55 @@ import Testimonial from '../components/Testimonial.astro';
 ---
 
 <Layout title="Newsletter - Anton Sten">
-  <div class="prose prose-lg">
-    <h1 class="h1 mb-24">Newsletter</h1>
-    
-    <h3 class="body-xxl mb-24">If you want to keep up with what I'm up to and stay in the loop about my industry, the simplest way is to join my newsletter. I've received some fantastic feedback, and I'd love to share it with you! </h3>
-  </div>
+    <div class="max-w-[700px] mx-auto px-8 sm:px-6 mt-[20vh]">
+        <h1 class="text-black font-medium text-[48px] leading-[1.2] tracking-[-0.02em] sm:text-display mb-40">Newsletter</h1>
 
-  <!-- Newsletter Section -->
-  <section class="mt-12">
-    <NewsletterForm />
-  </section>
+        <h3 class="body-xxl mb-24">If you want to keep up with what I'm up to and stay in the loop about my industry, the simplest way is to join my newsletter. I've received some fantastic feedback, and I'd love to share it with you! </h3>
 
-  <!-- Testimonials Section -->
-  <section class="mt-20">
-    <div class="grid gap-8 md:grid-cols-2">
-      <Testimonial
-        bgColor="light-grey"
-        quote={[
-          "I value Anton's transparency and passion for writing as a crucial skill for designers. His reflections have inspired me to start writing more and have helped me reconnect with my creative process."
-        ]}
-        author="Kendra Black"
-        role="Senior Web Designer"
-      />
+        <!-- Newsletter Section -->
+        <section class="mt-12">
+            <NewsletterForm />
+        </section>
 
-      <Testimonial
-        bgColor="light-grey"
-        quote={[
-          "An elite ultra-runner in the world of product design. Just when you think there's nothing left to give, he delivers that extra mile—straight to your inbox. Every time."
-        ]}
-        author="Archie Catic"
-        role="Designer"
-      />
+        <!-- Testimonials Section -->
+        <section class="mt-20">
+            <div class="grid gap-8 md:grid-cols-2">
+                <Testimonial
+                    bgColor="light-grey"
+                    quote={[
+                        "I value Anton's transparency and passion for writing as a crucial skill for designers. His reflections have inspired me to start writing more and have helped me reconnect with my creative process."
+                    ]}
+                    author="Kendra Black"
+                    role="Senior Web Designer"
+                />
 
-      <Testimonial
-        bgColor="light-grey"
-        quote={[
-          "Every time I get Anton's newsletter, it's like a mini-masterclass in Product Design—but without all the boring theory stuff. He talks about design in this super practical, real-world way that I can actually apply to my projects right away. Plus, the links he throws in at the end are absolutely gold!"
-        ]}
-        author="Brian Augsburger"
-        role="Designer"
-      />
+                <Testimonial
+                    bgColor="light-grey"
+                    quote={[
+                        "An elite ultra-runner in the world of product design. Just when you think there's nothing left to give, he delivers that extra mile—straight to your inbox. Every time."
+                    ]}
+                    author="Archie Catic"
+                    role="Designer"
+                />
 
-      <Testimonial
-        bgColor="light-grey"
-        quote={[
-          "Anton's newsletter is a breath of fresh air in the design world. His insights are practical, actionable, and always grounded in real-world experience. It's like having a mentor in your inbox."
-        ]}
-        author="Sarah Chen"
-        role="Product Designer"
-      />
+                <Testimonial
+                    bgColor="light-grey"
+                    quote={[
+                        "Every time I get Anton's newsletter, it's like a mini-masterclass in Product Design—but without all the boring theory stuff. He talks about design in this super practical, real-world way that I can actually apply to my projects right away. Plus, the links he throws in at the end are absolutely gold!"
+                    ]}
+                    author="Brian Augsburger"
+                    role="Designer"
+                />
+
+                <Testimonial
+                    bgColor="light-grey"
+                    quote={[
+                        "Anton's newsletter is a breath of fresh air in the design world. His insights are practical, actionable, and always grounded in real-world experience. It's like having a mentor in your inbox."
+                    ]}
+                    author="Sarah Chen"
+                    role="Product Designer"
+                />
+            </div>
+        </section>
     </div>
-  </section>
 </Layout> 

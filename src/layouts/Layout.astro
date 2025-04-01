@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import HtmlHead from '../components/HtmlHead.astro';
@@ -33,3 +34,29 @@ const {
 		font-family: 'Suisse Intl', system-ui, sans-serif;
 	}
 </style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const mainContent = document.querySelector('main');
+		const fixedNav = document.querySelector('.fixed .flex') as HTMLElement;
+		const originalNav = document.querySelector('nav') as HTMLElement;
+		
+		if (!mainContent || !fixedNav || !originalNav) return;
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					originalNav.style.opacity = '0';
+					fixedNav.style.opacity = '1';
+				} else {
+					originalNav.style.opacity = '1';
+					fixedNav.style.opacity = '0';
+				}
+			});
+		}, {
+			threshold: 0.5
+		});
+
+		observer.observe(mainContent);
+	});
+</script>
