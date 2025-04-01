@@ -12,6 +12,8 @@ const { title, description = "Anton's personal website" } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/rss.xml" />
   <title>{title}</title>
   <!-- fathom - beautiful, simple website analytics -->
   <script src="https://cdn.usefathom.com/script.js" data-site="kuencgtc" defer></script>

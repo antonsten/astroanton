@@ -49,12 +49,12 @@ function getFirstLine(content: string) {
                 <div>
                     <div class="flex justify-between items-start">
                         <h3 class="body-lg font-medium">
-                            <a href={`/articles/${article.slug}`} class="hover:opacity-80 transition-opacity">
+                            <a href={`/articles/${article.slug}`} class="hover:text-green transition-colors">
                                 {article.data.title}
                             </a>
                         </h3>
                         {article.data.date && (
-                            <span class="body-lg text-dark-grey">
+                            <span class="body-sm text-dark-grey">
                                 {new Date(article.data.date).toLocaleDateString('en-US', { 
                                     year: 'numeric',
                                     month: 'long',
