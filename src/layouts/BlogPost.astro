@@ -1,6 +1,8 @@
 ---
-import Layout from './Layout.astro';
+import Layout from '../layouts/Layout.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import MDXImage from '../components/MDXImage.astro';
+import YouTube from '../components/YouTube.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -40,6 +42,9 @@ function formatDate(dateStr: string | undefined) {
 }
 
 const formattedDate = formatDate(date);
+
+// Get the success state from the URL
+const success = Astro.url.searchParams.get('success') === 'true';
 ---
 
 <Layout title={title} description={description}>
@@ -80,7 +85,7 @@ const formattedDate = formatDate(date);
 
         <!-- Newsletter Section -->
         <section class="mb-16">
-            <NewsletterForm />
+            <NewsletterForm success={success} />
         </section>
     </article>
 </Layout>
@@ -178,7 +183,7 @@ const formattedDate = formatDate(date);
     }
 
     .prose blockquote a {
-        @apply text-[16px] leading-[24px] tracking-[-0.01em] font-regular text-grey no-underline mt-4 block;
+        @apply text-[16px] leading-[24px] tracking-[-0.01em] font-regular text-dark-grey no-underline mt-4 block;
     }
 
     .prose blockquote a:hover {

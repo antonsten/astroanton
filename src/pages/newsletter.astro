@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import Testimonial from '../components/Testimonial.astro';
+
+// Get the success state from the URL
+const success = Astro.url.searchParams.get('success') === 'true';
 ---
 
 <Layout title="Newsletter - Anton Sten">
@@ -12,7 +15,7 @@ import Testimonial from '../components/Testimonial.astro';
 
         <!-- Newsletter Section -->
         <section class="mt-12">
-            <NewsletterForm />
+            <NewsletterForm success={success} />
         </section>
 
         <!-- Testimonials Section -->
