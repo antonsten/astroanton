@@ -14,7 +14,8 @@ const { success } = Astro.props;
         <form 
             name="newsletter"
             method="POST"
-            action="/.netlify/functions/newsletter-signup"
+            data-netlify="true"
+            action="?success=true"
             class="flex flex-col gap-4 sm:flex-row sm:gap-2"
         >
             <input type="hidden" name="form-name" value="newsletter" />
