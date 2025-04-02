@@ -1,27 +1,37 @@
+---
+const { success } = Astro.props;
+---
+
 <div class="bg-light-green p-8 md:rounded-xl -mx-8 md:mx-0">
     <p class="text-black mb-8 text-[20px] leading-[26px] tracking-[-0.01em] font-regular">
         Each month, I share my insights on design with thousands of designers, developers, and product professionals from top companies like Amazon, IKEA, Figma, and Shopify.
     </p>
-    <form 
-        name="newsletter"
-        method="POST"
-        data-netlify="true"
-        class="flex flex-col gap-4 sm:flex-row sm:gap-2"
-    >
-        <input type="hidden" name="form-name" value="newsletter" />
-        <input 
-            class="flex-1 w-full px-4 py-2 rounded-[12px] bg-white focus:outline-none text-[16px] leading-[24px] tracking-[-0.01em] font-regular placeholder-[#A1A1AA] border-0" 
-            name="email" 
-            aria-label="Email Address" 
-            placeholder="Enter your email" 
-            required 
-            type="email"
+    {success ? (
+        <div class="text-green-600 text-[16px] leading-[24px] tracking-[-0.01em] font-regular">
+            Thanks for subscribing! You'll receive a confirmation email shortly.
+        </div>
+    ) : (
+        <form 
+            name="newsletter"
+            method="POST"
+            action="/.netlify/functions/newsletter-signup"
+            class="flex flex-col gap-4 sm:flex-row sm:gap-2"
         >
-        <button 
-            type="submit"
-            class="px-4 py-2 bg-green text-white rounded-[12px] hover:bg-green/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-[16px] leading-[24px] tracking-[-0.01em] font-medium whitespace-nowrap"
-        >
-            Sign up
-        </button>
-    </form>
+            <input type="hidden" name="form-name" value="newsletter" />
+            <input 
+                class="flex-1 w-full px-4 py-2 rounded-[12px] bg-white focus:outline-none text-[16px] leading-[24px] tracking-[-0.01em] font-regular placeholder-[#A1A1AA] border-0" 
+                name="email" 
+                aria-label="Email Address" 
+                placeholder="Enter your email" 
+                required 
+                type="email"
+            >
+            <button 
+                type="submit"
+                class="px-4 py-2 bg-green text-white rounded-[12px] hover:bg-green/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-[16px] leading-[24px] tracking-[-0.01em] font-medium whitespace-nowrap"
+            >
+                Sign up
+            </button>
+        </form>
+    )}
 </div> 

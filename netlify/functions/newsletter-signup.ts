@@ -13,11 +13,9 @@ export const handler: Handler = async (event) => {
   }
 
   try {
-    console.log('Received request body:', event.body);
-    const body = JSON.parse(event.body || '{}');
-    console.log('Parsed body:', body);
-    
-    const { email } = body;
+    // Parse the form data
+    const formData = new URLSearchParams(event.body || '');
+    const email = formData.get('email');
 
     if (!email) {
       return {
