@@ -6,17 +6,13 @@ const { success } = Astro.props;
     <p class="text-black mb-8 text-[20px] leading-[26px] tracking-[-0.01em] font-regular">
         Each month, I share my insights on design with thousands of designers, developers, and product professionals from top companies like Amazon, IKEA, Figma, and Shopify.
     </p>
-    {success ? (
-        <div class="text-green-600 text-[16px] leading-[24px] tracking-[-0.01em] font-regular">
-            Thanks for subscribing! You'll receive a confirmation email shortly.
-        </div>
-    ) : (
+    <div id="form-container">
         <form 
             name="newsletter"
             method="POST"
             data-netlify="true"
-            action="?success=true"
             class="flex flex-col gap-4 sm:flex-row sm:gap-2"
+            id="newsletter-form"
         >
             <input type="hidden" name="form-name" value="newsletter" />
             <input 
@@ -26,13 +22,72 @@ const { success } = Astro.props;
                 placeholder="Enter your email" 
                 required 
                 type="email"
+                id="email-input"
             >
             <button 
                 type="submit"
                 class="px-4 py-2 bg-green text-white rounded-[12px] hover:bg-green/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-[16px] leading-[24px] tracking-[-0.01em] font-medium whitespace-nowrap"
+                id="submit-button"
             >
-                Sign up
+                <span class="button-text">Sign up</span>
+                <span class="button-loading hidden">
+                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Subscribing...
+                </span>
             </button>
         </form>
-    )}
-</div> 
+        <div id="form-message" class="mt-4 text-sm hidden"></div>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('newsletter-form') as HTMLFormElement;
+    const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
+    const buttonText = submitButton.querySelector('.button-text') as HTMLElement;
+    const buttonLoading = submitButton.querySelector('.button-loading') as HTMLElement;
+    const formMessage = document.getElementById('form-message') as HTMLDivElement;
+    const emailInput = document.getElementById('email-input') as HTMLInputElement;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Show loading state
+        submitButton.disabled = true;
+        buttonText.classList.add('hidden');
+        buttonLoading.classList.remove('hidden');
+        formMessage.classList.add('hidden');
+
+        try {
+            const formData = new FormData(form);
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(formData as any),
+            });
+
+            if (response.ok) {
+                formMessage.textContent = 'Thanks for subscribing! You\'ll receive a confirmation email shortly.';
+                formMessage.classList.remove('hidden');
+                formMessage.classList.add('text-green-600');
+                emailInput.value = '';
+            } else {
+                throw new Error('Failed to subscribe');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            formMessage.textContent = 'Failed to subscribe to the newsletter. Please try again.';
+            formMessage.classList.remove('hidden');
+            formMessage.classList.add('text-red-600');
+        } finally {
+            // Reset button state
+            submitButton.disabled = false;
+            buttonText.classList.remove('hidden');
+            buttonLoading.classList.add('hidden');
+        }
+    });
+</script> 
