@@ -1,8 +1,8 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
 import HtmlHead from '../components/HtmlHead.astro';
+import ScrollAnimation from '../components/ScrollAnimation.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
@@ -20,11 +20,17 @@ const {
 <html lang="en">
 	<HtmlHead title={title} description={description} />
 	<body class="bg-white text-black antialiased">
-		<Navigation />
-		<main class="min-h-screen">
-			<slot />
-		</main>
-		<Footer />
+		<ScrollAnimation>
+			<div class="fixed top-0 left-0 w-full z-50 pointer-events-none">
+				<div class="max-w-[700px] mx-auto px-4">
+					<h1 class="text-[32px] leading-[40px] tracking-[-0.02em] font-medium text-black opacity-0 transition-opacity duration-300" id="scroll-title">Studio Anton Sten</h1>
+				</div>
+			</div>
+			<main class="min-h-screen">
+				<slot />
+			</main>
+			<Footer />
+		</ScrollAnimation>
 	</body>
 </html>
 
@@ -40,17 +46,20 @@ const {
 		const mainContent = document.querySelector('main');
 		const fixedNav = document.querySelector('.fixed .flex') as HTMLElement;
 		const originalNav = document.querySelector('nav') as HTMLElement;
+		const scrollTitle = document.getElementById('scroll-title') as HTMLElement;
 		
-		if (!mainContent || !fixedNav || !originalNav) return;
+		if (!mainContent || !fixedNav || !originalNav || !scrollTitle) return;
 
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
 					originalNav.style.opacity = '0';
 					fixedNav.style.opacity = '1';
+					scrollTitle.style.opacity = '1';
 				} else {
 					originalNav.style.opacity = '1';
 					fixedNav.style.opacity = '0';
+					scrollTitle.style.opacity = '0';
 				}
 			});
 		}, {

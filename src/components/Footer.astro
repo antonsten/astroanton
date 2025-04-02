@@ -1,28 +1,62 @@
-<div class="px-[20px] pb-[20px] pt-[160px]">
-  <footer class="bg-light-grey/90 backdrop-blur-sm rounded-xl">
-    <div class="px-[20px] py-[16px]">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div class="text-[14px] text-black font-semibold">
-          <p>This website uses no cookies and no tracking. Like the web should be <span class="text-black">❤️</span></p>
+<div class="footer-container">
+  <div class="footer-content">
+    <footer class="bg-light-grey/90 backdrop-blur-sm rounded-xl">
+      <div class="px-[20px] py-[16px]">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div class="text-[14px] text-black font-semibold">
+            <p>This website uses no cookies and no tracking. Like the web should be <span class="text-black">❤️</span></p>
+          </div>
+          
+          <nav>
+            <ul class="flex flex-wrap gap-2">
+              <li><a href="/colophon" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
+                Colophon
+              </a></li>
+              <li><a href="https://bsky.app/profile/antonsten.com" target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
+                Bluesky
+              </a></li>
+              <li><a href="https://instagram.com/antonsten" target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
+                Instagram
+              </a></li>
+              <li><a href="https://linkedin.com/in/antonsten" target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
+                Linkedin
+              </a></li>
+              <li><a href="/rss.xml" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
+                RSS
+              </a></li>
+            </ul>
+          </nav>
         </div>
-        
-        <nav>
-          <ul class="flex flex-wrap gap-2">
-            <li><a href="/colophon" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
-              Colophon
-            </a></li>
-            <li><a href="https://bsky.app/profile/antonsten.com" target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
-              Bluesky
-            </a></li>
-            <li><a href="https://instagram.com/antonsten" target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
-              Instagram
-            </a></li>
-            <li><a href="https://linkedin.com/in/antonsten" target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
-              Linkedin
-            </a></li>
-          </ul>
-        </nav>
       </div>
-    </div>
-  </footer>
-</div> 
+    </footer>
+  </div>
+  
+  <div class="footer-image-container">
+    <img src="/images/anton-taylor.webp" alt="Anton and Taylor" class="footer-image" />
+  </div>
+</div>
+
+<style>
+  .footer-container {
+    position: relative;
+    padding-top: 160px;
+  }
+
+  .footer-content {
+    position: relative;
+    z-index: 10;
+    padding: 0 20px 0;
+  }
+
+  .footer-image-container {
+    position: relative;
+    width: 400px;
+    margin: 160px auto 0;
+  }
+
+  .footer-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+</style> 

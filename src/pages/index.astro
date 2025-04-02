@@ -7,21 +7,26 @@ import anton from '../assets/anton.png';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+// Get the success state from the URL
+const success = Astro.url.searchParams.get('success') === 'true';
 ---
 
 <Layout title="Anton Sten">
 	<!-- Hero Section -->
 	<div class="px-[20px] mt-[40vh]">
 		<div class="flex flex-col gap-20">
-			<h1>
-				<span class="block text-black font-medium text-[48px] leading-[1.2] tracking-[-0.02em] sm:text-display">Anton Sten partners with founders and startups to design engaging digital products and brands.</span>
-			</h1>
+			<div class="w-[80%] max-w-[900px]">
+				<h1>
+					<span class="block text-black font-medium text-[48px] leading-[1.2] tracking-[-0.02em] sm:text-display">Anton Sten partners with founders and startups to design engaging digital products and brands.</span>
+				</h1>
+			</div>
 		</div>
 	</div>
 
 	<div class="max-w-[700px] mx-auto px-8 sm:px-6 mt-40">
 		<div class="space-y-6 mb-20">
-			<h3 class="body-xxl">As Head of Design at <a href="https://www.summerhealth.com/" class="underline hover:text-green">Summer Health</a>, I'm currently dedicated to creating solutions that empower the healthiest generation of children.</h3>
+			<h3 class="body-xxl">As Head of Design at <a href="https://www.summerhealth.com/" class="underline hover:text-green">Summer Health</a>, I'm currently dedicated to creating solutions that empower the healthiest generation of children 👶</h3>
 		</div>
 
 		<!-- Companies Section -->
@@ -58,7 +63,7 @@ import anton from '../assets/anton.png';
 
 		<!-- Newsletter Section -->
 		<section class="mb-20">
-			<NewsletterForm />
+			<NewsletterForm success={success} />
 		</section>
 
 		<!-- Testimonials Section -->
@@ -214,7 +219,7 @@ import anton from '../assets/anton.png';
 		<!-- Featured Writing Section -->
 		<section>
 			<h2 class="text-black body-xxl mb-8">Featured writing</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 				<a href="/articles/the-product-design-process" class="group flex md:flex-col gap-4 md:gap-0">
 					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/1.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />

@@ -1,0 +1,33 @@
+---
+import Navigation from './Navigation.astro';
+---
+
+<div class="layout-wrapper">
+  <div class="nav-wrapper">
+    <Navigation />
+  </div>
+  
+  <div class="content-wrapper">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .layout-wrapper {
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  }
+
+  .content-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+</style> 
