@@ -1,6 +1,6 @@
 <div class="footer-container">
   <div class="footer-content">
-    <footer class="bg-light-grey/90 backdrop-blur-sm rounded-xl">
+    <footer class="bg-light-grey/90 backdrop-blur-sm rounded-[4px]">
       <div class="px-[20px] py-[8px]">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div class="text-[14px] text-black font-semibold">
@@ -9,16 +9,16 @@
           
           <nav>
             <ul class="flex flex-wrap gap-2">
-              <li><a href="/colophon" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
+              <li><a href="/colophon" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-[4px] transition-colors flex items-center gap-2 font-semibold">
                 Colophon
               </a></li>
-              <li><a href="/rss.xml" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
+              <li><a href="/rss.xml" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-[4px] transition-colors flex items-center gap-2 font-semibold">
                 RSS
               </a></li>
-              <li><a href="https://bsky.app/profile/antonsten.com" target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
+              <li><a href="https://bsky.app/profile/antonsten.com" target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-[4px] transition-colors flex items-center gap-2 font-semibold">
                 Bluesky
               </a></li>
-              <li><a href="https://linkedin.com/in/antonsten" target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-lg transition-colors flex items-center gap-2 font-semibold">
+              <li><a href="https://linkedin.com/in/antonsten" target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-4 py-1 rounded-[4px] transition-colors flex items-center gap-2 font-semibold">
                 LinkedIn
               </a></li>
             </ul>
@@ -29,7 +29,7 @@
   </div>
   
   <div class="footer-image-container">
-    <img src="/images/anton-taylor.webp" alt="Anton and Taylor" class="footer-image" />
+    <img src="/images/footer/footer.webp" alt="Anton and Taylor" class="footer-image" />
   </div>
 </div>
 
@@ -47,13 +47,15 @@
 
   .footer-image-container {
     position: relative;
-    width: 400px;
-    margin: 160px auto 0;
+    width: 300px;
+    margin: 160px auto 160px;
   }
 
   .footer-image {
     width: 100%;
     height: auto;
     object-fit: contain;
+    transform: rotate(90deg);
+    border-radius: 4px;
   }
 </style> 

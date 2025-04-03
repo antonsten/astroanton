@@ -65,18 +65,18 @@ const success = Astro.url.searchParams.get('success') === 'true';
         </div>
 
         <!-- Social Sharing -->
-        <div class="bg-light-grey/90 backdrop-blur-sm rounded-xl px-[20px] py-[20px] mb-16">
+        <div class="bg-light-grey/90 backdrop-blur-sm rounded-[4px] px-[20px] py-[20px] mb-16">
             <h2 class="body-xl text-black mb-6">Did you enjoy this article?</h2>
             <div class="flex flex-wrap items-center gap-2">
-                <a href={`https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(title + ' ' + Astro.url.toString())}`} target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-3 py-1 rounded-lg transition-colors flex items-center gap-2">
+                <a href={`https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(title + ' ' + Astro.url.toString())}`} target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-3 py-1 rounded-[4px] transition-colors flex items-center gap-2">
                     <i class="fa-brands fa-linkedin"></i>
                     Share on LinkedIn
                 </a>
-                <a href={`https://bsky.app/intent/compose?text=${encodeURIComponent(title + ' ' + Astro.url.toString())}`} target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-3 py-1 rounded-lg transition-colors flex items-center gap-2">
+                <a href={`https://bsky.app/intent/compose?text=${encodeURIComponent(title + ' ' + Astro.url.toString())}`} target="_blank" rel="noopener noreferrer" class="text-[14px] text-black hover:bg-white px-3 py-1 rounded-[4px] transition-colors flex items-center gap-2">
                     <i class="fa-brands fa-bluesky"></i>
                     Share on Bluesky
                 </a>
-                <button id="copyUrl" class="text-[14px] text-black hover:bg-white px-3 py-1 rounded-lg transition-colors flex items-center gap-2">
+                <button id="copyUrl" class="text-[14px] text-black hover:bg-white px-3 py-1 rounded-[4px] transition-colors flex items-center gap-2">
                     <i class="fa-regular fa-copy"></i>
                     Copy link
                 </button>
@@ -149,7 +149,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
     }
 
     .prose blockquote {
-        @apply relative bg-light-grey p-8 rounded-xl mb-12 !important;
+        @apply relative bg-light-grey text-black p-8 rounded-[4px] mb-12 !important;
     }
 
     .prose blockquote::before,
@@ -183,11 +183,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
     }
 
     .prose blockquote a {
-        @apply text-[16px] leading-[24px] tracking-[-0.01em] font-regular text-dark-grey no-underline mt-4 block;
-    }
-
-    .prose blockquote a:hover {
-        @apply text-green;
+        @apply text-[16px] leading-[24px] tracking-[-0.01em] font-regular text-dark-grey no-underline mt-4 block hover:text-black transition-colors;
     }
 
     .prose code {
@@ -195,7 +191,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
     }
 
     .prose pre {
-        @apply bg-light-grey p-6 rounded-[12px] mb-8 overflow-x-auto;
+        @apply bg-light-grey p-6 rounded-[4px] mb-8 overflow-x-auto;
     }
 
     .prose pre code {
@@ -203,7 +199,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
     }
 
     .prose img {
-        @apply rounded-[12px] mb-8;
+        @apply rounded-[4px] mb-8;
     }
 
     .prose figure {
@@ -215,6 +211,6 @@ const success = Astro.url.searchParams.get('success') === 'true';
     }
 
     .prose iframe {
-        @apply w-full aspect-video rounded-[12px] mb-8;
+        @apply w-full aspect-video rounded-[4px] mb-8;
     }
 </style> 

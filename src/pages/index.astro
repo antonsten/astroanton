@@ -34,27 +34,27 @@ const success = Astro.url.searchParams.get('success') === 'true';
 			<div class="relative">
 				<!-- Logo containers -->
 				<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-					<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+					<div class="bg-light-grey w-full aspect-[170/90] rounded-[4px] flex items-center justify-center px-5">
 						<img src="/logos/google.svg" alt="Google" class="h-5" loading="lazy" />
 					</div>
 
-					<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+					<div class="bg-light-grey w-full aspect-[170/90] rounded-[4px] flex items-center justify-center px-5">
 						<img src="/logos/loom.svg" alt="Loom" class="h-5" loading="lazy" />
 					</div>
 
-					<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+					<div class="bg-light-grey w-full aspect-[170/90] rounded-[4px] flex items-center justify-center px-5">
 						<img src="/logos/ueno.svg" alt="Ueno logo" class="h-4" loading="lazy" />
 					</div>
 
-					<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+					<div class="bg-light-grey w-full aspect-[170/90] rounded-[4px] flex items-center justify-center px-5">
 						<img src="/logos/spotify.svg" alt="Spotify" class="h-5" loading="lazy" />
 					</div>
 
-					<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+					<div class="bg-light-grey w-full aspect-[170/90] rounded-[4px] flex items-center justify-center px-5">
 						<img src="/logos/herman-miller.svg" alt="Herman Miller" class="h-4" loading="lazy" />
 					</div>
 
-					<div class="bg-light-grey w-full aspect-[170/90] rounded-[12px] flex items-center justify-center px-5">
+					<div class="bg-light-grey w-full aspect-[170/90] rounded-[4px] flex items-center justify-center px-5">
 						<img src="/logos/ikea.svg" alt="IKEA" class="h-4" loading="lazy" />
 					</div>
 				</div>
@@ -195,7 +195,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 				</div>
 				<div class="flex gap-2 mt-4">
 					<button 
-						class="w-12 h-12 rounded-[12px] flex items-center justify-center hover:bg-green group transition-colors"
+						class="w-12 h-12 rounded-[4px] flex items-center justify-center hover:bg-green group transition-colors"
 						aria-label="Previous testimonial"
 						data-testimonial-prev
 					>
@@ -204,7 +204,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 						</svg>
 					</button>
 					<button 
-						class="w-12 h-12 rounded-[12px] flex items-center justify-center hover:bg-green group transition-colors"
+						class="w-12 h-12 rounded-[4px] flex items-center justify-center hover:bg-green group transition-colors"
 						aria-label="Next testimonial"
 						data-testimonial-next
 					>
@@ -219,63 +219,63 @@ const success = Astro.url.searchParams.get('success') === 'true';
 		<!-- Featured Writing Section -->
 		<section>
 			<h2 class="text-black body-xxl mb-8">Featured writing</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
 				<a href="/articles/the-product-design-process" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/1.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
 					</div>
 					<div>
-						<time class="text-dark-grey caption block">March 19, 2024</time>
+						<time class="text-dark-grey text-[14px] leading-[20px] block">March 19, 2024</time>
 						<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Product Design Process</h3>
 					</div>
 				</a>
 
 				<a href="/articles/the-solo-designer-lessons-from-a-startup-journey" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/2.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
 					</div>
 					<div>
-						<time class="text-dark-grey caption block">January 27, 2024</time>
+						<time class="text-dark-grey text-[14px] leading-[20px] block">January 27, 2024</time>
 						<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Solo Designer: Lessons from a Startup Journey</h3>
 					</div>
 				</a>
 
 				<a href="/articles/creating-a-ux-strategy" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/3.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
 					</div>
 					<div>
-						<time class="text-dark-grey caption block">April 23, 2024</time>
+						<time class="text-dark-grey text-[14px] leading-[20px] block">April 23, 2024</time>
 						<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Creating a UX Strategy</h3>
 					</div>
 				</a>
 
 				<a href="/articles/the-stakeholder-interview" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/4.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
 					</div>
 					<div>
-						<time class="text-dark-grey caption block">March 25, 2024</time>
+						<time class="text-dark-grey text-[14px] leading-[20px] block">March 25, 2024</time>
 						<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Stakeholder Interview</h3>
 					</div>
 				</a>
 
 				<a href="/articles/why-designers-need-to-write" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/5.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
 					</div>
 					<div>
-						<time class="text-dark-grey caption block">May 25, 2017</time>
+						<time class="text-dark-grey text-[14px] leading-[20px] block">May 25, 2017</time>
 						<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Why Designers Need to Write</h3>
 					</div>
 				</a>
 
 				<a href="/articles/working-as-a-ux-lead" class="group flex md:flex-col gap-4 md:gap-0">
-					<div class="bg-light-grey group-hover:bg-grey rounded-[12px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+					<div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/6.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
 					</div>
 					<div>
-						<time class="text-dark-grey caption block">April 1, 2024</time>
+						<time class="text-dark-grey text-[14px] leading-[20px] block">April 1, 2024</time>
 						<h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Working as a UX-Lead</h3>
 					</div>
 				</a>
