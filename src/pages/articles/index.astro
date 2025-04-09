@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const articles = await getCollection('articles');
-articles.sort((a, b) => {
+const sortedArticles = articles.sort((a, b) => {
     const dateA = a.data.date ? new Date(a.data.date) : new Date(0);
     const dateB = b.data.date ? new Date(b.data.date) : new Date(0);
     return dateB.getTime() - dateA.getTime();
@@ -35,17 +35,18 @@ function getFirstLine(content: string) {
     <div class="max-w-[700px] mx-auto px-4">
         <h1 class="text-black font-medium text-[48px] leading-[1.2] tracking-[-0.02em] sm:text-display mb-40 mt-[20vh]">Articles</h1>
 
-        <h3 class="body-xxl mb-24">
-            "Wisdom is a useless gift unless you share it"
-            <br>
-            - Esther Williams
-        </h3>
+    
         <p class="body-xxl mb-24">
-            Whether it's through blogging, speaking at conferences, or simply talking to fellow creatives, I believe that sharing knowledge and experience is one of the best ways to help others grow and succeed. With each conversation, I learn something new and gain a fresh perspective on the world of design and entrepreneurship.
+            Sharing what you know is one of the best ways to help people. Whether it's writing, speaking, or just talking to other designers, it almost always goes both ways.
+            <br><br>
+            Every conversation teaches me something too—something I didn't know I was missing. I end up seeing design, and the work around it, a little differently each time.
+            <br><br>
+            That's the real reason to share what you've learned. Not because you have all the answers, but because it keeps you learning too.
         </p>
+        <h3 class="text-2xl font-bold mb-12">Recent articles</h3>
 
         <div class="space-y-8">
-            {articles.map(article => (
+            {sortedArticles.map(article => (
                 <div>
                     <div class="flex justify-between items-start">
                         <h3 class="body-lg font-medium">
