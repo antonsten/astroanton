@@ -9,6 +9,9 @@ const sortedArticles = articles.sort((a, b) => {
     return dateB.getTime() - dateA.getTime();
 });
 
+// Debug: Log all articles and their dates
+console.log('All articles:', articles.map(a => ({ title: a.data.title, date: a.data.date, slug: a.slug })));
+
 // Function to get first line of content
 function getFirstLine(content: string) {
     const lines = content.split('\n');
