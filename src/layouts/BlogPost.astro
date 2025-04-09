@@ -133,19 +133,19 @@ const success = Astro.url.searchParams.get('success') === 'true';
     }
 
     .prose ul {
-        @apply list-disc list-outside ml-6 mb-8;
+        @apply list-disc mb-8;
     }
 
     .prose ol {
-        @apply list-decimal list-outside ml-6 mb-8;
+        @apply list-decimal mb-8;
     }
 
     .prose li {
-        @apply mb-2;
+        @apply mb-2 pl-0;
     }
 
     .prose a {
-        @apply text-black underline hover:text-green transition-colors;
+        @apply text-black underline hover:text-green transition-colors font-regular;
     }
 
     .prose blockquote {

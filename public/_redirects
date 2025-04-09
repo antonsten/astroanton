@@ -336,3 +336,6 @@
     ^/write-when-you-have-something-to-say-2: /articles/write-when-you-have-something-to-say-2/ 301
     ^/can-you-be-creative: /articles/can-you-be-creative/ 301
     ^/core-values: /articles/core-values/ 301
+
+# Add new redirect rule
+    /writing/* /articles/:splat 301
