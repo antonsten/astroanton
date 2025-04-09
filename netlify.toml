@@ -9,9 +9,3 @@
 [dev]
   framework = "astro"
   targetPort = 3000
-
-[[redirects]]
-  from = "/writing/*"
-  to = "/articles/:splat"
-  status = 301
-  force = true 
