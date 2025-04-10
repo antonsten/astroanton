@@ -48,7 +48,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 ---
 
 <Layout title={title} description={description}>
-    <article class="max-w-[700px] mx-auto px-4">
+    <article class="max-w-[700px] mx-auto px-8 sm:px-6">
         <!-- Article Header -->
         <header class="mb-16 mt-[20vh]">
             <h1 class="text-[32px] md:text-[50px] leading-[40px] md:leading-[56px] tracking-[-0.02em] font-medium text-black mb-4">{title}</h1>
@@ -149,7 +149,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
     }
 
     .prose blockquote {
-        @apply relative bg-light-grey text-black p-8 rounded-[4px] mb-12 !important;
+        @apply relative bg-[#BDD7E8] text-black p-8 rounded-[4px] mb-12 !important;
     }
 
     .prose blockquote::before,

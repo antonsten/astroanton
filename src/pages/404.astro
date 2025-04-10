@@ -4,14 +4,86 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="404 - Page Not Found">
     <div class="min-h-screen bg-white">
-        <div class="pt-32 pb-16">
-            <h1 class="h1 mb-16">404 - Page Not Found</h1>
-            <p class="body-xl mb-24">
-                Sorry, the page you're looking for doesn't exist.
+        <div class="max-w-[700px] mx-auto px-8 sm:px-6 mt-[20vh]">
+            <div class="-mx-8 sm:mx-0 mb-8">
+                <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGoxbHJucXNmdmhwczB1ZGp5dDV2Y3gwam9hM3FpMmVzdnVhMDFldiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ta3v3I4GI1gH7Rqek6/giphy.gif" alt="Lost in space" class="w-full" />
+            </div>
+            
+            <h1 class="text-black font-medium text-[48px] leading-[1.2] tracking-[-0.02em] sm:text-display mb-8">This page doesn't exist (or it moved).</h1>
+            
+            <p class="body-xxl mb-24">
+                Looks like you've taken a wrong turn. It happens.
+                <br /><br />
+                Here are some popular articles you might want to check out instead:
             </p>
-            <a href="/" class="text-[18px] leading-[32px] tracking-[-0.01em] font-regular text-dark-grey hover:text-black transition-colors">
-                ← Back to home
-            </a>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 mb-24">
+                <a href="/articles/the-product-design-process" class="group flex md:flex-col gap-4 md:gap-0">
+                    <div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+                        <img src="/svg/1.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
+                    </div>
+                    <div>
+                        <time class="text-dark-grey text-[14px] leading-[20px] block">March 19, 2024</time>
+                        <h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Product Design Process</h3>
+                    </div>
+                </a>
+
+                <a href="/articles/the-solo-designer" class="group flex md:flex-col gap-4 md:gap-0">
+                    <div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+                        <img src="/svg/2.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
+                    </div>
+                    <div>
+                        <time class="text-dark-grey text-[14px] leading-[20px] block">January 27, 2024</time>
+                        <h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Solo Designer: Lessons from a Startup Journey</h3>
+                    </div>
+                </a>
+
+                <a href="/articles/uxstrategy" class="group flex md:flex-col gap-4 md:gap-0">
+                    <div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+                        <img src="/svg/3.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
+                    </div>
+                    <div>
+                        <time class="text-dark-grey text-[14px] leading-[20px] block">April 23, 2024</time>
+                        <h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Creating a UX Strategy</h3>
+                    </div>
+                </a>
+
+                <a href="/articles/stakeholder" class="group flex md:flex-col gap-4 md:gap-0">
+                    <div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+                        <img src="/svg/4.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
+                    </div>
+                    <div>
+                        <time class="text-dark-grey text-[14px] leading-[20px] block">March 25, 2024</time>
+                        <h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">The Stakeholder Interview</h3>
+                    </div>
+                </a>
+
+                <a href="/articles/designers-write" class="group flex md:flex-col gap-4 md:gap-0">
+                    <div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+                        <img src="/svg/5.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
+                    </div>
+                    <div>
+                        <time class="text-dark-grey text-[14px] leading-[20px] block">May 25, 2017</time>
+                        <h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Why Designers Need to Write</h3>
+                    </div>
+                </a>
+
+                <a href="/articles/uxlead" class="group flex md:flex-col gap-4 md:gap-0">
+                    <div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
+                        <img src="/svg/6.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
+                    </div>
+                    <div>
+                        <time class="text-dark-grey text-[14px] leading-[20px] block">April 1, 2024</time>
+                        <h3 class="text-black body font-medium group-hover:text-green leading-[1.3]">Working as a UX-Lead</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="bg-light-green p-8 md:rounded-[4px] -mx-8 md:mx-0">
+                <p class="text-black mb-8 text-[20px] leading-[26px] tracking-[-0.01em] font-regular">
+                    Still can't find what you're looking for? <a href="mailto:anton@antonsten.com" class="text-black underline hover:text-green transition-colors">Send me an email</a> and I'll help you out.
+                </p>
+            </div>
         </div>
     </div>
 </Layout> 

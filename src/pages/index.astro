@@ -14,11 +14,11 @@ const success = Astro.url.searchParams.get('success') === 'true';
 
 <Layout title="Anton Sten">
 	<!-- Hero Section -->
-	<div class="px-[20px] mt-[40vh]">
+	<div class="px-8 sm:px-6 mt-[30vh] sm:mt-[40vh]">
 		<div class="flex flex-col gap-20">
 			<div class="w-[80%] max-w-[900px]">
 				<h1>
-					<span class="block text-black font-medium text-[48px] leading-[1.2] tracking-[-0.02em] sm:text-display">I help founders and startups turn ideas into great digital products and brands.</span>
+					<span class="block text-black font-medium text-[40px] sm:text-[48px] leading-[1.2] tracking-[-0.02em] sm:text-display">I help founders and startups turn ideas into great digital products and brands.</span>
 				</h1>
 			</div>
 		</div>
@@ -30,9 +30,9 @@ const success = Astro.url.searchParams.get('success') === 'true';
 		</div>
 
 		<!-- Companies Section -->
+		<!--
 		<section class="mb-20">
 			<div class="relative">
-				<!-- Logo containers -->
 				<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
 					<div class="bg-light-grey w-full aspect-[170/90] rounded-[4px] flex items-center justify-center px-5">
 						<img src="/logos/google.svg" alt="Google" class="h-5" loading="lazy" />
@@ -60,6 +60,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 				</div>
 			</div>
 		</section>
+		-->
 
 		<!-- Newsletter Section -->
 		<section class="mb-20">
@@ -69,9 +70,8 @@ const success = Astro.url.searchParams.get('success') === 'true';
 		<!-- Testimonials Section -->
 		<section class="mb-20">
 			<div class="relative -mx-8 sm:mx-0">
-				<div class="carousel flex gap-[4px] overflow-x-auto no-scrollbar">
-						
-					<div class="flex-shrink-0" style="width: 100vw;">
+				<div class="carousel flex gap-[4px] overflow-x-auto snap-x snap-mandatory no-scrollbar">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="#615CF5" textColor="white" logo="/logos/loom-test.svg" quote={["Anton partnered with us to reimagine Loom's design system and our team could not be happier. He is highly organized, malleable to team feedback yet principled, and the deliverables he helped us produce will absolutely help accelerate the velocity and collaboration within Design and beyond.",
 						"I cannot recommend Anton enough for design system partnerships that benefit from someone with specialized expertise."]}
 						author="Sean Thompson"
@@ -79,7 +79,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 						/>
 					</div>
 						
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="#E22D00" textColor='white' logo="/logos/herman-miller-test.svg" quote={["I've had the pleasure of working with Anton on a fast-moving project that has greatly benefited from his talents.",
 						"Anton is an intelligent, creative, team-oriented, and highly conscientious designer, and he has quickly become one of my favorite collaborators."]}
 						author="Ryan Andersson"
@@ -87,8 +87,8 @@ const success = Astro.url.searchParams.get('success') === 'true';
 						/>
 					</div>
 					
-					<div class="flex-shrink-0" style="width: 100vw;">
-						<Testimonial 
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
+						<Testimonial
 							bgColor="#0066FF"
 							textColor="white"
 							quote={[
@@ -101,7 +101,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 						/>
 					</div>
 						
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="light-grey" quote={["Anton is an example of mature leadership.",
 						"He is interested in learning, understanding, and doing the right thing for the products he makes in partnership with clients. His ideas are carefully considered with the user's needs and business goals top of mind.",
 						"I'd work with him again in a heartbeat."]}
@@ -110,7 +110,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 						/>
 					</div>
 										
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="#1DB954" textColor="white" logo="/logos/spotify-test.svg" quote={["Whenever someone asks me if I know any good designers I always answer with Anton.",
 						"He's a great designer with superior business understanding who always put the user in the front seat and delivers bloody good work.",
 						"If you get a chance to work with Anton, don't miss it."]}
@@ -119,14 +119,14 @@ const success = Astro.url.searchParams.get('success') === 'true';
 						/>
 					</div>
 						
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="black" textColor="white"  logo="/logos/bttr-test.png" quote={["We all have that person whom we want to book for every project. Anton is that person for me. He's experienced, insightful, collaborative, and great at his craft. He's an unusual mix of both a leader and mentor for the creative team while also building a strong relationship with the client, asking questions, and understanding the needs and motivations of their users. The resulting work is always well-considered and exceeds expectations."]}
 						author="Nicole Hampton"
 						role="Head of Projects at BTTR"
 						/>
 					</div>
 						
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="#ffc220" textColor="black"  logo="/logos/summerhealth-test.svg" quote={["Anton is a world-class designer: he is talented with user experience and visual design, and a deeply empathetic product builder. He knows our product inside and out, and has been with us since the start. He is a team player in every way - he gets involved with the team and customers to understand and embody the brand, and produces extremely clean, user-friendly designs as a result."]}
 						author="Ellen DaSilva"
 						role="CEO at Summer Health"
@@ -134,7 +134,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 					</div>
 			
 						
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="black" textColor="white" quote={["Tractorbeam has been following Anton for a while, and we finally had the pleasure of working with him on a category-defining redesign and design system for Front Gate Tickets.",
 						"Anton's expertise and mentorship were integral throughout the project lifecycle – not to mention he's an absolute joy to work with. We cannot recommend Anton enough; he truly is a rare talent.",
 						"Ps. Has Bond villain hair."]}
@@ -143,7 +143,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 						/>
 					</div>
 						
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="light-grey" quote={["A skilled and strategic designer, he can delve into the details without losing sight of the bigger picture. In fact, he's probably thinking two steps ahead.",
 						"Even though he could boast about his impressive UX credentials, he never does. In fact, his humility and good humor make him an even better person to work with.",
 						"If you have the chance to collaborate with Anton, seize it."]}
@@ -152,7 +152,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 						/>
 					</div>
 						
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="#E8F5E9" textColor="black" quote={["Anton was thorough and a pleasure to work with. He's a great collaborator and partner to work through product solutions with.",
 						"He does what he says and never misses a deadline, which is an unfortunate rarity these days that you don't have to worry about with Anton."]}
 						author="Travis Schmeisser"
@@ -160,14 +160,14 @@ const success = Astro.url.searchParams.get('success') === 'true';
 						/>
 					</div>
 					
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="black" textColor="white" quote={["Smart, edgy, and always to the point, Anton Sten is most likely the user experience addition your team needs to help ensure practicality, elegance, and efficiency in how your customers engage with your products and services."]}
 						author="Rob Maigret"
 						role="President at Titan Space"
 						/>
 					</div>
 						
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="#4E0450" textColor="white" quote={["Anton is a very structured design thinker.",
 						"He shines at taking a breadth of inputs and transforming them into usable information and experiences.",
 						"Anton is also highly collaborative and great to work with.",
@@ -177,7 +177,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 						/>
 					</div>
 						
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="light-grey" quote={["Anton is a Renaissance man.",
 						"It's rare to find someone who can help in so many areas at such a thoughtful and high level of quality. Anton makes any team better."]}
 						author="Dan Mall"
@@ -185,7 +185,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 						/>
 					</div>
 						
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="#FBA8B2" quote={["If you dislike working with consultants as much as I do, you'll love working with Anton.",
 						"He was challenging when appropriate and accommodating when necessary, all the while being extremely mindful of our time.",
 						"He's quick to offer possible solutions and even faster to implement them."]}
@@ -193,9 +193,9 @@ const success = Astro.url.searchParams.get('success') === 'true';
 						role="COO and Co-Founder at Karma"
 						/>
 					</div>
-
+ 
 						
-					<div class="flex-shrink-0" style="width: 100vw;">
+					<div class="flex-shrink-0 snap-start" style="width: 100vw;">
 						<Testimonial bgColor="#EE7024" textColor="white" quote={["I had the pleasure of working with Anton on one of our highest-priority projects.",
 						"He was able to quickly familiarize himself with the challenges at hand and produce conceptual designs that were spot on from the start.",
 						"His experience and insight were invaluable to our team and project."]}
@@ -241,7 +241,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 					</div>
 				</a>
 
-				<a href="/articles/the-solo-designer-lessons-from-a-startup-journey" class="group flex md:flex-col gap-4 md:gap-0">
+				<a href="/articles/the-solo-designer" class="group flex md:flex-col gap-4 md:gap-0">
 					<div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/2.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
 					</div>
@@ -251,7 +251,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 					</div>
 				</a>
 
-				<a href="/articles/creating-a-ux-strategy" class="group flex md:flex-col gap-4 md:gap-0">
+				<a href="/articles/uxstrategy" class="group flex md:flex-col gap-4 md:gap-0">
 					<div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/3.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
 					</div>
@@ -261,7 +261,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 					</div>
 				</a>
 
-				<a href="/articles/the-stakeholder-interview" class="group flex md:flex-col gap-4 md:gap-0">
+				<a href="/articles/stakeholder" class="group flex md:flex-col gap-4 md:gap-0">
 					<div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/4.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
 					</div>
@@ -271,7 +271,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 					</div>
 				</a>
 
-				<a href="/articles/why-designers-need-to-write" class="group flex md:flex-col gap-4 md:gap-0">
+				<a href="/articles/designers-write" class="group flex md:flex-col gap-4 md:gap-0">
 					<div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/5.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
 					</div>
@@ -281,7 +281,7 @@ const success = Astro.url.searchParams.get('success') === 'true';
 					</div>
 				</a>
 
-				<a href="/articles/working-as-a-ux-lead" class="group flex md:flex-col gap-4 md:gap-0">
+				<a href="/articles/uxlead" class="group flex md:flex-col gap-4 md:gap-0">
 					<div class="bg-light-grey group-hover:bg-grey rounded-[4px] w-12 h-12 md:w-auto md:h-[160px] flex-shrink-0 flex items-center justify-center p-3 md:p-8 md:mb-4">
 						<img src="/svg/6.svg" alt="" class="w-6 h-6 md:w-12 md:h-12" loading="lazy" />
 					</div>
