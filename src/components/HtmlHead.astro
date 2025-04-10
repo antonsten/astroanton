@@ -4,17 +4,32 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Anton's personal website" } = Astro.props;
+const { title, description = "Anton Sten - Product designer" } = Astro.props;
+const currentUrl = Astro.url.toString();
 ---
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/rss.xml" />
   <title>{title}</title>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={currentUrl} />
+  <meta property="og:image" content={new URL('/images/og-image.webp', currentUrl).href} />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL('/images/og-image.webp', currentUrl).href} />
+
   <!-- fathom - beautiful, simple website analytics -->
   <script src="https://cdn.usefathom.com/script.js" data-site="kuencgtc" defer></script>
   <!-- / fathom -->
