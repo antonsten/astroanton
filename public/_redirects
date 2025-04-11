@@ -3,53 +3,39 @@
 # Status codes: 301 (permanent) or 302 (temporary)
 
 # Add common pattern redirects
-    ^\/writing\/([a-z0-9-]+)\/$: /articles/$1 301
-    ^\/blog\/([a-z0-9-]+)\/$: /articles/$1 301
-    ^\/books\/([a-z0-9-]+)\/$: /articles/$1 301
-    ^\/ux\/([a-z0-9-]+)\/$: /articles/$1 301
-    ^\/rss\/([a-z0-9-]+)\/$: /rss 301
-    ^\/newsletter\/(.*): /newsletter 301
+/writing/* /articles/:splat 301
+/blog/* /articles/:splat 301
+/books/* /articles/:splat 301
+/ux/* /articles/:splat 301
+/rss/* /rss 301
+/newsletter/* /newsletter 301
 
 # Add specific redirects for RSS feeds
-    ^/feed.xml: /rss/ 301
-    ^/rss.xml: /rss/ 301
-    ^/writing.xml: /rss/ 301
+/feed.xml /rss/ 301
+/rss.xml /rss/ 301
+/writing.xml /rss/ 301
 
 # Add specific redirects for work pages
-    ^/falkenberg: /work 301
-    ^/designsystem: /work 301
-    ^/case/ /work 301
-    ^/case/summerhealth/ /work 301
-    ^/case/loom/ /work 301
-    ^/case/zabka/ /work 301
-    ^/case/toast/ /work 301
-    ^/case/hermanmiller/ /work 301
-    ^/case/titan-space/ /work 301
-    ^/case/eobuwie/ /work 301
-    ^/case/forwardoperators/ /work 301
-    ^/case/titan/ /work 301
-    ^/case/summer-health/ /work 301
+/falkenberg /work/ 301
+/designsystem /work/ 301
+/case/* /work/ 301
 
 # Add specific redirects for other pages
-    ^/work-with-me: /articles/working-with-anton 301
-    ^/book: /articles 301
-    ^/blog: /articles 301
-    ^/writing: /articles 301
-    ^/ux-lead: /uxlead/ 301
-    ^/testimonials: / 301
-
+/work-with-me /articles/working-with-anton/ 301
+/book /articles/ 301
+/blog /articles/ 301
+/writing /articles/ 301
+/ux-lead /uxlead/ 301
+/testimonials / 301
 
 # Add specific redirect for books
-    ^/books/user-experiences-matter: /user-experiences-matter/ 301
+/books/user-experiences-matter /user-experiences-matter/ 301
 
 # Add specific redirect for year in review
-    ^/2024: /articles/2024/ 301
-
-# Add /writing/* redirects for all articles
-    ^/writing/(.*): /articles/$1/ 301
+/2024 /articles/2024/ 301
 
 # Add /content/* redirects (common pattern)
-    ^/content/(.*): /articles/$1/ 301
+/content/* /articles/:splat 301
 
     ^/newsletter-its-about-me-me-me: /articles/newsletter-its-about-me-me-me/ 301
     ^/newsletter-change-is-a-good-thing: /articles/newsletter-change-is-a-good-thing/ 301
@@ -348,6 +334,3 @@
     ^/write-when-you-have-something-to-say-2: /articles/write-when-you-have-something-to-say-2/ 301
     ^/can-you-be-creative: /articles/can-you-be-creative/ 301
     ^/core-values: /articles/core-values/ 301
-
-# Add new redirect rule
-    /writing/* /articles/:splat 301
