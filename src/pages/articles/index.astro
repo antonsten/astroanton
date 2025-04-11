@@ -9,12 +9,12 @@ const articles = await getCollection('articles', ({ data }) => {
         date: data.date,
         slug: data.slug
     });
-    return true; // Include all articles, including future-dated ones
+    return true; // Include all articles
 });
 
 const sortedArticles = articles.sort((a, b) => {
-    const dateA = a.data.date ? new Date(a.data.date.toString()) : new Date(0);
-    const dateB = b.data.date ? new Date(b.data.date.toString()) : new Date(0);
+    const dateA = a.data.date ? new Date(a.data.date) : new Date(0);
+    const dateB = b.data.date ? new Date(b.data.date) : new Date(0);
     
     // Debug: Log the dates being compared
     console.log('Comparing dates:', {
@@ -29,7 +29,7 @@ const sortedArticles = articles.sort((a, b) => {
 console.log('All articles:', articles.map(a => ({ 
     title: a.data.title, 
     date: a.data.date, 
-    parsedDate: a.data.date ? new Date(a.data.date.toString()) : null,
+    parsedDate: a.data.date ? new Date(a.data.date) : null,
     slug: a.slug 
 })));
 
