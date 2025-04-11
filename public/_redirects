@@ -3,7 +3,17 @@
 # Status codes: 301 (permanent) or 302 (temporary)
 
 # Add common pattern redirects
-    ^\/case\/([a-zA-Z0-9-]+)(\/)?$: /work 301
+    ^/case/ /work/ 301
+    ^/case/summerhealth/ /work/ 301
+    ^/case/loom/ /work/ 301
+    ^/case/zabka/ /work/ 301
+    ^/case/toast/ /work/ 301
+    ^/case/hermanmiller/ /work/ 301
+    ^/case/titan-space/ /work/ 301
+    ^/case/eobuwie/ /work/ 301
+    ^/case/forwardoperators/ /work/ 301
+    ^/case/titan/ /work/ 301
+    ^/case/summer-health/ /work/ 301
     ^\/writing\/([a-z0-9-]+)\/$: /articles/$1 301
     ^\/blog\/([a-z0-9-]+)\/$: /articles/$1 301
     ^\/books\/([a-z0-9-]+)\/$: /articles/$1 301
