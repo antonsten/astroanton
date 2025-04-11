@@ -2,15 +2,17 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
+import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://antonsten.com',
+  site: 'https://www.antonsten.com',
   integrations: [
     tailwind(),
     mdx()
   ],
-  output: 'static',
+  output: 'server',
+  adapter: netlify(),
   vite: {
     envDir: './'
   }
