@@ -1,0 +1,19 @@
+---
+// This component tracks page views in the user's session
+const session = await Astro.session;
+if (!session) {
+  throw new Error('Session not available');
+}
+
+let pageViews = await session.get('pageViews') || 0;
+let lastVisit = await session.get('lastVisit') || new Date().toISOString();
+
+// Increment page views
+pageViews++;
+await session.set('pageViews', pageViews);
+await session.set('lastVisit', new Date().toISOString());
+---
+
+<div class="text-sm text-gray-500">
+  You've viewed {pageViews} pages in this session. Last visit: {new Date(lastVisit).toLocaleString()}
+</div> 
