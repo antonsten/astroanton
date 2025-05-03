@@ -1,0 +1,46 @@
+---
+import JsonLd from './JsonLd.astro';
+
+export interface Props {
+  name?: string;
+  jobTitle?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+  sameAs?: string[];
+}
+
+const { 
+  name = "Anton Sten",
+  jobTitle = "UX Lead & Product Designer",
+  description = "Product design leader with 28 years of experience, helping teams build better digital products through thoughtful design, collaboration, and strategy.",
+  image = "https://www.antonsten.com/images/anton.webp",
+  url = "https://www.antonsten.com",
+  sameAs = [
+    "https://www.linkedin.com/in/antonsten/",
+    "https://twitter.com/antonsten"
+  ]
+} = Astro.props;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": name,
+  "jobTitle": jobTitle,
+  "description": description,
+  "image": image,
+  "url": url,
+  "sameAs": sameAs,
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "Sweden"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Summer Health",
+    "url": "https://summerhealth.com"
+  }
+};
+---
+
+<JsonLd data={personSchema} /> 

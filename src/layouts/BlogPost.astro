@@ -1,53 +1,59 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from './Layout.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import MDXImage from '../components/MDXImage.astro';
 import YouTube from '../components/YouTube.astro';
+import ArticleSchema from '../components/ArticleSchema.astro';
 import '../styles/global.css';
+import { formatDate } from '../utils/date';
 
-interface Props {
+export interface Props {
     frontmatter?: {
         title: string;
         description?: string;
         date: string;
         minutesToRead?: number;
+        keywords?: string[];
     };
     title?: string;
     description?: string;
     date?: string;
     minutesToRead?: number;
+    keywords?: string[];
 }
 
 const { 
     title = 'Untitled Post', 
     description = '',
     date = '',
-    minutesToRead = 5
+    minutesToRead = 5,
+    keywords = []
 } = Astro.props.frontmatter || Astro.props;
 
-// Format the date without using browser APIs
-function formatDate(dateStr: string | undefined) {
-    if (!dateStr) {
-        console.error('No date string provided');
-        return '';
-    }
-    try {
-        const date = new Date(dateStr);
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-    } catch (error) {
-        console.error('Error formatting date:', error);
-        return '';
-    }
-}
-
 const formattedDate = formatDate(date);
+const path = Astro.url.pathname;
 
 // Get the success state from the URL
 const success = Astro.url.searchParams.get('success') === 'true';
+
+// Get the current URL for the article schema
+const url = Astro.url.toString();
 ---
 
-<Layout title={title} description={description}>
+<Layout 
+	title={`${title} | Anton Sten`} 
+	description={description}
+	path={path}
+>
+    <ArticleSchema
+        title={title}
+        description={description}
+        publishDate={new Date(date)}
+        url={url}
+        readingTime={minutesToRead}
+        keywords={keywords}
+    />
+    
     <article class="max-w-[700px] mx-auto px-8 sm:px-6">
         <!-- Article Header -->
         <header class="mb-16 mt-[20vh]">

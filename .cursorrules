@@ -1,0 +1,9 @@
+{
+  "rules": [
+    "Ensure each page has a unique meta description.",
+    "Compress images using TinyPNG or similar tools.",
+    "Add descriptive alt text to all images.",
+    "Implement structured data (Schema.org) for Person and Article types.",
+    "Maintain a clear heading hierarchy: H1 > H2 > H3."
+  ]
+} 

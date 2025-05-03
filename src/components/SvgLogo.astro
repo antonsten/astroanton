@@ -1,4 +1,11 @@
 ---
-const { src, class: className } = Astro.props;
+interface Props {
+	src: string;
+	className?: string;
+	alt?: string;
+}
+
+const { src, className = '', alt = 'Company logo' } = Astro.props;
 ---
-<img src={src} class={className} alt="" /> 
+
+<img src={src} class={className} alt={alt} /> 

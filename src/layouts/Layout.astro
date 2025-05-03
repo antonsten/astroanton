@@ -4,21 +4,25 @@ import '../styles/global.css';
 import HtmlHead from '../components/HtmlHead.astro';
 import ScrollAnimation from '../components/ScrollAnimation.astro';
 import Footer from '../components/Footer.astro';
+import CanonicalUrl from '../components/CanonicalUrl.astro';
 
 interface Props {
 	title: string;
 	description?: string;
+	path?: string;
 }
 
 const { 
 	title, 
-	description = "Anton Sten - Product design leader working remotely from the Swedish countryside" 
+	description = "Anton Sten is a UX lead and product designer helping teams build better digital products through thoughtful design, collaboration, and strategy.",
+	path = ''
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<HtmlHead title={title} description={description} />
+	<CanonicalUrl path={path} />
 	<body class="bg-white text-black antialiased">
 		<ScrollAnimation>
 			<div class="fixed top-0 left-0 w-full z-50 pointer-events-none">

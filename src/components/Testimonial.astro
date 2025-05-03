@@ -30,7 +30,7 @@ const bgColorClasses = {
     </div>
     <footer class="mt-16 flex flex-col items-center text-center">
         {logo && (
-            <img src={logo} alt="" class="w-12 h-12 object-contain mb-4" loading="lazy" />
+            <img src={logo} alt={`${author}'s company logo`} class="w-12 h-12 object-contain mb-4" loading="lazy" />
         )}
         <p class="text-[16px] leading-[24px] tracking-[-0.01em] font-medium">{author}</p>
         {role && <p class="text-[16px] leading-[20px] tracking-[-0.01em] font-regular opacity-80 -mt-0.5">{role}</p>}

@@ -4,10 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run optimize-images && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "optimize-images": "node scripts/optimize-images.js",
+    "optimize-images": "tsx scripts/optimize-images.ts",
     "add-slugs": "tsx scripts/add-slugs.ts"
   },
   "dependencies": {

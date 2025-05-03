@@ -1,21 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import PersonSchema from '../components/PersonSchema.astro';
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Anton Sten",
+  "jobTitle": "UX Lead & Product Designer",
+  "description": "Product design leader with 28 years of experience, helping teams build better digital products through thoughtful design, collaboration, and strategy.",
+  "image": "https://antonsten.com/images/anton.webp",
+  "url": "https://antonsten.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/antonsten/",
+    "https://twitter.com/antonsten"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "Sweden"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Summer Health",
+    "url": "https://summerhealth.com"
+  }
+};
 ---
 
-<Layout title="About Anton Sten">
+<Layout 
+  title="About | Anton Sten – UX Lead & Product Designer"
+  description="Meet Anton Sten, a product design leader with 28 years of experience. Based in the Swedish countryside, Anton combines design expertise with a passion for music, dogs, and Liverpool FC."
+  path="/about"
+>
+  <PersonSchema />
+  
   <div class="max-w-[700px] mx-auto px-8 sm:px-6 mt-[20vh]">
     <h1 class="text-black font-medium text-[48px] leading-[1.2] tracking-[-0.02em] sm:text-display mb-20">Hello, I'm Anton</h1>
 
-
     <p class="body-xxl mb-12">I've been a younger brother for 44 years, loved dogs for 40, been into music for 35, worked as a designer for 28, supported Liverpool for 26, and lived in Sweden for 23.</p>
 
-    <img src="/images/anton.webp" alt="Anton Sten" class="w-full mb-20" />
-
+    <OptimizedImage 
+      src="/images/anton.webp" 
+      alt="Anton Sten - UX Lead and Product Designer" 
+      className="w-full mb-20" 
+    />
 
     <p class="body-xxl mb-12">If you only looked at the numbers, it might seem like not much happened after I turned 20. But of course, the opposite is true. Those twenty-something years hold almost everything: the person I became, the work I'm proud of, the life I built.</p>
       
     <p class="body-xxl mb-20">When I'm not designing, I'm usually outside with my wife Anna and our dog, Taylor (Swift). We live in an old house in the Swedish countryside. It's beautiful, but like most beautiful things, it's a little broken. There's always something to fix. I used to find that exhausting. Now I find it comforting. Some projects aren't supposed to be finished. You just live in them.</p>
 
-    <img src="/images/house.webp" alt="My house in southern Sweden" class="w-full mb-20" />
+    <OptimizedImage 
+      src="/images/house.webp" 
+      alt="My beautiful old house in the Swedish countryside, surrounded by nature" 
+      className="w-full mb-20" 
+    />
   </div>
 </Layout> 

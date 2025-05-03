@@ -1,0 +1,64 @@
+---
+import type { ComponentProps } from 'astro';
+import JsonLd from './JsonLd.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  publishDate: Date;
+  modifiedDate?: Date;
+  author?: string;
+  image?: string;
+  url: string;
+  keywords?: string[];
+  readingTime?: number;
+}
+
+const { 
+  title, 
+  description, 
+  publishDate, 
+  modifiedDate = publishDate,
+  author = "Anton Sten",
+  image = "https://www.antonsten.com/images/og-image.png",
+  url,
+  keywords = [],
+  readingTime
+} = Astro.props;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": image,
+  "datePublished": publishDate.toISOString(),
+  "dateModified": modifiedDate.toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": author,
+    "url": "https://www.antonsten.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Anton Sten",
+    "url": "https://www.antonsten.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.antonsten.com/favicon.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": url
+  },
+  "keywords": keywords.join(", "),
+  "wordCount": readingTime ? readingTime * 200 : undefined, // Rough estimate: 200 words per minute
+  "articleSection": "Design & UX",
+  "inLanguage": "en-US",
+  "isAccessibleForFree": true,
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+};
+---
+
+<JsonLd data={articleSchema} /> 

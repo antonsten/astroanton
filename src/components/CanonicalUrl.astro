@@ -1,0 +1,10 @@
+---
+interface Props {
+  path?: string;
+}
+
+const { path = '' } = Astro.props;
+const canonicalUrl = `https://www.antonsten.com${path}`;
+---
+
+<link rel="canonical" href={canonicalUrl} /> 
