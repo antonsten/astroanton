@@ -4,10 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run optimize-images && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "optimize-images": "tsx scripts/optimize-images.ts",
     "add-slugs": "tsx scripts/add-slugs.ts"
   },
   "dependencies": {
@@ -22,11 +21,9 @@
     "chokidar": "^4.0.3",
     "dotenv": "^16.4.7",
     "glob": "^11.0.1",
-    "image-size": "^2.0.1",
     "mkdirp": "^3.0.1",
     "node-fetch": "^3.3.2",
     "path-scurry": "^2.0.0",
-    "sharp": "^0.33.5",
     "turndown": "^7.2.0"
   },
   "devDependencies": {
