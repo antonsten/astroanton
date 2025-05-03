@@ -6,6 +6,7 @@ interface Props {
 
 const { title, description = "Anton Sten - Product designer" } = Astro.props;
 const currentUrl = Astro.url.toString();
+const ogImageUrl = new URL('/images/og-image.png', currentUrl).href;
 ---
 
 <head>
@@ -22,14 +23,14 @@ const currentUrl = Astro.url.toString();
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={currentUrl} />
-  <meta property="og:image" content={new URL('/images/og-image.webp', currentUrl).href} />
+  <meta property="og:image" content={ogImageUrl} />
   <meta property="fb:app_id" content="966242223397117" />
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={new URL('/images/og-image.webp', currentUrl).href} />
+  <meta name="twitter:image" content={ogImageUrl} />
 
   <!-- fathom - beautiful, simple website analytics -->
   <script src="https://cdn.usefathom.com/script.js" data-site="kuencgtc" defer></script>
