@@ -5,6 +5,9 @@ import HtmlHead from '../components/HtmlHead.astro';
 import ScrollAnimation from '../components/ScrollAnimation.astro';
 import Footer from '../components/Footer.astro';
 import CanonicalUrl from '../components/CanonicalUrl.astro';
+import Navigation from '../components/Navigation.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import PersonSchema from '../components/PersonSchema.astro';
 
 interface Props {
 	title: string;
@@ -17,12 +20,17 @@ const {
 	description = "Anton Sten is a UX lead and product designer helping teams build better digital products through thoughtful design, collaboration, and strategy.",
 	path = ''
 } = Astro.props;
+
+// Get the success state from the URL
+const success = Astro.url.searchParams.get('success') === 'true';
 ---
 
 <!doctype html>
 <html lang="en">
-	<HtmlHead title={title} description={description} />
-	<CanonicalUrl path={path} />
+	<head>
+		<HtmlHead title={title} description={description} />
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	</head>
 	<body class="bg-white text-black antialiased">
 		<ScrollAnimation>
 			<div class="fixed top-0 left-0 w-full z-50 pointer-events-none">
@@ -35,6 +43,9 @@ const {
 			</main>
 			<Footer />
 		</ScrollAnimation>
+		<Navigation path={path} />
+		<NewsletterForm success={success} />
+		<PersonSchema />
 	</body>
 </html>
 
@@ -72,4 +83,14 @@ const {
 
 		observer.observe(mainContent);
 	});
+
+	if (window.netlifyIdentity) {
+		window.netlifyIdentity.on("init", user => {
+			if (!user) {
+				window.netlifyIdentity.on("login", () => {
+					document.location.href = "/admin/";
+				});
+			}
+		});
+	}
 </script>

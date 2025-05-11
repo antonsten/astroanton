@@ -5,4 +5,12 @@ declare namespace App {
     pageViews: number;
     lastVisit: string;
   }
+}
+
+interface Window {
+    netlifyIdentity: {
+        on: (event: string, callback: (user: any) => void) => void;
+        open: () => void;
+        close: () => void;
+    };
 } 
