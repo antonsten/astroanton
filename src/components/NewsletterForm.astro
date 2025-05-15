@@ -13,8 +13,10 @@ const { success } = Astro.props;
             data-netlify="true"
             class="flex flex-col gap-4 sm:flex-row sm:gap-2"
             id="newsletter-form"
+            action="/thankyou"
         >
             <input type="hidden" name="form-name" value="newsletter" />
+            <input type="hidden" name="form-id" value={crypto.randomUUID()} />
             <input 
                 class="flex-1 w-full px-4 py-2 rounded-[4px] bg-white focus:outline-none text-[16px] leading-[24px] tracking-[-0.01em] font-regular placeholder-[#A1A1AA] border-0" 
                 name="email" 
@@ -44,50 +46,81 @@ const { success } = Astro.props;
 </div>
 
 <script>
-    const form = document.getElementById('newsletter-form') as HTMLFormElement;
-    const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
-    const buttonText = submitButton.querySelector('.button-text') as HTMLElement;
-    const buttonLoading = submitButton.querySelector('.button-loading') as HTMLElement;
-    const formMessage = document.getElementById('form-message') as HTMLDivElement;
-    const emailInput = document.getElementById('email-input') as HTMLInputElement;
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    // Only enhance the form with JavaScript if it's available
+    if (typeof window !== 'undefined') {
+        const form = document.getElementById('newsletter-form') as HTMLFormElement;
+        const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
+        const buttonText = submitButton.querySelector('.button-text') as HTMLElement;
+        const buttonLoading = submitButton.querySelector('.button-loading') as HTMLElement;
+        const formMessage = document.getElementById('form-message') as HTMLDivElement;
+        const emailInput = document.getElementById('email-input') as HTMLInputElement;
         
-        // Show loading state
-        submitButton.disabled = true;
-        buttonText.classList.add('hidden');
-        buttonLoading.classList.remove('hidden');
-        formMessage.classList.add('hidden');
+        let isSubmitting = false;
+        let submissionTimeout: number;
 
-        try {
-            const formData = new FormData(form);
-            const response = await fetch('/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams(formData as any),
-            });
-
-            if (response.ok) {
-                formMessage.textContent = 'Thanks for subscribing! You\'ll receive a confirmation email shortly.';
-                formMessage.classList.remove('hidden');
-                formMessage.classList.add('text-green-600');
-                emailInput.value = '';
-            } else {
-                throw new Error('Failed to subscribe');
+        form.addEventListener('submit', async (e) => {
+            // Only prevent default if we're handling it with JS
+            e.preventDefault();
+            
+            if (isSubmitting) {
+                return;
             }
-        } catch (error) {
-            console.error('Form submission error:', error);
-            formMessage.textContent = 'Failed to subscribe to the newsletter. Please try again.';
-            formMessage.classList.remove('hidden');
-            formMessage.classList.add('text-red-600');
-        } finally {
-            // Reset button state
-            submitButton.disabled = false;
-            buttonText.classList.remove('hidden');
-            buttonLoading.classList.add('hidden');
-        }
-    });
+            
+            isSubmitting = true;
+            
+            // Show loading state
+            submitButton.disabled = true;
+            buttonText.classList.add('hidden');
+            buttonLoading.classList.remove('hidden');
+            formMessage.classList.add('hidden');
+
+            // Set a timeout to re-enable the form if submission takes too long
+            submissionTimeout = window.setTimeout(() => {
+                isSubmitting = false;
+                submitButton.disabled = false;
+                buttonText.classList.remove('hidden');
+                buttonLoading.classList.add('hidden');
+                formMessage.textContent = 'Submission is taking longer than expected. Please try again.';
+                formMessage.classList.remove('hidden');
+                formMessage.classList.add('text-yellow-600');
+            }, 10000); // 10 second timeout
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams(formData as any),
+                });
+
+                clearTimeout(submissionTimeout);
+
+                if (response.ok) {
+                    formMessage.textContent = 'Thanks for subscribing! You\'ll receive a confirmation email shortly.';
+                    formMessage.classList.remove('hidden');
+                    formMessage.classList.add('text-green-600');
+                    emailInput.value = '';
+                    
+                    // Redirect to thank you page after successful submission
+                    window.location.href = '/thankyou';
+                } else {
+                    throw new Error('Failed to subscribe');
+                }
+            } catch (error) {
+                clearTimeout(submissionTimeout);
+                console.error('Form submission error:', error);
+                formMessage.textContent = 'Failed to subscribe to the newsletter. Please try again.';
+                formMessage.classList.remove('hidden');
+                formMessage.classList.add('text-red-600');
+                
+                // Re-enable form for retry
+                isSubmitting = false;
+                submitButton.disabled = false;
+                buttonText.classList.remove('hidden');
+                buttonLoading.classList.add('hidden');
+            }
+        });
+    }
 </script> 
