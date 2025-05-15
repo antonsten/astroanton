@@ -3,13 +3,13 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Thank You | Anton Sten – UX Lead & Product Designer">
-    <main class="container mx-auto px-4 py-16">
-        <div class="max-w-2xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Thank you for subscribing!</h1>
-            <p class="text-xl mb-8">You'll receive your first newsletter soon.</p>
-            <a href="/" class="inline-block bg-green text-white px-6 py-3 rounded-xl hover:bg-green/90 transition-colors">
-                Return to Home
-            </a>
-        </div>
-    </main>
+    <div class="max-w-[700px] mx-auto px-8 sm:px-6 mt-[20vh]">
+        <h3 class="body-xxl mb-24">
+            Thanks for signing up.
+            <br /><br />
+            You'll get a confirmation email in a moment. Be sure to click the link to confirm your subscription — you won't get my emails unless you double opt-in. If it doesn't show up, check your spam folder or just <a href="mailto:anton@antonsten.com" class="text-black underline hover:text-green">email me</a>.
+            <br /><br />
+            <a href="#" onclick="history.back(); return false;" class="text-black underline hover:text-green">Back</a>
+        </h3>
+    </div>
 </Layout> 
