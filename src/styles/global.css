@@ -9,7 +9,11 @@
     font-feature-settings: 'ss01' 1, 'ss02' 1, 'ss03' 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @apply text-base font-regular text-gray-900;
+    @apply text-base font-regular text-gray-900 overflow-x-hidden;
+  }
+
+  body {
+    @apply overflow-x-hidden;
   }
 }
 
