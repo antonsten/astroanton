@@ -2,7 +2,7 @@
 const { success } = Astro.props;
 ---
 
-<div class="bg-light-green p-8 md:rounded-[4px] -mx-8 md:mx-0">
+<div class="bg-light-green p-8 rounded-[4px]">
     <p class="text-black mb-8 text-[20px] leading-[26px] tracking-[-0.01em] font-regular">
         Join 3,000+ designers, developers, and product people who get my best ideas about design each month.
     </p>
@@ -16,7 +16,6 @@ const { success } = Astro.props;
             action="/thankyou"
         >
             <input type="hidden" name="form-name" value="newsletter" />
-            <input type="hidden" name="form-id" value={crypto.randomUUID()} />
             <input 
                 class="flex-1 w-full px-4 py-2 rounded-[4px] bg-white focus:outline-none text-[16px] leading-[24px] tracking-[-0.01em] font-regular placeholder-[#A1A1AA] border-0" 
                 name="email" 
