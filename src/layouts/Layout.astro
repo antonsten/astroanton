@@ -1,12 +1,12 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+import '../styles/critical.css';
 import '../styles/global.css';
 import HtmlHead from '../components/HtmlHead.astro';
 import ScrollAnimation from '../components/ScrollAnimation.astro';
 import Footer from '../components/Footer.astro';
 import CanonicalUrl from '../components/CanonicalUrl.astro';
 import Navigation from '../components/Navigation.astro';
-import NewsletterForm from '../components/NewsletterForm.astro';
 import PersonSchema from '../components/PersonSchema.astro';
 
 interface Props {
@@ -23,13 +23,20 @@ const {
 
 // Get the success state from the URL
 const success = Astro.url.searchParams.get('success') === 'true';
+
+// Inline critical CSS
+const criticalCSS = await Astro.slots.render('critical-css');
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<HtmlHead title={title} description={description} />
-		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+		<style is:inline>{criticalCSS}</style>
+		<link rel="stylesheet" href="/styles/global.css" media="print" onload="this.media='all'" />
+		<noscript><link rel="stylesheet" href="/styles/global.css" /></noscript>
+		<!-- Netlify Identity Widget -->
+		<script src="/js/netlify-identity.js" defer></script>
 	</head>
 	<body class="bg-white text-black antialiased">
 		<ScrollAnimation>
@@ -38,13 +45,12 @@ const success = Astro.url.searchParams.get('success') === 'true';
 					<h1 class="text-[32px] leading-[40px] tracking-[-0.02em] font-medium text-black opacity-0 transition-opacity duration-300" id="scroll-title">Studio Anton Sten</h1>
 				</div>
 			</div>
+			<Navigation path={path} />
 			<main class="min-h-screen">
 				<slot />
 			</main>
 			<Footer />
 		</ScrollAnimation>
-		<Navigation path={path} />
-		<NewsletterForm success={success} />
 		<PersonSchema />
 	</body>
 </html>
@@ -84,13 +90,16 @@ const success = Astro.url.searchParams.get('success') === 'true';
 		observer.observe(mainContent);
 	});
 
-	if (window.netlifyIdentity) {
-		window.netlifyIdentity.on("init", user => {
-			if (!user) {
-				window.netlifyIdentity.on("login", () => {
-					document.location.href = "/admin/";
-				});
-			}
-		});
-	}
+	// Initialize Netlify Identity
+	document.addEventListener('DOMContentLoaded', () => {
+		if (window.netlifyIdentity) {
+			window.netlifyIdentity.on("init", user => {
+				if (!user) {
+					window.netlifyIdentity.on("login", () => {
+						document.location.href = "/admin/";
+					});
+				}
+			});
+		}
+	});
 </script>

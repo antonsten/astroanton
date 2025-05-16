@@ -1,0 +1,99 @@
+/* Critical CSS for above-the-fold content */
+@tailwind base;
+@tailwind components;
+
+/* Critical font declarations */
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/SuisseIntl-Regular-WebM.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/SuisseIntl-Medium-WebM.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: optional;
+}
+
+/* Critical styles */
+html {
+  font-family: 'Suisse Intl', system-ui, sans-serif;
+  font-feature-settings: 'ss01' 1, 'ss02' 1, 'ss03' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply text-base font-regular text-gray-900 overflow-x-hidden;
+}
+
+body {
+  @apply bg-white text-black antialiased overflow-x-hidden;
+}
+
+/* Critical layout styles */
+.max-w-\[700px\] {
+  max-width: 700px;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.sm\:px-6 {
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Critical typography */
+.text-\[32px\] {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+.text-\[20px\] {
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+}
+
+/* Critical colors */
+.text-black {
+  color: #131313;
+}
+
+.bg-white {
+  background-color: #FFFFFF;
+}
+
+/* Critical navigation styles */
+.fixed {
+  position: fixed;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.z-50 {
+  z-index: 50;
+} 

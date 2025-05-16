@@ -8,41 +8,36 @@ interface Props {
   loading?: 'lazy' | 'eager';
 }
 
-const { src, alt, width, height, className = '', loading = 'lazy' } = Astro.props;
-
-// Get the base path without extension
-const basePath = src.replace(/\.[^/.]+$/, '');
-const optimizedPath = `/optimized${basePath}`;
+const { 
+  src, 
+  alt, 
+  width = 700, 
+  height, 
+  className = '', 
+  loading = 'lazy' 
+} = Astro.props;
 
 // Generate srcset for different sizes
-const sizes = [320, 640, 960, 1280];
+const sizes = [400, 700, 1000];
 const srcset = sizes
-  .map(size => `${optimizedPath}-${size}.webp ${size}w`)
-  .join(', ');
+    .map(size => `${src}?width=${size} ${size}w`)
+    .join(', ');
 
-// Generate srcset for JPEG fallback
-const jpegSrcset = sizes
-  .map(size => `${optimizedPath}-${size}.jpeg ${size}w`)
-  .join(', ');
+// Calculate aspect ratio if height is not provided
+const aspectRatio = height ? height / width : 9/16;
+const paddingBottom = `${aspectRatio * 100}%`;
 ---
 
-<picture>
-  <source
-    type="image/webp"
-    srcset={srcset}
-    sizes="(max-width: 640px) 320px, (max-width: 960px) 640px, (max-width: 1280px) 960px, 1280px"
-  />
-  <source
-    type="image/jpeg"
-    srcset={jpegSrcset}
-    sizes="(max-width: 640px) 320px, (max-width: 960px) 640px, (max-width: 1280px) 960px, 1280px"
-  />
-  <img
-    src={`${optimizedPath}-640.jpeg`}
-    alt={alt}
-    width={width}
-    height={height}
-    class={className}
-    loading={loading}
-  />
-</picture> 
+<div class={`relative ${className}`} style={`padding-bottom: ${paddingBottom}`}>
+    <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height || Math.round(width * aspectRatio)}
+        srcset={srcset}
+        sizes="(max-width: 640px) 100vw, 700px"
+        loading={loading}
+        decoding="async"
+        class="absolute inset-0 w-full h-full object-cover"
+    />
+</div> 
