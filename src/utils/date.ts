@@ -5,8 +5,8 @@ export function formatDate(dateStr: string | Date | undefined) {
     }
     try {
         const date = new Date(dateStr);
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
     } catch (error) {
         console.error('Error formatting date:', error);
         return '';

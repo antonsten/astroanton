@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { formatDate } from '../../utils/date';
 
 const articles = await getCollection('articles', ({ data }) => {
     // Debug: Log each article as it's being processed
@@ -80,11 +81,7 @@ function getFirstLine(content: string) {
                         </h3>
                         {article.data.date && (
                             <span class="body-sm text-dark-grey">
-                                {new Date(article.data.date).toLocaleDateString('en-US', { 
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric'
-                                })}
+                                {formatDate(article.data.date)}
                             </span>
                         )}
                     </div>

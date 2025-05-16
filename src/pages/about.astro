@@ -25,6 +25,52 @@ const personSchema = {
     "url": "https://summerhealth.com"
   }
 };
+
+// Define interviews and podcasts data
+const appearances = [
+  {
+    title: "Zalet Podcast: Design in the Digital Age",
+    url: "https://podcasts.apple.com/us/podcast/anton-st%C3%A9n/id1597353595?i=1000681686287",
+    date: "25 Dec 2024",
+    type: "podcast"
+  },
+  {
+    title: "Matters of Creative: Beyond the Screen - The Evolution of UX Design",
+    url: "https://podcasts.apple.com/us/podcast/beyond-the-screen-the-evolution-of-ux-design/id1750097456?i=1000669244866",
+    date: "15 Dec 2024",
+    type: "podcast"
+  },
+  {
+    title: "Lovers Magazine Interview",
+    url: "https://spaces.is/loversmagazine/interviews/anton-sten",
+    date: "18 Apr 2024",
+    type: "interview"
+  },
+  {
+    title: "Nodes of Design Podcast: Design Systems Decoded",
+    url: "https://podcasts.apple.com/gb/podcast/nodes-of-design-103-design-systems-decoded-by-anton-st%C3%A9n/id1492348213?i=1000627713912",
+    date: "13 Sep 2023",
+    type: "podcast"
+  },
+  {
+    title: "The Optimal Path: IC vs. Manager - Choosing Your Design Career Path",
+    url: "https://podcasts.apple.com/nz/podcast/ic-vs-manager-choosing-your-design-career-path-with/id1603036634?i=1000551373667",
+    date: "17 Feb 2022",
+    type: "podcast"
+  },
+  {
+    title: "Being Freelance: It Takes Time",
+    url: "https://podcasts.apple.com/us/podcast/it-takes-time-ux-designer-anton-sten/id959401077?i=1000389435612",
+    date: "02 Jul 2017",
+    type: "podcast"
+  },
+  {
+    title: "Adobe Blog: Q&A About User Experiences That Matter",
+    url: "https://blog.adobe.com/en/publish/2017/11/02/qa-with-anton-sten-author-of-user-experiences-that-matter",
+    date: "02 Nov 2017",
+    type: "interview"
+  }
+];
 ---
 
 <Layout 
@@ -54,5 +100,27 @@ const personSchema = {
       alt="My beautiful old house in the Swedish countryside, surrounded by nature" 
       className="w-full mb-20" 
     />
+
+    <!-- Interviews and Podcasts Section -->
+    <section class="mb-20">
+      <h2 class="text-2xl font-bold mb-12">Interviews & Podcasts</h2>
+      <div class="space-y-8">
+        {appearances.map(appearance => (
+          <div>
+            <div class="flex justify-between items-start">
+              <h3 class="body-lg font-medium">
+                <a href={appearance.url} class="hover:text-green transition-colors" target="_blank" rel="noopener noreferrer">
+                  {appearance.title}
+                </a>
+              </h3>
+              <span class="body-sm text-dark-grey">
+                {appearance.date}
+              </span>
+            </div>
+            <div class="h-px bg-light-grey mt-8"></div>
+          </div>
+        ))}
+      </div>
+    </section>
   </div>
 </Layout> 
