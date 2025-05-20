@@ -53,8 +53,8 @@ content:
   - name: pages
     label: Pages
     type: collection
-    path: src/pages
-    filename: "{slug}.astro"
+    path: src/content/pages
+    filename: "{slug}.mdx"
 
     view:
       fields: [ title, slug ]
