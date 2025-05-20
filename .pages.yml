@@ -1,3 +1,10 @@
+backend:
+  name: pages
+  branch: main # or your default branch
+
+media_folder: "public/media" # Media files will be stored here
+public_folder: "/media" # The src attribute for uploaded media
+
 collections:
   - name: articles
     label: Articles
@@ -11,3 +18,27 @@ collections:
       - { label: "Reading Time", name: "readingTime", widget: "number", required: false }
       - { label: "Slug", name: "slug", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+
+  - name: pages
+    label: Pages
+    folder: src/content/pages
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+
+  - name: media
+    label: Media
+    folder: public/media
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Alt Text", name: "alt", widget: "string", required: false }
+      - { label: "File", name: "file", widget: "image" }
