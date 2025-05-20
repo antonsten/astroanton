@@ -3,8 +3,7 @@
 
 # ---------------------------------------------------------------------------
 # MEDIA
-# Uploaded images will be stored in the repo under src/assets/images
-# and referenced in markdown as /images/... so Astro can copy them as‑is.
+# Uploaded images are saved in src/assets/images and referenced as /images/…
 # ---------------------------------------------------------------------------
 media:
   input: src/assets/images
@@ -13,15 +12,14 @@ media:
 
 # ---------------------------------------------------------------------------
 # CONTENT TYPES
-# Currently the site only declares one Astro content collection: "articles".
-# This mirrors /src/content/articles where all .mdx files live.
 # ---------------------------------------------------------------------------
 content:
-  - name: articles            # machine name (unique)
-    label: Articles           # shown in Pages CMS sidebar
+  # ───── Blog articles ─────
+  - name: articles
+    label: Articles
     type: collection
     path: src/content/articles
-    filename: "{year}-{month}-{day}-{slug}.mdx"  # create new posts as MDX
+    filename: "{year}-{month}-{day}-{slug}.mdx"
 
     view:
       fields: [ title, date, slug ]
@@ -47,6 +45,34 @@ content:
       - name: readingTime
         label: Reading time (min)
         type: number
+      - name: body
+        label: Body
+        type: rich-text
+
+  # ───── Site pages ─────
+  - name: pages
+    label: Pages
+    type: collection
+    path: src/content/pages
+    filename: "{slug}.mdx"
+
+    view:
+      fields: [ title, slug ]
+      primary: title
+      sort: [ title ]
+
+    fields:
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
       - name: body
         label: Body
         type: rich-text
