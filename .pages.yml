@@ -5,7 +5,7 @@ backend:
 media_folder: "public/media" # Media files will be stored here
 public_folder: "/media" # The src attribute for uploaded media
 
-collections:
+content:
   - name: articles
     label: Articles
     folder: src/content/articles
