@@ -35,17 +35,9 @@ const criticalCSS = await Astro.slots.render('critical-css');
 		<style is:inline>{criticalCSS}</style>
 		<link rel="stylesheet" href="/styles/global.css" media="print" onload="this.media='all'" />
 		<noscript><link rel="stylesheet" href="/styles/global.css" /></noscript>
-		<!-- Netlify Identity Widget -->
-		<script src="/js/netlify-identity.js" defer></script>
 	</head>
 	<body class="bg-white text-black antialiased">
-		<ScrollAnimation>
-			<div class="fixed top-0 left-0 w-full z-50 pointer-events-none">
-				<div class="max-w-[700px] mx-auto px-4">
-					<h1 class="text-[32px] leading-[40px] tracking-[-0.02em] font-medium text-black opacity-0 transition-opacity duration-300" id="scroll-title">Studio Anton Sten</h1>
-				</div>
-			</div>
-			<Navigation path={path} />
+		<ScrollAnimation path={path}>
 			<main class="min-h-screen">
 				<slot />
 			</main>
@@ -61,45 +53,3 @@ const criticalCSS = await Astro.slots.render('critical-css');
 		font-family: 'Suisse Intl', system-ui, sans-serif;
 	}
 </style>
-
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const mainContent = document.querySelector('main');
-		const fixedNav = document.querySelector('.fixed .flex') as HTMLElement;
-		const originalNav = document.querySelector('nav') as HTMLElement;
-		const scrollTitle = document.getElementById('scroll-title') as HTMLElement;
-		
-		if (!mainContent || !fixedNav || !originalNav || !scrollTitle) return;
-
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					originalNav.style.opacity = '0';
-					fixedNav.style.opacity = '1';
-					scrollTitle.style.opacity = '1';
-				} else {
-					originalNav.style.opacity = '1';
-					fixedNav.style.opacity = '0';
-					scrollTitle.style.opacity = '0';
-				}
-			});
-		}, {
-			threshold: 0.5
-		});
-
-		observer.observe(mainContent);
-	});
-
-	// Initialize Netlify Identity
-	document.addEventListener('DOMContentLoaded', () => {
-		if (window.netlifyIdentity) {
-			window.netlifyIdentity.on("init", user => {
-				if (!user) {
-					window.netlifyIdentity.on("login", () => {
-						document.location.href = "/admin/";
-					});
-				}
-			});
-		}
-	});
-</script>

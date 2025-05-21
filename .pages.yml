@@ -1,80 +1,44 @@
-# Pages CMS configuration for Anton's Astro site
-# Docs: https://pagescms.org/docs/configuration/
+backend:
+  name: pages
+  branch: main # or your default branch
 
-# ---------------------------------------------------------------------------
-# MEDIA
-# Uploaded images are saved in src/assets/images and referenced as /images/…
-# ---------------------------------------------------------------------------
-media:
-  input: src/assets/images
-  output: /images
-  extensions: [ png, jpg, jpeg, webp, svg ]
+media_folder: "public/media" # Media files will be stored here
+public_folder: "/media" # The src attribute for uploaded media
 
-# ---------------------------------------------------------------------------
-# CONTENT TYPES
-# ---------------------------------------------------------------------------
-content:
-  # ───── Blog articles ─────
+collections:
   - name: articles
     label: Articles
-    type: collection
-    path: src/content/articles
-    filename: "{year}-{month}-{day}-{slug}.mdx"
-
-    view:
-      fields: [ title, date, slug ]
-      primary: title
-      sort: [ date, title ]
-
+    folder: src/content/articles
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - name: slug
-        label: Slug
-        type: string
-        required: true
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: description
-        label: Description
-        type: text
-      - name: date
-        label: Publish date
-        type: date
-        required: true
-      - name: readingTime
-        label: Reading time (min)
-        type: number
-      - name: body
-        label: Body
-        type: rich-text
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime", required: true }
+      - { label: "Reading Time", name: "readingTime", widget: "number", required: false }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
 
-  # ───── Site pages ─────
   - name: pages
     label: Pages
-    type: collection
-    path: src/content/pages
-    filename: "{slug}.mdx"
-
-    view:
-      fields: [ title, slug ]
-      primary: title
-      sort: [ title ]
-
+    folder: src/content/pages
+    create: true
+    slug: "{{slug}}"
     fields:
-      - name: slug
-        label: Slug
-        type: string
-        required: true
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: description
-        label: Description
-        type: text
-      - name: body
-        label: Body
-        type: rich-text
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Slug", name: "slug", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
 
-# End of .pages.yml
+  - name: media
+    label: Media
+    folder: public/media
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Alt Text", name: "alt", widget: "string", required: false }
+      - { label: "File", name: "file", widget: "image" }

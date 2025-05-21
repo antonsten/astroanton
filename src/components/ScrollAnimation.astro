@@ -1,33 +1,40 @@
 ---
 import Navigation from './Navigation.astro';
+
+interface Props {
+    path?: string;
+}
+
+const { path = '' } = Astro.props;
 ---
 
 <div class="layout-wrapper">
-  <div class="nav-wrapper">
-    <Navigation />
-  </div>
-  
-  <div class="content-wrapper">
-    <slot />
-  </div>
+    <div class="nav-wrapper">
+        <Navigation path={path} />
+    </div>
+    
+    <div class="content-wrapper">
+        <slot />
+    </div>
 </div>
 
 <style>
-  .layout-wrapper {
-    min-height: 100vh;
-    position: relative;
-  }
+    .layout-wrapper {
+        min-height: 100vh;
+        position: relative;
+    }
 
-  .nav-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 50;
-  }
+    .nav-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+    }
 
-  .content-wrapper {
-    position: relative;
-    z-index: 1;
-  }
+    .content-wrapper {
+        position: relative;
+        z-index: 1;
+        padding-top: 80px; /* Add padding to account for fixed navigation */
+    }
 </style> 

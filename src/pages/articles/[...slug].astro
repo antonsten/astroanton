@@ -4,13 +4,39 @@ import Layout from '../../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
     const articles = await getCollection('articles');
-    return articles.map(article => ({
-        params: { slug: article.slug },
-        props: { article }
-    }));
+    return articles.map(article => {
+        // Generate the slug either from the article's slug or from date + title
+        const articleSlug = article.slug || 
+            (article.data.date instanceof Date ? article.data.date.toISOString().split('T')[0] : article.data.date) + 
+            '-' + article.data.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        
+        return {
+            params: { slug: articleSlug },
+            props: { article }
+        };
+    });
 }
 
-const { article } = Astro.props;
+// Get the current slug from the URL
+const { slug } = Astro.params;
+
+// Get all articles
+const articles = await getCollection('articles');
+
+// Find the article that matches the current slug
+const article = articles.find(article => {
+    const articleSlug = article.slug || 
+        (article.data.date instanceof Date ? article.data.date.toISOString().split('T')[0] : article.data.date) + 
+        '-' + article.data.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    return articleSlug === slug;
+});
+
+// If no article is found, redirect to 404
+if (!article) {
+    return Astro.redirect('/404');
+}
+
+// Render the article content
 const { Content } = await article.render();
 
 // Transform the article data to match the expected frontmatter format

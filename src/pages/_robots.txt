@@ -4,6 +4,5 @@ Allow: /
 # Sitemaps
 Sitemap: https://www.antonsten.com/sitemap.xml
 
-# Disallow admin and private routes
-Disallow: /admin/
+# Disallow private routes
 Disallow: /private/ 
