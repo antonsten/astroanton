@@ -12,7 +12,6 @@ export default defineConfig({
     mdx(),
     netlify()
   ],
-  output: 'server',
   experimental: {
     session: true
   },
